@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mavuno Trade Ltd - Exporting Tanzanian Agricultural Products</title>
+  <meta name="description" content="Mavuno Trade Ltd exports premium Tanzanian agricultural produce to global markets. Based in Dar es Salaam, we connect East African farms to the world.">
+  
+  <!-- Social Media Meta Tags -->
+  <meta property="og:title" content="Mavuno Trade Ltd">
+  <meta property="og:description" content="Exporting Tanzania's Best Agricultural Produce to the World">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1587049352841-6e8cfc4b5ec6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80">
+  <meta property="og:url" content="https://www.mavunotrade.org">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
+  
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #3A7D44;
+      --primary-dark: #245530;
+      --primary-light: #68A357;
+      --accent: #FFC857;
+      --light-bg: #F8F9FA;
+      --dark-text: #212529;
+      --light-text: #F8F9FA;
+      --border-radius: 16px;
+      --box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    
+    /* Header - Modern Design - Updated for fixed positioning */
+    header {
+      background-color: white;
+      padding: 20px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* Add padding to main to account for fixed header */
+    main {
+      padding-top: 90px;
+    }
+
+    .logo {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+    }
+
+ 
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none; /* Removes underline from link */
+    }
+    
+    .logo-img {
+      height: 50px; /* Adjust this to your preferred size */
+      width: auto; /* Maintains aspect ratio */
+      transition: opacity 0.3s ease;
+    }
+    
+    .logo-img:hover {
+      opacity: 0.9;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    nav a {
+      color: var(--dark-text);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+      padding: 8px 16px;
+      border-radius: 8px;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+      background-color: rgba(58, 125, 68, 0.1);
+    }
+
+    nav a.active {
+      color: white;
+      background-color: var(--primary);
+    }
+
+    /* Mobile Menu Styles */
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      font-size: 24px;
+      background: transparent;
+      border: none;
+      color: var(--primary-dark);
+      width: 44px;
+      height: 44px;
+      align-items: center;
+      justify-content: center;
+      z-index: 1001;
+      padding: 0;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+      
+      nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background-color: white;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 20px;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        z-index: 1000;
+      }
+      
+      nav.active {
+        display: flex;
+        animation: fadeIn 0.3s ease-out;
+      }
+      
+      nav a {
+        margin: 10px 0;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+      
+      nav a:hover {
+        background-color: rgba(58, 125, 68, 0.1);
+      }
+      
+      header {
+        flex-direction: row;
+        align-items: center;
+        padding: 15px 5%;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    html, body { height: 100%; }
+    body {
+      font-family: 'Manrope', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--light-bg);
+      color: var(--dark-text);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Updated Hero Section for Slideshow */
+    .hero {
+      position: relative;
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 100px 20px;
+      color: var(--light-text);
+      overflow: hidden;
+    }
+
+    .hero-slideshow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h2 {
+      font-size: clamp(28px, 5vw, 40px);
+      margin-bottom: 20px;
+    }
+
+    .hero a {
+      background: var(--primary);
+      color: var(--light-text);
+      padding: 12px 24px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+      display: inline-block;
+      margin-top: 20px;
+    }
+
+    .hero a:hover { background: var(--primary-dark); }
+
+    .section {
+      padding: 60px 40px;
+      position: relative;
+      background-color: #ffffff;
+    }
+    
+    /* Animation Classes */
+    .animate {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    
+    .animate.animated {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .animate-delay-1 {
+      transition-delay: 0.2s;
+    }
+    
+    .animate-delay-2 {
+      transition-delay: 0.4s;
+    }
+    
+    .animate-delay-3 {
+      transition-delay: 0.6s;
+    }
+    
+    /* Updated About Section */
+    #about {
+      background-color: #ffffff;
+      color: var(--dark-text);
+    }
+    
+    .about-container {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .about-content {
+      flex: 1;
+      min-width: 50%;
+    }
+    
+    .about-image {
+      flex: 1;
+      min-width: 40%;
+      height: 400px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--box-shadow);
+    }
+    
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .about-image:hover img {
+      transform: scale(1.05);
+    }
+    
+    #about h2 {
+      color: var(--primary-dark);
+      margin-top: 0;
+    }
+    
+    .section h2 {
+      color: var(--primary-dark);
+      margin-bottom: 20px;
+      font-size: clamp(24px, 4vw, 32px);
+    }
+    .section p { 
+      line-height: 1.6;
+      font-size: clamp(16px, 2vw, 18px);
+    }
+    
+    /* Products Section Styles */
+    .products-section {
+      padding: 80px 20px;
+      background-color: var(--light-bg);
+    }
+
+    .products-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-header h2 {
+      color: var(--primary-dark);
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-header h2::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: var(--primary);
+    }
+
+    .section-subtitle {
+      color: #555;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--box-shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    }
+
+    .product-image {
+      height: 250px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.05);
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: var(--primary-dark);
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .product-details {
+      padding: 25px;
+    }
+
+    .product-details h3 {
+      color: var(--primary-dark);
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+
+    .product-specs {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .spec-item {
+      display: flex;
+      align-items: center;
+      color: #555;
+    }
+
+    .spec-item i {
+      margin-right: 10px;
+      color: var(--primary);
+      width: 20px;
+      text-align: center;
+    }
+
+    .product-description {
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .product-cta {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .product-btn {
+      flex: 1;
+      padding: 10px;
+      background: var(--primary-dark);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .product-btn:hover {
+      background: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .product-btn.outline {
+      background: transparent;
+      border: 2px solid var(--primary-dark);
+      color: var(--primary-dark);
+    }
+
+    .product-btn.outline:hover {
+      background: #e6f2e6;
+    }
+
+    .all-products-link {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .view-all-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 30px;
+      background: transparent;
+      border: 2px solid var(--primary-dark);
+      border-radius: 5px;
+      color: var(--primary-dark);
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .view-all-btn:hover {
+      background: var(--primary-dark);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* Hidden product animation */
+    #hiddenProduct {
+      opacity: 0;
+      height: 0;
+      overflow: hidden;
+      transition: opacity 0.5s ease, height 0.5s ease;
+    }
+
+    #hiddenProduct.show {
+      opacity: 1;
+      height: auto;
+    }
+    
+    /* Partner With Us Section with Background Image */
+    .partner-section {
+      position: relative;
+      text-align: center;
+      padding: 100px 40px;
+      color: white;
+      background-size: cover;
+      background-position: center;
+      background-image: url('https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1350&q=80');
+    }
+    
+    .partner-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+    
+    .partner-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .partner-section h2 {
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    
+    .partner-section p {
+      margin-bottom: 30px;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 15px 30px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.3s;
+    }
+    
+    .cta-button:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+    }
+
+    /* Redesigned Farm Partners Section */
+    .farm-partners {
+      background-color: var(--light-bg);
+      padding: 80px 20px;
+    }
+    
+    .partners-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .partners-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    
+    .partners-header h2 {
+      color: var(--primary-dark);
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .partners-header h2::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: var(--primary);
+    }
+    
+    .partners-header p {
+      color: #555;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .partner-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--box-shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .partner-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    }
+    
+    .partner-image {
+      height: 200px;
+      overflow: hidden;
+    }
+    
+    .partner-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .partner-card:hover .partner-image img {
+      transform: scale(1.1);
+    }
+    
+    .partner-info {
+      padding: 25px;
+    }
+    
+    .partner-info h3 {
+      color: var(--primary-dark);
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+    
+    .partner-location {
+      display: flex;
+      align-items: center;
+      color: #6c757d;
+      margin-bottom: 15px;
+    }
+    
+    .partner-location i {
+      margin-right: 8px;
+      color: var(--primary);
+    }
+    
+    .partner-description {
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    
+    .partner-specialty {
+      display: inline-block;
+      background-color: #e6f2e6;
+      color: var(--primary-dark);
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    /* Testimonials Section - Redesigned */
+    .testimonials-section {
+      padding: 80px 20px;
+      background-color: #ffffff;
+    }
+
+    .testimonials-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .testimonials-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .testimonials-header h2 {
+      color: var(--primary-dark);
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .testimonials-header h2::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: var(--primary);
+    }
+
+    .testimonials-header p {
+      color: #555;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .testimonial-card {
+      background: white;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: var(--box-shadow);
+      transition: transform 0.3s ease;
+      position: relative;
+      border: 1px solid rgba(58, 125, 68, 0.1);
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .testimonial-card::before {
+      content: """;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 60px;
+      color: rgba(58, 125, 68, 0.1);
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+
+    .testimonial-content {
+      margin-bottom: 20px;
+      font-style: italic;
+      color: #555;
+      line-height: 1.6;
+      position: relative;
+      z-index: 1;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+      color: var(--primary-dark);
+    }
+
+    .testimonial-author::before {
+      content: "";
+      display: inline-block;
+      width: 30px;
+      height: 2px;
+      background-color: var(--primary);
+      margin-right: 15px;
+    }
+
+    .testimonial-rating {
+      color: var(--accent);
+      margin-top: 10px;
+    }
+
+    /* Footer Styles */
+    footer {
+      background-color: var(--primary-dark);
+      color: var(--light-text);
+      padding: 60px 20px 20px;
+      font-size: 16px;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 40px;
+    }
+
+    .footer-section {
+      flex: 1;
+      min-width: 250px;
+      margin-bottom: 30px;
+    }
+
+    .footer-section h3 {
+      color: var(--accent);
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-section ul li a {
+      color: var(--light-text);
+      text-decoration: none;
+      transition: var(--transition);
+      opacity: 0.8;
+    }
+
+    .footer-section ul li a:hover {
+      color: var(--accent);
+      opacity: 1;
+      padding-left: 5px;
+    }
+
+    .footer-section p {
+      margin: 15px 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .footer-section i {
+      margin-right: 10px;
+      width: 20px;
+      text-align: center;
+      color: var(--accent);
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .social-icons a {
+      color: var(--light-text);
+      font-size: 20px;
+      transition: var(--transition);
+    }
+
+    .social-icons a:hover {
+      color: var(--accent);
+    }
+
+    .newsletter-form {
+      display: flex;
+      margin-top: 15px;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 4px 0 0 4px;
+    }
+
+    .newsletter-form button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0 15px;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .newsletter-form button:hover {
+      background: var(--primary-light);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      margin-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .legal-links {
+      margin-top: 15px;
+    }
+
+    .legal-links a {
+      color: #a8dadc;
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .legal-links a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .about-container {
+        flex-direction: column;
+      }
+      
+      .about-content {
+        width: 100%;
+      }
+      
+      .about-image {
+        width: 100%;
+        height: 300px;
+        margin-top: 30px;
+      }
+      
+      /* Mobile Partner Section */
+      .partner-section {
+        padding: 60px 20px;
+      }
+      
+      /* Mobile Farm Partners */
+      .partners-header h2 {
+        font-size: 2rem;
+      }
+      
+      .partners-header p {
+        font-size: 1rem;
+      }
+      
+      .partners-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      /* Mobile Products Section */
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .product-cta {
+        flex-direction: column;
+      }
+      
+      .section-header h2 {
+        font-size: 2rem;
+      }
+      
+      .section-subtitle {
+        font-size: 1rem;
+      }
+      
+      /* Mobile Testimonials */
+      .testimonials-header h2 {
+        font-size: 2rem;
+      }
+      
+      .testimonials-header p {
+        font-size: 1rem;
+      }
+      
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      /* Adjust main padding for mobile */
+      main {
+        padding-top: 80px;
+      }
+    }
+    
+    @keyframes slideInLeft {
+      0% { transform: translateX(-100px); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+    
+    @keyframes fadeUp {
+      0% { transform: translateY(40px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="images/logo.jpg" alt="Mavuno Trade Ltd" class="logo-img">
+      <span>Mavuno Trade Ltd</span>
+    </div>
+    
+    <!-- Updated Mobile Menu Toggle with aria attributes -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false" aria-controls="mainNav">
+      <i class="fas fa-bars"></i>
+    </button>
+    
+    <nav id="mainNav" aria-labelledby="menuToggle">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="staff.html">Our Team</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Updated Hero Section with Slideshow -->
+    <section class="hero" id="home">
+      <div class="hero-slideshow">
+        <div class="slide active" style="background-image: url('./images/wheat.jpg')"></div>
+        <div class="slide" style="background-image: url('./images/ricee.jpg')"></div>
+        <div class="slide" style="background-image: url('./images/pine.jpg')"></div>
+        <div class="slide" style="background-image: url('./images/maizee.jpg')"></div>
+      </div>
+      <div class="hero-content">
+        <h2>Exporting Tanzania's Best Agricultural Produce to the World</h2>
+        <p>Connecting East African farms to global markets with quality and care.</p>
+        <a href="contact.html">Get in Touch</a>
+      </div>
+    </section>
+
+    <section class="section animate" id="about">
+      <div class="about-container">
+        <div class="about-content">
+          <h2>About Us</h2>
+          <p>Mavuno Trade Ltd, headquartered in Dar es Salaam, Tanzania, is a trusted name in the agricultural export industry. With deep roots in local farming communities and strong logistics capabilities, we ensure that premium Tanzanian produce reaches markets across East Africa, the Middle East, Asia, and Europe.</p>
+          <p>We are committed to sustainability, transparency, and long-term partnerships that uplift local farmers and deliver value to our global clients. Our team combines agricultural expertise with international trade knowledge to bridge the gap between Tanzanian farms and world markets.</p>
+          <p>By maintaining strict quality control measures and ethical sourcing practices, we guarantee that our products meet both international standards and our clients' specific requirements.</p>
+        </div>
+        <div class="about-image animate animate-delay-1">
+          <img src="images/trade.jpg" alt="Mavuno Trade team working in the field">
+        </div>
+      </div>
+    </section>
+
+    <!-- Redesigned Products Section -->
+    <section class="products-section animate" id="products">
+      <div class="products-container">
+        <div class="section-header">
+          <h2>Our Premium Agricultural Products</h2>
+          <p class="section-subtitle">Exporting Tanzania's finest agricultural produce to global markets</p>
+        </div>
+        
+        <div class="products-grid">
+          <!-- Maize Product -->
+          <div class="product-card animate animate-delay-1">
+            <div class="product-image">
+              <img src="images/maizepic.jpg" alt="Tanzanian Maize">
+              <div class="product-badge">Best Seller</div>
+            </div>
+            <div class="product-details">
+              <h3>Premium Maize</h3>
+              <div class="product-specs">
+                <div class="spec-item">
+                  <i class="fas fa-seedling"></i>
+                  <span>White & Yellow Varieties</span>
+                </div>
+                <div class="spec-item">
+                  <i class="fas fa-weight-hanging"></i>
+                  <span>Minimum order: 20 tons</span>
+                </div>
+                <div class="spec-item">
+                  <i class="fas fa-calendar-alt"></i>
+                  <span>Year-round supply</span>
+                </div>
+              </div>
+              <p class="product-description">High-quality maize harvested under strict quality control measures, available in bulk quantities for food and feed industries.</p>
+              <div class="product-cta">
+                <a href="contact.html" class="product-btn">Request Samples</a>
+                <a href="contact.html" class="product-btn outline">Inquire Now</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Rice Product -->
+          <div class="product-card animate animate-delay-2">
+            <div class="product-image">
+              <img src="images/ricee.jpg" alt="Tanzanian Rice">
+              <div class="product-badge">Organic Available</div>
+            </div>
+            <div class="product-details">
+              <h3>Rice</h3>
+              <div class="product-specs">
+                <div class="spec-item">
+                  <i class="fas fa-seedling"></i>
+                  <span>Paddy, Milled, Aromatic</span>
+                </div>
+                <div class="spec-item">
+                  <i class="fas fa-weight-hanging"></i>
+                  <span>Minimum order: 15 tons</span>
+                </div>
+                <div class="spec-item">
+                  <i class="fas fa-calendar-alt"></i>
+                  <span>Year-round supply</span>
+                </div>
+              </div>
+              <p class="product-description">Premium Tanzanian rice varieties, carefully processed and packaged for the market.</p>
+              <div class="product-cta">
+                <a href="contact.html" class="product-btn">Request Samples</a>
+                <a href="contact.html" class="product-btn outline">Inquire Now</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Wheat Product -->
+          <div class="product-card animate animate-delay-2">
+            <div class="product-image">
+              <img src="images/wheatt.jpg" alt="Tanzanian Wheat">
+              <div class="product-badge">High Demand</div>
+            </div>
+            <div class="product-details">
+              <h3>Wheat</h3>
+              <div class="product-specs">
+                <div class="spec-item">
+                  <i class="fas fa-seedling"></i>
+                  <span>Hard & Soft Varieties</span>
+                </div>
+                <div class="spec-item">
+                  <i class="fas fa-weight-hanging"></i>
+                  <span>Minimum order: 25 tons</span>
+                </div>
+                <div class="spec-item">
+                  <i class="fas fa-calendar-alt"></i>
+                  <span>Seasonal availability</span>
+                </div>
+              </div>
+              <p class="product-description">Quality wheat grains suitable for milling and baking applications, sourced from Tanzania's best wheat-growing regions.</p>
+              <div class="product-cta">
+                <a href="contact.html" class="product-btn">Request Samples</a>
+                <a href="contact.html" class="product-btn outline">Inquire Now</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Timber Product (hidden initially) -->
+          <div class="product-card animate animate-delay-3" id="hiddenProduct">
+            <div class="product-image">
+              <img src="images/pine.jpg" alt="Tanzanian Timber">
+              <div class="product-badge">Premium Quality</div>
+            </div>
+            <div class="product-details">
+              <h3>Pine & Eucalyptus</h3>
+              <div class="product-specs">
+                <div class="spec-item">
+                  <i class="fas fa-seedling"></i>
+                  <span>Kiln-dried & Treated</span>
+                </div>
+                <div class="spec-item">
+                  <i class="fas fa-tree"></i>
+                  <span>Minimum order: 20 logs</span>
+                </div>
+                <div class="spec-item">
+                  <i class="fas fa-ruler-combined"></i>
+                  <span>Custom sizes available</span>
+                </div>
+              </div>
+              <p class="product-description">High-quality pine and eucalyptus logs, sustainably harvested and processed for construction and furniture making.</p>
+              <div class="product-cta">
+                <a href="contact.html" class="product-btn">Request Samples</a>
+                <a href="contact.html" class="product-btn outline">Inquire Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="all-products-link">
+          <a href="#products" class="view-all-btn" id="viewMoreBtn">View More Products <i class="fas fa-arrow-down"></i></a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Partner With Us Section with Background Image -->
+    <section class="partner-section animate" id="partners">
+      <div class="partner-content">
+        <h2>Partner With Us</h2>
+        <p>Join our network of global partners and get access to premium Tanzanian agricultural products. We work directly with local farmers to bring you the freshest produce while supporting sustainable farming practices.</p>
+        <a href="contact.html" class="cta-button">Become a Partner</a>
+      </div>
+    </section>
+    
+    <!-- Redesigned Farm Partners Section -->
+    <section class="farm-partners animate" id="gallery">
+      <div class="partners-container">
+        <div class="partners-header">
+          <h2>Our Farm Partners</h2>
+          <p>We work closely with a network of trusted local farms across Tanzania, ensuring the highest quality produce while supporting sustainable agricultural practices.</p>
+        </div>
+        
+        <div class="partners-grid">
+          <div class="partner-card animate animate-delay-1">
+            <div class="partner-image">
+              <img src="images/iringa.jpg" alt="">alt="Iringa Highlands Farm">
+            </div>
+            <div class="partner-info">
+              <h3>Iringa Highlands Farm</h3>
+              <div class="partner-location">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Iringa, Tanzania</span>
+              </div>
+              <p class="partner-description">"With over three generations of expertise, we specialize in high-quality eucalyptus and pine timber, sustainably grown for construction, furniture, and paper production."</p>
+            </div>
+          </div>
+          
+          <div class="partner-card animate animate-delay-2">
+            <div class="partner-image">
+              <img src="images/morogoro.jpg"  alt="Morogoro Valley Produce">
+            </div>
+            <div class="partner-info">
+              <h3>Shinyanga Valley Produce</h3>
+              <div class="partner-location">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Shinyanga, Tanzania</span>
+              </div>
+              <p class="partner-description">A trusted source of high-quality rice, grown with precision irrigation and modern milling for consistent quality.</p>
+            </div>
+          </div>
+          
+          <div class="partner-card animate animate-delay-3">
+            <div class="partner-image">
+              <img src="images/tunduma.jpg" alt="Southern Highlands Grains">
+            </div>
+            <div class="partner-info">
+              <h3>Southern Highlands Grains</h3>
+              <div class="partner-location">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Tunduma, Tanzania</span>
+              </div>
+              <p class="partner-description">Premium maize and wheat producer with advanced grain storage facilities to ensure quality.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Redesigned Testimonials Section -->
+    <section class="testimonials-section animate" id="testimonials">
+      <div class="testimonials-container">
+        <div class="testimonials-header">
+          <h2>What Our Clients Say</h2>
+          <p>Hear from our satisfied customers around the world who trust us for quality Tanzanian agricultural products</p>
+        </div>
+        
+        <div class="testimonials-grid">
+          <div class="testimonial-card animate animate-delay-1">
+            <div class="testimonial-content">
+              "Mavuno AgroTrade consistently delivers high-quality produce with reliable logistics. Our partnership has been invaluable for our food processing business in Dubai."
+            </div>
+            <div class="testimonial-author">Ahmed K.</div>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          
+          <div class="testimonial-card animate animate-delay-2">
+            <div class="testimonial-content">
+              "The Tanzanian cocoa beans we source through Mavuno are superior quality. Their ethical sourcing practices and attention to detail make them our preferred supplier in Europe."
+            </div>
+            <div class="testimonial-author">Sophie L.</div>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          
+          <div class="testimonial-card animate animate-delay-3">
+            <div class="testimonial-content">
+              "Excellent communication and transparency throughout the supply chain. Mavuno AgroTrade understands our specific requirements and delivers accordingly. Highly recommended for Asian markets."
+            </div>
+            <div class="testimonial-author">Raj P.</div>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Our Products</a></li>
+          <li><a href="staff.html">Our Team</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Contact Information</h3>
+        <p><i class="fas fa-map-marker-alt"></i> Dar es Salaam, Tanzania</p>
+        <p><i class="fas fa-phone"></i> +255 764 324 714</p>
+        <p><i class="fas fa-phone"></i> +254 792 699 947</p>
+        <p><i class="fas fa-envelope"></i> info@mavunotrade.org</p>
+        <p><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 5:00 PM</p>
+      </div>
+
+      <div class="footer-section">
+        <h3>Connect With Us</h3>
+        <div class="social-icons">
+          <a href="https://wa.me/+255764324714" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://wa.me/+254792699947" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://instagram.com/mavunotrade" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://facebook.com/mavunotrade" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="mailto:info@mavunotrade.org" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://linkedin.com/company/mavunotrade" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+        
+        <div class="newsletter">
+          <h4>Subscribe to Our Newsletter</h4>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email address" required>
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Mavuno Trade Ltd. All rights reserved.</p>
+      <div class="legal-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Menu Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.getElementById('menuToggle');
+      const mainNav = document.getElementById('mainNav');
+      
+      // Mobile Menu Toggle
+      menuToggle.addEventListener('click', function() {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !isExpanded);
+        mainNav.classList.toggle('active');
+        
+        // Change icon based on menu state
+        const icon = this.querySelector('i');
+        if (mainNav.classList.contains('active')) {
+          icon.classList.replace('fa-bars', 'fa-times');
+        } else {
+          icon.classList.replace('fa-times', 'fa-bars');
+        }
+      });
+      
+      // Close menu when clicking on a link
+      const navLinks = mainNav.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          if (window.innerWidth <= 768) {
+            mainNav.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
+          }
+        });
+      });
+      
+      // Close menu when clicking outside
+      document.addEventListener('click', function(event) {
+        if (window.innerWidth <= 768 && 
+            mainNav.classList.contains('active') &&
+            !menuToggle.contains(event.target) &&
+            !mainNav.contains(event.target)) {
+          mainNav.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
+        }
+      });
+      
+      // Reset menu state when window is resized to desktop size
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+          mainNav.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
+        }
+      });
+
+      // Image Slideshow Functionality
+      let currentSlide = 0;
+      const slides = document.querySelectorAll('.slide');
+      const totalSlides = slides.length;
+
+      function changeSlide() {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % totalSlides;
+        slides[currentSlide].classList.add('active');
+      }
+
+      // Change slide every 5 seconds
+      setInterval(changeSlide, 5000);
+      
+      // Image Loading
+      const images = document.querySelectorAll('img');
+      images.forEach(img => {
+        img.onerror = function() {
+          // Replace broken images with placeholder
+          this.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200"%3E%3Crect fill="%23e6f2e6" width="300" height="200"/%3E%3Ctext fill="%232d6a4f" font-family="Arial" font-size="16" dy="20" text-anchor="middle" x="150" y="100"%3EImage Loading...%3C/text%3E%3C/svg%3E';
+        }
+        
+        // Fix URLs that might have double slashes
+        if(img.src.includes('https://')) {
+          img.src = img.src.replace('https://', 'https://');
+        }
+      });
+      
+      // Initial animation check
+      checkAnimation();
+      
+      // Newsletter Form Submission
+      document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = this.querySelector('input').value;
+        // Here you would typically send the email to your server
+        alert(`Thank you for subscribing with ${email}!`);
+        this.reset();
+      });
+      
+      // Scroll Animation Functionality
+      function checkAnimation() {
+        const elements = document.querySelectorAll('.animate');
+        
+        elements.forEach(element => {
+          const elementPosition = element.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+          
+          if (elementPosition < windowHeight - 100) {
+            element.classList.add('animated');
+          } else {
+            // Reset animation when element scrolls out of view
+            element.classList.remove('animated');
+          }
+        });
+      }
+      
+      // Check animation on scroll
+      window.addEventListener('scroll', checkAnimation);
+      
+      // Also check when resizing window
+      window.addEventListener('resize', checkAnimation);
+
+      // View More Products functionality - Smooth transition without page jump
+      document.getElementById('viewMoreBtn').addEventListener('click', function(e) {
+        e.preventDefault();
+        const hiddenProduct = document.getElementById('hiddenProduct');
+        const viewMoreBtn = document.getElementById('viewMoreBtn');
+        
+        hiddenProduct.classList.toggle('show');
+        
+        if (hiddenProduct.classList.contains('show')) {
+          viewMoreBtn.innerHTML = 'View Less Products <i class="fas fa-arrow-up"></i>';
+        } else {
+          viewMoreBtn.innerHTML = 'View More Products <i class="fas fa-arrow-down"></i>';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
