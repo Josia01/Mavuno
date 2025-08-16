@@ -1,0 +1,1785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twing Memorial School | K-12 Excellence in Education</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a3e72;
+            --primary-light: #2a56a0;
+            --secondary: #e63946;
+            --accent: #ffbe0b;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --success: #2a9d8f;
+            --white: #ffffff;
+            --header-bg: rgba(255, 255, 255, 0.98);
+            --footer-bg: #0a1a36;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        a {
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-light);
+            border-color: var(--primary-light);
+            color: white;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-accent {
+            background-color: var(--accent);
+            color: var(--dark);
+            border: 2px solid var(--accent);
+        }
+        
+        .btn-accent:hover {
+            background-color: transparent;
+            color: var(--dark);
+        }
+
+        /* ========== HEADER STYLES ========== */
+        .top-notification {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+        
+        .top-notification a {
+            color: var(--accent);
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        
+        header {
+            background-color: var(--header-bg);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            position: relative;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            z-index: 101;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-text h1 {
+            font-size: 22px;
+            color: var(--primary);
+            margin-bottom: 2px;
+            line-height: 1.1;
+        }
+        
+        .logo-text span {
+            font-size: 12px;
+            color: var(--gray);
+            letter-spacing: 0.5px;
+        }
+        
+        /* Desktop Navigation */
+        .desktop-nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        .desktop-nav ul li {
+            position: relative;
+        }
+        
+        .desktop-nav ul li a {
+            font-weight: 600;
+            color: var(--dark);
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+        }
+        
+        .desktop-nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        .desktop-nav ul li a i {
+            margin-left: 5px;
+            font-size: 12px;
+            transition: transform 0.3s ease;
+        }
+        
+        .desktop-nav ul li:hover > a i {
+            transform: rotate(180deg);
+        }
+        
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--white);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 0 0 8px 8px;
+            padding: 15px 0;
+            min-width: 220px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        
+        .desktop-nav ul li:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .dropdown li {
+            padding: 0;
+        }
+        
+        .dropdown li a {
+            padding: 10px 25px;
+            font-weight: 500;
+            color: var(--gray);
+            transition: all 0.2s ease;
+        }
+        
+        .dropdown li a:hover {
+            color: var(--primary);
+            background-color: rgba(26, 62, 114, 0.05);
+        }
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .header-btn {
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .header-btn.outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            background-color: transparent;
+        }
+        
+        .header-btn.outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .header-btn.solid {
+            background-color: var(--primary);
+            color: white;
+            border: 2px solid var(--primary);
+        }
+        
+        .header-btn.solid:hover {
+            background-color: var(--primary-light);
+            border-color: var(--primary-light);
+        }
+        
+        /* Mobile Navigation */
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--primary);
+            z-index: 101;
+            padding: 10px;
+        }
+        
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 90%;
+            max-width: 350px;
+            height: 100vh;
+            background-color: var(--white);
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            padding: 90px 25px 30px;
+            transition: right 0.3s ease;
+            z-index: 100;
+            overflow-y: auto;
+        }
+        
+        .mobile-nav.active {
+            right: 0;
+        }
+        
+        .mobile-nav ul {
+            list-style: none;
+        }
+        
+        .mobile-nav ul li {
+            margin-bottom: 5px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .mobile-nav ul li a {
+            font-weight: 600;
+            color: var(--dark);
+            display: block;
+            padding: 15px 0;
+            font-size: 16px;
+        }
+        
+        .mobile-nav ul li a i {
+            margin-left: 5px;
+            font-size: 12px;
+        }
+        
+        .mobile-dropdown {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding-left: 15px;
+        }
+        
+        .mobile-dropdown.active {
+            max-height: 500px;
+        }
+        
+        .mobile-dropdown li {
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .mobile-dropdown li a {
+            font-weight: 500;
+            font-size: 14px;
+            padding: 10px 0;
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* ========== HERO SLIDESHOW STYLES ========== */
+        .hero-slideshow {
+            position: relative;
+            margin-top: 0; /* Removed the gap */
+        }
+        
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            height: 80vh;
+            min-height: 500px;
+            overflow: hidden;
+        }
+        
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .slide.fade {
+            opacity: 0;
+        }
+        
+        .slide.active {
+            opacity: 1;
+        }
+        
+        .slide-content {
+            max-width: 800px;
+            padding: 0 20px;
+            animation: fadeIn 1.5s;
+        }
+        
+        .slide-content h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .slide-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        /* Next & previous buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 28px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0,0,0,0.2);
+        }
+        
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+        
+        /* The dots/bullets/indicators */
+        .dots-container {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: rgba(255,255,255,0.5);
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        
+        .active-dot, .dot:hover {
+            background-color: white;
+        }
+        
+        /* Fade animation */
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(20px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        /* ========== NEW FOOTER STYLES ========== */
+        footer {
+            background-color: var(--footer-bg);
+            color: white;
+            padding: 60px 0 0;
+            position: relative;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-col {
+            padding: 0 15px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(to right, var(--accent), var(--secondary));
+        }
+
+        .footer-about p {
+            margin-bottom: 20px;
+            line-height: 1.7;
+            opacity: 0.8;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            transform: translateX(5px);
+        }
+
+        .footer-links a i {
+            margin-right: 8px;
+            font-size: 12px;
+            color: var(--accent);
+        }
+
+        .contact-info {
+            list-style: none;
+        }
+
+        .contact-info li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .contact-info i {
+            margin-right: 12px;
+            color: var(--accent);
+            font-size: 16px;
+            margin-top: 3px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            transform: translateY(-3px);
+        }
+
+        .newsletter-form input {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 4px;
+            border: none;
+            margin-bottom: 10px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .newsletter-form button {
+            width: 100%;
+            padding: 12px;
+            border-radius: 4px;
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            color: white;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(230, 57, 70, 0.3);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 25px 0;
+        }
+
+        .footer-bottom p {
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        .footer-links-bottom {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links-bottom a {
+            color: white;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-links-bottom a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        /* ========== MAIN CONTENT STYLES ========== */
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .about-img {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-text h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+        }
+        
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .feature-icon {
+            background-color: rgba(26, 62, 114, 0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        
+        .feature-text h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        /* Schools Section */
+        .schools {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .school-cards {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .school-card {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .school-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .school-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .school-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .school-card:hover .school-img img {
+            transform: scale(1.05);
+        }
+        
+        .school-content {
+            padding: 30px;
+        }
+        
+        .school-content h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .school-content p {
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+        
+        .school-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            flex: 1;
+            min-width: 80px;
+        }
+        
+        .stat-item h4 {
+            font-size: 24px;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .stat-item p {
+            font-size: 14px;
+            color: var(--gray);
+        }
+        
+        /* Academics Section */
+        .academics {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .academics-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+            flex-wrap: wrap;
+        }
+        
+        .tab-btn {
+            padding: 12px 25px;
+            background: none;
+            border: none;
+            font-weight: 600;
+            color: var(--gray);
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .tab-btn.active {
+            color: var(--primary);
+        }
+        
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .program-card {
+            background-color: var(--light);
+            border-radius: 8px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .program-card:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-5px);
+        }
+        
+        .program-card:hover h4,
+        .program-card:hover p,
+        .program-card:hover a {
+            color: white;
+        }
+        
+        .program-card h4 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .program-card p {
+            margin-bottom: 15px;
+            color: var(--gray);
+        }
+        
+        .program-card a {
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .program-card a i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .program-card:hover a i {
+            transform: translateX(5px);
+        }
+        
+        /* CTA Section - Now positioned before News */
+        .cta {
+            padding: 80px 0;
+            background: linear-gradient(rgba(26, 62, 114, 0.9), rgba(26, 62, 114, 0.9)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        
+        /* News Section */
+        .news {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .news-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .news-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .news-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .news-card:hover .news-img img {
+            transform: scale(1.05);
+        }
+        
+        .news-content {
+            padding: 25px;
+        }
+        
+        .news-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: var(--gray);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .news-date {
+            display: flex;
+            align-items: center;
+            margin-right: 15px;
+        }
+        
+        .news-date i, .news-category i {
+            margin-right: 5px;
+        }
+        
+        .news-category {
+            display: flex;
+            align-items: center;
+            background-color: rgba(26, 62, 114, 0.1);
+            color: var(--primary);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .news-content h4 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            transition: color 0.3s ease;
+        }
+        
+        .news-card:hover h4 {
+            color: var(--primary);
+        }
+        
+        .news-content p {
+            margin-bottom: 15px;
+            color: var(--gray);
+        }
+        
+        .news-link {
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .news-link i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .news-card:hover .news-link i {
+            transform: translateX(5px);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-img, .about-text {
+                flex: none;
+                width: 100%;
+            }
+            
+            .school-cards {
+                flex-direction: column;
+            }
+            
+            .footer-top {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            /* Slideshow adjustments */
+            .slide-content h2 {
+                font-size: 2.5rem;
+            }
+            
+            .slide-content p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .top-notification {
+                font-size: 12px;
+                padding: 10px 0;
+            }
+            
+            .desktop-nav {
+                display: none;
+            }
+            
+            .header-actions {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .section-title h2 {
+                font-size: 30px;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            
+            .footer-top {
+                grid-template-columns: 1fr;
+            }
+
+            /* Slideshow adjustments */
+            .slideshow-container {
+                height: 70vh;
+                min-height: 450px;
+            }
+            
+            .slide-content h2 {
+                font-size: 2rem;
+            }
+            
+            .slide-content p {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo img {
+                height: 40px;
+                margin-right: 10px;
+            }
+            
+            .logo-text h1 {
+                font-size: 18px;
+            }
+            
+            .logo-text span {
+                font-size: 10px;
+            }
+            
+            .section-title h2 {
+                font-size: 26px;
+            }
+            
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+
+            /* Slideshow adjustments */
+            .slideshow-container {
+                height: 60vh;
+                min-height: 400px;
+            }
+            
+            .slide-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 250px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Notification Bar -->
+    <div class="top-notification">
+        <div class="container">
+            <span>Applications for 2023-2024 are now open!</span>
+            <a href="admissions.html">Apply Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+    
+    <!-- Main Header with New Design -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="https://via.placeholder.com/50x50" alt="Twing Memorial School Logo">
+                <div class="logo-text">
+                    <h1>Twing Memorial</h1>
+                    <span>Elementary & High School</span>
+                </div>
+            </div>
+            
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li>
+                        <a href="#">About <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="mission.html">Mission & Vision</a></li>
+                            <li><a href="leadership.html">Leadership</a></li>
+                            <li><a href="history.html">Our History</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Schools <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="elementary.html">Elementary School</a></li>
+                            <li><a href="highschool.html">High School</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Academics <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="curriculum.html">Curriculum</a></li>
+                            <li><a href="programs.html">Programs</a></li>
+                            <li><a href="library.html">Library</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="admissions.html">Admissions</a></li>
+                    <li><a href="sponsor.html">Sponsor a Child</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <a href="tour.html" class="header-btn outline">Tour</a>
+                <a href="apply.html" class="header-btn solid">Apply</a>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <a href="#" class="mobile-dropdown-toggle">About <i class="fas fa-chevron-down"></i></a>
+                <ul class="mobile-dropdown">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="mission.html">Mission & Vision</a></li>
+                    <li><a href="leadership.html">Leadership</a></li>
+                    <li><a href="history.html">Our History</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="mobile-dropdown-toggle">Schools <i class="fas fa-chevron-down"></i></a>
+                <ul class="mobile-dropdown">
+                    <li><a href="elementary.html">Elementary School</a></li>
+                    <li><a href="highschool.html">High School</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="mobile-dropdown-toggle">Academics <i class="fas fa-chevron-down"></i></a>
+                <ul class="mobile-dropdown">
+                    <li><a href="curriculum.html">Curriculum</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="library.html">Library</a></li>
+                </ul>
+            </li>
+            <li><a href="admissions.html">Admissions</a></li>
+            <li><a href="sponsor.html">Sponsor a Child</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        
+        <div class="mobile-actions" style="margin-top: 30px; display: flex; gap: 15px;">
+            <a href="tour.html" class="btn btn-outline" style="flex: 1; text-align: center;">Schedule Tour</a>
+            <a href="apply.html" class="btn btn-primary" style="flex: 1; text-align: center;">Apply Now</a>
+        </div>
+    </div>
+    
+    <div class="overlay" id="overlay"></div>
+    
+    <!-- Hero Slideshow Section -->
+    <section class="hero-slideshow">
+        <div class="slideshow-container">
+            <!-- Slide 1 -->
+            <div class="slide fade" style="background-image: linear-gradient(rgba(26, 62, 114, 0.7), rgba(26, 62, 114, 0.7)), url('./images/Twin1.jpeg');">
+                <div class="slide-content">
+                    <h2>Excellence in Education Since 1995</h2>
+                    <p>Providing quality education from kindergarten through 12th grade in Kigoma</p>
+                    <div class="hero-btns">
+                        <a href="admissions.html" class="btn btn-primary">Apply Now</a>
+                        <a href="tour.html" class="btn btn-outline">Take a Tour</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide fade" style="background-image: linear-gradient(rgba(26, 62, 114, 0.7), rgba(26, 62, 114, 0.7)), url('https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80');">
+                <div class="slide-content">
+                    <h2>Nurturing Future Leaders</h2>
+                    <p>Our holistic approach develops academic, social, and spiritual growth</p>
+                    <div class="hero-btns">
+                        <a href="programs.html" class="btn btn-primary">Our Programs</a>
+                        <a href="faculty.html" class="btn btn-outline">Meet Our Teachers</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide fade" style="background-image: linear-gradient(rgba(26, 62, 114, 0.7), rgba(26, 62, 114, 0.7)), url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                <div class="slide-content">
+                    <h2>Join Our School Community</h2>
+                    <p>Applications now open for the 2023-2024 academic year</p>
+                    <div class="hero-btns">
+                        <a href="admissions.html" class="btn btn-primary">Enroll Today</a>
+                        <a href="contact.html" class="btn btn-outline">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+            <!-- The dots/circles -->
+            <div class="dots-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Welcome to Twing Memorial</h2>
+                <p>Founded in 1995, Twing Memorial School has been providing exceptional education to our community for over 25 years. Our dual-campus approach ensures specialized learning environments for each age group.</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="Twing Memorial School">
+                </div>
+                
+                <div class="about-text">
+                    <h3>A Legacy of Educational Excellence</h3>
+                    <p>Twing Memorial School was established with the vision of creating a comprehensive educational institution that would serve students from kindergarten through high school graduation. Our unique twin-campus model allows us to provide age-appropriate facilities and programs while maintaining a cohesive school community.</p>
+                    <p>We pride ourselves on our student-centered approach, with small class sizes that allow for personalized attention and differentiated instruction to meet each student's needs.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>College Prep</h4>
+                                <p>100% college acceptance rate for our graduates</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Accredited</h4>
+                                <p>Fully accredited by the State Board of Education</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Expert Faculty</h4>
+                                <p>90% of teachers hold advanced degrees</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Diverse Community</h4>
+                                <p>Students from 20+ different cultural backgrounds</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Schools Section -->
+    <section class="schools">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Twin Campuses</h2>
+                <p>Each campus is designed to meet the specific developmental needs of students at different stages of their educational journey.</p>
+            </div>
+            
+            <div class="school-cards">
+                <div class="school-card">
+                    <div class="school-img">
+                        <img src="https://images.unsplash.com/photo-1591123120675-6f7f1aae0e5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Elementary School">
+                    </div>
+                    <div class="school-content">
+                        <h3>Twing Memorial Elementary</h3>
+                        <p>Our elementary program builds strong foundations in literacy, numeracy, and social skills through engaging, hands-on learning experiences designed for young learners.</p>
+                        <a href="elementary.html" class="btn btn-accent">Explore Elementary</a>
+                        
+                        <div class="school-stats">
+                            <div class="stat-item">
+                                <h4>K-5</h4>
+                                <p>Grade Levels</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>18:1</h4>
+                                <p>Student-Teacher Ratio</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>15+</h4>
+                                <p>Enrichment Programs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="school-card">
+                    <div class="school-img">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="High School">
+                    </div>
+                    <div class="school-content">
+                        <h3>Twing Memorial High School</h3>
+                        <p>Prepare for college and beyond with our rigorous academic curriculum, extensive extracurricular offerings, and personalized college counseling program.</p>
+                        <a href="highschool.html" class="btn btn-accent">Explore High School</a>
+                        
+                        <div class="school-stats">
+                            <div class="stat-item">
+                                <h4>9-12</h4>
+                                <p>Grade Levels</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>12:1</h4>
+                                <p>Student-Teacher Ratio</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>25+</h4>
+                                <p>AP & Honors Courses</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Academics Section -->
+    <section class="academics">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Academic Programs</h2>
+                <p>We offer a comprehensive curriculum designed to challenge students and prepare them for success in college and beyond.</p>
+            </div>
+            
+            <div class="academics-tabs">
+                <button class="tab-btn active" data-tab="elementary">Elementary</button>
+                <button class="tab-btn" data-tab="middle">Middle School</button>
+                <button class="tab-btn" data-tab="highschool">High School</button>
+            </div>
+            
+            <div class="tab-content active" id="elementary">
+                <div class="programs-grid">
+                    <div class="program-card">
+                        <h4>Early Childhood Program</h4>
+                        <p>Our play-based learning approach fosters social, emotional, and cognitive development in our youngest learners.</p>
+                        <a href="#">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="program-card">
+                        <h4>Literacy Focus</h4>
+                        <p>Comprehensive reading and writing program with individualized instruction to ensure all students become proficient readers.</p>
+                        <a href="#">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="program-card">
+                        <h4>STEM Explorations</h4>
+                        <p>Hands-on science, technology, engineering, and math activities designed to spark curiosity and critical thinking.</p>
+                        <a href="#">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="middle">
+                <div class="programs-grid">
+                    <div class="program-card">
+                        <h4>Core Curriculum</h4>
+                        <p>Rigorous academic program in English, math, science, and social studies with differentiated instruction.</p>
+                        <a href="#">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="program-card">
+                        <h4>Exploratory Courses</h4>
+                        <p>Students sample various electives including art, music, technology, and world languages.</p>
+                        <a href="#">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="program-card">
+                        <h4>Leadership Development</h4>
+                        <p>Programs designed to help students develop confidence, teamwork, and problem-solving skills.</p>
+                        <a href="#">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="highschool">
+                <div class="programs-grid">
+                    <div class="program-card">
+                        <h4>College Preparatory</h4>
+                        <p>Comprehensive curriculum meeting all university entrance requirements with honors and AP options.</p>
+                        <a href="#">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="program-card">
+                        <h4>STEM Academy</h4>
+                        <p>Advanced program in science, technology, engineering, and mathematics with research opportunities.</p>
+                        <a href="#">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="program-card">
+                        <h4>Arts Conservatory</h4>
+                        <p>Intensive training in visual and performing arts with professional mentorship and exhibition opportunities.</p>
+                        <a href="#">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section - Now positioned before News -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Join the Twing Memorial Family?</h2>
+            <p>Applications for the 2023-2024 school year are now being accepted. Schedule a tour to experience our campuses and learn more about our programs.</p>
+            <div class="hero-btns">
+                <a href="admissions.html" class="btn btn-primary">Apply Now</a>
+                <a href="tour.html" class="btn btn-outline">Schedule a Tour</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- News Section -->
+    <section class="news">
+        <div class="container">
+            <div class="section-title">
+                <h2>Latest News & Events</h2>
+                <p>Stay updated with what's happening at Twing Memorial School.</p>
+            </div>
+            
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-img">
+                        <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Science Fair Winners">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <div class="news-date">
+                                <i class="far fa-calendar-alt"></i> June 15, 2023
+                            </div>
+                            <div class="news-category">
+                                <i class="fas fa-tag"></i> Academics
+                            </div>
+                        </div>
+                        <h4>Twing Memorial Students Win Regional Science Fair</h4>
+                        <p>Three of our high school students took top honors at the annual regional science fair with their innovative research projects.</p>
+                        <a href="#" class="news-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-img">
+                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="New Playground">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <div class="news-date">
+                                <i class="far fa-calendar-alt"></i> June 5, 2023
+                            </div>
+                            <div class="news-category">
+                                <i class="fas fa-tag"></i> Facilities
+                            </div>
+                        </div>
+                        <h4>Elementary Campus Unveils New Playground</h4>
+                        <p>Thanks to generous donations from our PTA, the elementary school has opened a new state-of-the-art playground facility.</p>
+                        <a href="#" class="news-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-img">
+                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Graduation">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <div class="news-date">
+                                <i class="far fa-calendar-alt"></i> May 28, 2023
+                            </div>
+                            <div class="news-category">
+                                <i class="fas fa-tag"></i> Events
+                            </div>
+                        </div>
+                        <h4>Class of 2023 Graduation Ceremony</h4>
+                        <p>Our largest graduating class yet received their diplomas in a moving ceremony attended by families and faculty.</p>
+                        <a href="#" class="news-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- New Footer Design -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col">
+                    <h3>About Twing Memorial</h3>
+                    <div class="footer-about">
+                        <p>Twing Memorial School provides exceptional education for students from kindergarten through 12th grade across our two specialized campuses with a focus on academic excellence and character development.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Admissions</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Academics</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Student Life</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Our Schools</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Elementary School</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> High School</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Summer Programs</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Athletics</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Arts Programs</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> STEM Academy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Education Way<br>Learning City, LC 12345</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span>Elementary: (555) 123-4567<br>High School: (555) 123-4568</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@twingmemorial.edu<br>admissions@twingmemorial.edu</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="newsletter-form">
+                        <h4>Stay Updated</h4>
+                        <input type="email" placeholder="Your email address">
+                        <button type="submit">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Twing Memorial School. All Rights Reserved.</p>
+                <div class="footer-links-bottom">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Sitemap</a>
+                    <a href="#">Careers</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        const overlay = document.getElementById('overlay');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileNav.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : 'auto';
+            
+            // Change icon
+            const icon = mobileMenuBtn.querySelector('i');
+            if (mobileNav.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Close mobile menu when clicking overlay
+        overlay.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            
+            // Change icon back to bars
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        });
+        
+        // Mobile dropdown toggles
+        const dropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+        
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                const dropdown = toggle.nextElementSibling;
+                dropdown.classList.toggle('active');
+                
+                // Rotate chevron icon
+                const icon = toggle.querySelector('i');
+                icon.classList.toggle('fa-chevron-up');
+                icon.classList.toggle('fa-chevron-down');
+            });
+        });
+        
+        // Tab functionality
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabBtns.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                // Show corresponding content
+                const tabId = btn.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Slideshow functionality
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+        
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+            
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            
+            for (i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+            
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active-dot", "");
+            }
+            
+            slides[slideIndex-1].classList.add("active");
+            dots[slideIndex-1].className += " active-dot";
+        }
+        
+        // Auto-advance slides every 5 seconds
+        setInterval(function() {
+            plusSlides(1);
+        }, 5000);
+    </script>
+</body>
+</html>
