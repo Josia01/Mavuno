@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Products - Mavuno Trade Ltd</title>
+  <meta name="description" content="Premium Tanzanian agricultural products from Mavuno Trade Ltd - Maize, Rice, Wheat, and Timber. Learn about their benefits, quality standards, and safety measures.">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #3A7D44;
+      --primary-dark: #245530;
+      --primary-light: #68A357;
+      --accent: #FFC857;
+      --light-bg: #F8F9FA;
+      --dark-text: #212529;
+      --light-text: #F8F9FA;
+      --border-radius: 16px;
+      --box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    
+    body {
+      font-family: 'Manrope', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--light-bg);
+      color: var(--dark-text);
+      line-height: 1.6;
+    }
+
+    /* Header - Modern Design */
+    header {
+      background-color: white;
+      padding: 20px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none; /* Removes underline from link */
+    }
+    
+    .logo-img {
+      height: 50px; /* Adjust this to your preferred size */
+      width: auto; /* Maintains aspect ratio */
+      transition: opacity 0.3s ease;
+    }
+    
+    .logo-img:hover {
+      opacity: 0.9;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    nav a {
+      color: var(--dark-text);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+      padding: 8px 16px;
+      border-radius: 8px;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+      background-color: rgba(58, 125, 68, 0.1);
+    }
+
+    nav a.active {
+      color: white;
+      background-color: var(--primary);
+    }
+
+    /* Hero Section */
+    .products-hero {
+      background: linear-gradient(135deg, rgba(58, 125, 68, 0.9) 0%, rgba(36, 85, 48, 0.9) 100%),
+                  url('https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1350&q=80') center/cover;
+      color: var(--light-text);
+      padding: 120px 5% 100px;
+      text-align: center;
+      position: relative;
+    }
+
+    .products-hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .products-hero h1 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 3.5rem;
+      margin: 0 0 20px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .products-hero p {
+      font-size: 1.25rem;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      opacity: 0.9;
+    }
+
+    /* Products Section */
+    .products-section {
+      padding: 100px 5%;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-header h2 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 2.8rem;
+      color: var(--primary-dark);
+      margin: 0 0 15px;
+    }
+
+    .section-header p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: #555;
+      font-size: 1.1rem;
+    }
+
+    .product-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--box-shadow);
+      transition: var(--transition);
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+    }
+
+    .product-image {
+      height: 300px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.05);
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: var(--accent);
+      color: var(--primary-dark);
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .product-content {
+      padding: 30px;
+    }
+
+    .product-content h3 {
+      font-size: 1.8rem;
+      margin: 0 0 15px;
+      color: var(--primary-dark);
+    }
+
+    .product-specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .spec-item {
+      display: flex;
+      align-items: center;
+      background-color: var(--light-bg);
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+
+    .spec-item i {
+      margin-right: 8px;
+      color: var(--primary);
+    }
+
+    .product-description {
+      margin-bottom: 25px;
+      color: #555;
+    }
+
+    .benefits-list {
+      margin-bottom: 25px;
+    }
+
+    .benefits-list h4 {
+      color: var(--primary-dark);
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    .benefits-list ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .benefits-list li {
+      margin-bottom: 8px;
+    }
+
+    .quality-section {
+      background-color: rgba(58, 125, 68, 0.05);
+      padding: 20px;
+      border-radius: var(--border-radius);
+      margin-bottom: 25px;
+    }
+
+    .quality-section h4 {
+      color: var(--primary-dark);
+      margin-top: 0;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    }
+
+    .quality-section h4 i {
+      margin-right: 10px;
+      color: var(--accent);
+    }
+
+    .product-cta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .product-price {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--primary-dark);
+    }
+
+    .product-price span {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #777;
+    }
+
+    .btn {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-outline:hover {
+      background-color: rgba(58, 125, 68, 0.1);
+    }
+
+    /* Quality Assurance Section */
+    .quality-assurance {
+      padding: 100px 5%;
+      background-color: white;
+    }
+
+    .quality-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .quality-content {
+      padding-right: 40px;
+    }
+
+    .quality-content h2 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 2.5rem;
+      color: var(--primary-dark);
+      margin: 0 0 25px;
+      position: relative;
+    }
+
+    .quality-content h2::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background-color: var(--accent);
+    }
+
+    .quality-content p {
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    .quality-standards {
+      margin-top: 40px;
+    }
+
+    .standard-item {
+      display: flex;
+      margin-bottom: 25px;
+    }
+
+    .standard-icon {
+      background-color: var(--accent);
+      color: var(--primary-dark);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-right: 20px;
+      flex-shrink: 0;
+    }
+
+    .standard-text h4 {
+      margin: 0 0 8px;
+      color: var(--primary-dark);
+    }
+
+    .standard-text p {
+      margin: 0;
+      color: #555;
+    }
+
+    .quality-image {
+      position: relative;
+      min-height: 400px;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--box-shadow);
+    }
+
+    .quality-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    /* Certification Section */
+    .certification-section {
+      padding: 80px 5%;
+      background-color: var(--light-bg);
+      text-align: center;
+    }
+
+    .certification-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .certification-logos {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 50px;
+    }
+
+    .certification-logo {
+      background-color: white;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      box-shadow: var(--box-shadow);
+      transition: var(--transition);
+    }
+
+    .certification-logo:hover {
+      transform: translateY(-10px);
+    }
+
+    .certification-logo img {
+      max-width: 100%;
+      max-height: 100%;
+      filter: grayscale(100%);
+      opacity: 0.7;
+      transition: var(--transition);
+    }
+
+    .certification-logo:hover img {
+      filter: grayscale(0);
+      opacity: 1;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      padding: 100px 5%;
+      background: linear-gradient(135deg, rgba(58, 125, 68, 0.9) 0%, rgba(36, 85, 48, 0.9) 100%),
+                  url('https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1350&q=80') center/cover;
+      color: var(--light-text);
+      text-align: center;
+    }
+
+    .cta-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .cta-container h2 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 2.5rem;
+      margin: 0 0 20px;
+    }
+
+    .cta-container p {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      opacity: 0.9;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--primary-dark);
+      color: var(--light-text);
+      padding: 80px 5% 40px;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+    }
+
+    .footer-col h3 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.5rem;
+      margin: 0 0 25px;
+      position: relative;
+    }
+
+    .footer-col h3::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background-color: var(--accent);
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: var(--light-text);
+      text-decoration: none;
+      transition: var(--transition);
+      opacity: 0.8;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+      opacity: 1;
+      padding-left: 5px;
+    }
+
+    .contact-info {
+      margin-bottom: 25px;
+    }
+
+    .contact-info p {
+      margin: 0 0 15px;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .contact-info i {
+      margin-right: 10px;
+      color: var(--accent);
+      margin-top: 3px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .footer-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      color: var(--light-text);
+      transition: var(--transition);
+    }
+
+    .footer-social a:hover {
+      background-color: var(--accent);
+      color: var(--primary-dark);
+      transform: translateY(-3px);
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .quality-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .quality-content {
+        padding-right: 0;
+      }
+      
+      .quality-image {
+        min-height: 300px;
+        order: -1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+      }
+      
+      nav {
+        justify-content: center;
+      }
+      
+      .products-hero {
+        padding: 80px 5% 60px;
+      }
+      
+      .products-hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .section-header h2 {
+        font-size: 2.2rem;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .products-hero h1 {
+        font-size: 2rem;
+      }
+      
+      .products-hero p {
+        font-size: 1.1rem;
+      }
+      
+      .product-cards {
+        grid-template-columns: 1fr;
+      }
+      
+      .product-image {
+        height: 250px;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate {
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+
+    .delay-1 { animation-delay: 0.2s; }
+    .delay-2 { animation-delay: 0.4s; }
+    .delay-3 { animation-delay: 0.6s; }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="images/logo.jpg" alt="Mavuno Trade Ltd" class="logo-img">
+      <span>Mavuno Trade Ltd</span>
+    </div>
+    
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html" class="active">Products</a>
+      <a href="staff.html">Our Team</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="products-hero">
+    <div class="products-hero-content animate">
+      <h1>Our Premium Agricultural Products</h1>
+      <p>Discover Tanzania's finest agricultural exports, grown with care and exported with excellence to global markets.</p>
+    </div>
+  </section>
+
+  <section class="products-section">
+    <div class="section-header animate">
+      <h2>Quality Products from Tanzanian Farms</h2>
+      <p>We specialize in exporting premium agricultural commodities that meet international quality and safety standards.</p>
+    </div>
+    
+    <div class="product-cards">
+      <!-- Premium Maize -->
+      <div class="product-card animate delay-1">
+        <div class="product-image">
+          <img src="images/maizepic.jpg" alt="Premium Maize">
+          <div class="product-badge">Best Seller</div>
+        </div>
+        <div class="product-content">
+          <h3>Premium Maize</h3>
+          <div class="product-specs">
+            <div class="spec-item">
+              <i class="fas fa-seedling"></i>
+              <span>White & Yellow Varieties</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-weight-hanging"></i>
+              <span>20 ton minimum</span>
+            </div>
+          </div>
+          <div class="product-description">
+            <p>Our premium maize is grown in the fertile soils of Tanzania's Southern Highlands, known for producing some of Africa's finest grains.</p>
+          </div>
+          <div class="benefits-list">
+            <h4>Key Benefits:</h4>
+            <ul>
+              <li>High nutritional value with 9-12% protein content</li>
+              <li>Excellent for human consumption and animal feed</li>
+              <li>Non-GMO and traditionally cultivated</li>
+              <li>Long shelf life when properly stored</li>
+            </ul>
+          </div>
+          <div class="quality-section">
+            <h4><i class="fas fa-check-circle"></i> Quality & Safety</h4>
+            <p>Our maize meets international food safety standards with moisture content below 14%, aflatoxin levels under 5ppb, and foreign matter less than 1%.</p>
+          </div>
+          <div class="product-cta">
+            <div class="product-price">$270/ton <span>FOB Dar es Salaam</span></div>
+            <a href="contact.html" class="btn">Inquire Now</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Rice -->
+      <div class="product-card animate delay-2">
+        <div class="product-image">
+          <img src="images/ricee.jpg"alt="Rice">
+          <div class="product-badge">Organic Available</div>
+        </div>
+        <div class="product-content">
+          <h3>Rice</h3>
+          <div class="product-specs">
+            <div class="spec-item">
+              <i class="fas fa-seedling"></i>
+              <span>Paddy & Milled</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-weight-hanging"></i>
+              <span>15 ton minimum</span>
+            </div>
+          </div>
+          <div class="product-description">
+            <p>Tanzanian rice is renowned for its excellent cooking qualities and distinctive aroma, grown in the lush paddies of Morogoro and Mbeya regions.</p>
+          </div>
+          <div class="benefits-list">
+            <h4>Key Benefits:</h4>
+            <ul>
+              <li>High milling recovery rate (68-72%)</li>
+              <li>Low broken percentage (under 5%)</li>
+              <li>Excellent grain elongation when cooked</li>
+              <li>Available in organic and conventional varieties</li>
+            </ul>
+          </div>
+          <div class="quality-section">
+            <h4><i class="fas fa-check-circle"></i> Quality & Safety</h4>
+            <p>Our rice is processed in modern mills meeting HACCP standards, with moisture content below 14%, and free from artificial additives or preservatives.</p>
+          </div>
+          <div class="product-cta">
+            <div class="product-price">$450/ton <span>FOB Dar es Salaam</span></div>
+            <a href="contact.html" class="btn">Inquire Now</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Wheat -->
+      <div class="product-card animate delay-1">
+        <div class="product-image">
+          <img src="images/wheatt.jpg" alt="Wheat">
+          <div class="product-badge">High Protein</div>
+        </div>
+        <div class="product-content">
+          <h3>Wheat</h3>
+          <div class="product-specs">
+            <div class="spec-item">
+              <i class="fas fa-seedling"></i>
+              <span>Hard & Soft Varieties</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-weight-hanging"></i>
+              <span>25 ton minimum</span>
+            </div>
+          </div>
+          <div class="product-description">
+            <p>Grown in the cool highlands of Tanzania, our wheat boasts excellent baking qualities with protein content ranging from 11-14%.</p>
+          </div>
+          <div class="benefits-list">
+            <h4>Key Benefits:</h4>
+            <ul>
+              <li>High gluten content for excellent bread-making</li>
+              <li>Consistent quality throughout the year</li>
+              <li>Low moisture content for better storage</li>
+              <li>Non-GMO and sustainably farmed</li>
+            </ul>
+          </div>
+          <div class="quality-section">
+            <h4><i class="fas fa-check-circle"></i> Quality & Safety</h4>
+            <p>Our wheat is tested for falling number (over 300), protein content, and moisture (under 13%). We ensure it's free from pests and mycotoxins.</p>
+          </div>
+          <div class="product-cta">
+            <div class="product-price">$380/ton <span>FOB Dar es Salaam</span></div>
+            <a href="contact.html" class="btn">Inquire Now</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Timber -->
+      <div class="product-card animate delay-2">
+        <div class="product-image">
+          <img src="images/pine.jpg" alt="Timber">
+          <div class="product-badge">Sustainable</div>
+        </div>
+        <div class="product-content">
+          <h3>Pine & Eucalyptus Timber</h3>
+          <div class="product-specs">
+            <div class="spec-item">
+              <i class="fas fa-tree"></i>
+              <span>Kiln-dried</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-ruler-combined"></i>
+              <span>Custom sizes</span>
+            </div>
+          </div>
+          <div class="product-description">
+            <p>Sustainably harvested from Tanzanian plantations, our timber is ideal for construction, furniture, and packaging applications.</p>
+          </div>
+          <div class="benefits-list">
+            <h4>Key Benefits:</h4>
+            <ul>
+              <li>Fast-growing plantation species</li>
+              <li>Kiln-dried to prevent warping</li>
+              <li>Treated against termites and fungi</li>
+              <li>FSC-certified options available</li>
+            </ul>
+          </div>
+          <div class="quality-section">
+            <h4><i class="fas fa-check-circle"></i> Quality & Safety</h4>
+            <p>Our timber meets international grading standards with moisture content below 12%. All treatments use environmentally-safe preservatives.</p>
+          </div>
+          <div class="product-cta">
+            <div class="product-price">$120/m³ <span>FOB Dar es Salaam</span></div>
+            <a href="contact.html" class="btn">Inquire Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quality-assurance">
+    <div class="quality-container">
+      <div class="quality-content">
+        <h2 class="animate">Our Quality Assurance</h2>
+        <p class="animate delay-1">At Mavuno Trade, we implement rigorous quality control measures at every stage of production to ensure our products meet the highest international standards.</p>
+        <p class="animate delay-1">From farm selection to final packaging, our team of agricultural experts monitors each step to guarantee the safety, quality, and consistency of our products.</p>
+        
+        <div class="quality-standards animate delay-2">
+          <div class="standard-item">
+            <div class="standard-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <div class="standard-text">
+              <h4>Sustainable Farming</h4>
+              <p>We work with farmers who practice sustainable agriculture to protect the environment and ensure long-term productivity.</p>
+            </div>
+          </div>
+          
+          <div class="standard-item">
+            <div class="standard-icon">
+              <i class="fas fa-flask"></i>
+            </div>
+            <div class="standard-text">
+              <h4>Laboratory Testing</h4>
+              <p>Every shipment undergoes comprehensive laboratory testing for moisture, purity, and food safety parameters.</p>
+            </div>
+          </div>
+          
+          <div class="standard-item">
+            <div class="standard-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="standard-text">
+              <h4>Safe Packaging</h4>
+              <p>We use food-grade packaging materials that protect products during transit while meeting international phytosanitary requirements.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="quality-image animate delay-2">
+        <img src="https://images.unsplash.com/photo-1587049352841-6e8cfc4b5ec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Quality Control Process">
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-container animate">
+      <h2>Ready to Order Our Premium Products?</h2>
+      <p>Contact our sales team today to discuss your requirements and receive a customized quote.</p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn">Request a Quote</a>
+        <a href="contact.html" class="btn">Contact Sales</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="certification-section">
+    <div class="certification-container">
+      <div class="section-header animate">
+        <h2>Our Certifications</h2>
+        <p>Mavuno Trade meets and exceeds international certification standards for quality and safety.</p>
+      </div>
+      
+      <div class="certification-logos">
+        <div class="certification-logo animate delay-1">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/ISO_logo.svg/1200px-ISO_logo.svg.png" alt="ISO Certified">
+        </div>
+        <div class="certification-logo animate delay-2">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/HACCP_logo.svg/1200px-HACCP_logo.svg.png" alt="HACCP Certified">
+        </div>
+        <div class="certification-logo animate delay-1">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Usda_logo.svg/1200px-Usda_logo.svg.png" alt="USDA Standards">
+        </div>
+        <div class="certification-logo animate delay-2">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/FSC_logo.svg/1200px-FSC_logo.svg.png" alt="FSC Certified">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Mavuno Trade</h3>
+        <p>Connecting Tanzanian agriculture to global markets with integrity and excellence since 2024.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Our Products</a></li>
+          <li><a href="staff.html">Our Team</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Contact Info</h3>
+        <div class="contact-info">
+          <p><i class="fas fa-map-marker-alt"></i> Nyerere Road, Dar es Salaam, Tanzania</p>
+          <p><i class="fas fa-phone-alt"></i> +255 764 324 714</p>
+          <p><i class="fas fa-phone-alt"></i> +254 792 699 947</p>
+          <p><i class="fas fa-envelope"></i> info@mavunotrade.org</p>
+          <p><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 5:00 PM</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="copyright">
+      &copy; 2025 Mavuno Trade Ltd. All Rights Reserved.
+    </div>
+  </footer>
+
+  <script>
+    // Simple animation trigger
+    document.addEventListener('DOMContentLoaded', function() {
+      const animatedElements = document.querySelectorAll('.animate');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      animatedElements.forEach(el => {
+        el.style.opacity = 0;
+        observer.observe(el);
+      });
+    });
+  </script>
+</body>
+</html>

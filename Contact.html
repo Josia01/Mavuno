@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Mavuno Trade Ltd</title>
+  <meta name="description" content="Contact Mavuno Trade Ltd to place orders for premium Tanzanian agricultural products or inquire about partnership opportunities.">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #3A7D44;
+      --primary-dark: #245530;
+      --primary-light: #68A357;
+      --accent: #FFC857;
+      --light-bg: #F8F9FA;
+      --dark-text: #212529;
+      --light-text: #F8F9FA;
+      --border-radius: 16px;
+      --box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    
+    body {
+      font-family: 'Manrope', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--light-bg);
+      color: var(--dark-text);
+      line-height: 1.6;
+    }
+
+    /* Header - Modern Design */
+    header {
+      background-color: white;
+      padding: 20px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none; /* Removes underline from link */
+    }
+    
+    .logo-img {
+      height: 50px; /* Adjust this to your preferred size */
+      width: auto; /* Maintains aspect ratio */
+      transition: opacity 0.3s ease;
+    }
+    
+    .logo-img:hover {
+      opacity: 0.9;
+    }
+
+    nav a {
+      color: var(--dark-text);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+      padding: 8px 16px;
+      border-radius: 8px;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+      background-color: rgba(58, 125, 68, 0.1);
+    }
+
+    nav a.active {
+      color: white;
+      background-color: var(--primary);
+    }
+
+    /* Hero Section */
+    .contact-hero {
+      background: linear-gradient(135deg, rgba(58, 125, 68, 0.9) 0%, rgba(36, 85, 48, 0.9) 100%),
+                  url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1350&q=80') center/cover;
+      color: var(--light-text);
+      padding: 120px 5% 100px;
+      text-align: center;
+      position: relative;
+    }
+
+    .contact-hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact-hero h1 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 3.5rem;
+      margin: 0 0 20px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .contact-hero p {
+      font-size: 1.25rem;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      opacity: 0.9;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      padding: 100px 5%;
+      background-color: white;
+    }
+
+    .contact-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+
+    .contact-info {
+      padding: 40px;
+      background-color: var(--light-bg);
+      border-radius: var(--border-radius);
+    }
+
+    .contact-info h2 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 2.5rem;
+      color: var(--primary-dark);
+      margin: 0 0 25px;
+      position: relative;
+    }
+
+    .contact-info h2::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background-color: var(--accent);
+    }
+
+    .contact-details {
+      margin-bottom: 40px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 25px;
+    }
+
+    .contact-icon {
+      background-color: var(--primary);
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-right: 20px;
+      flex-shrink: 0;
+    }
+
+    .contact-text h3 {
+      margin: 0 0 5px;
+      font-size: 1.2rem;
+      color: var(--primary-dark);
+    }
+
+    .contact-text p, .contact-text a {
+      margin: 0;
+      color: var(--dark-text);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .contact-text a:hover {
+      color: var(--primary);
+    }
+
+    .business-hours h3 {
+      font-size: 1.3rem;
+      color: var(--primary-dark);
+      margin: 0 0 15px;
+    }
+
+    .hours-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .hours-list li {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    /* Contact Form */
+    .contact-form-container {
+      padding: 40px;
+      background-color: white;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+    }
+
+    .contact-form-container h2 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 2.5rem;
+      color: var(--primary-dark);
+      margin: 0 0 25px;
+      position: relative;
+    }
+
+    .contact-form-container h2::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background-color: var(--accent);
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--primary-dark);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-family: 'Manrope', sans-serif;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(58, 125, 68, 0.2);
+    }
+
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .btn {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .btn-block {
+      display: block;
+      width: 100%;
+    }
+
+    /* Status Message Styles */
+    .status-message {
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 5px;
+      display: none;
+    }
+    
+    .status-success {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    
+    .status-error {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+
+    /* Map Section */
+    .map-section {
+      padding: 0 5% 100px;
+    }
+
+    .map-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      height: 500px;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--box-shadow);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Updated Footer to Match Reference */
+    footer {
+      background-color: var(--primary-dark);
+      color: white;
+      padding: 60px 5% 30px;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+    }
+
+    .footer-col h3 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.5rem;
+      margin: 0 0 20px;
+      color: white;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-col h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background-color: var(--accent);
+    }
+
+    .footer-logo {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: white;
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .footer-logo-icon {
+      color: var(--accent);
+      margin-right: 10px;
+      font-size: 28px;
+    }
+
+    .footer-about p {
+      margin: 0 0 20px;
+      line-height: 1.6;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      transition: var(--transition);
+      display: block;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+      padding-left: 5px;
+    }
+
+    .footer-contact-info {
+      margin-bottom: 20px;
+    }
+
+    .footer-contact-info p {
+      margin: 0 0 15px;
+      display: flex;
+      align-items: flex-start;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .footer-contact-info i {
+      margin-right: 10px;
+      color: var(--accent);
+      margin-top: 3px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .footer-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      color: white;
+      transition: var(--transition);
+    }
+
+    .footer-social a:hover {
+      background-color: var(--accent);
+      color: var(--primary-dark);
+      transform: translateY(-3px);
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .contact-info {
+        order: 1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+      }
+      
+      nav {
+        justify-content: center;
+      }
+      
+      .contact-hero {
+        padding: 80px 5% 60px;
+      }
+      
+      .contact-hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .section-header h2 {
+        font-size: 2.2rem;
+      }
+      
+      .order-form {
+        padding: 30px;
+      }
+      
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .contact-hero h1 {
+        font-size: 2rem;
+      }
+      
+      .contact-hero p {
+        font-size: 1.1rem;
+      }
+      
+      .contact-info h2, .contact-form-container h2 {
+        font-size: 2rem;
+      }
+      
+      .map-container {
+        height: 300px;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate {
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+
+    .delay-1 { animation-delay: 0.2s; }
+    .delay-2 { animation-delay: 0.4s; }
+    .delay-3 { animation-delay: 0.6s; }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="images/logo.jpg" alt="Mavuno Trade Ltd" class="logo-img">
+      <span>Mavuno Trade Ltd</span>
+    </div>
+    
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="staff.html">Our Team</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </header>
+
+  <section class="contact-hero">
+    <div class="contact-hero-content animate">
+      <h1>Get In Touch With Us</h1>
+      <p>Whether you have questions about our products, want to place an order, or explore partnership opportunities, our team is ready to assist you.</p>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="contact-container">
+      <div class="contact-info animate">
+        <h2>Contact Information</h2>
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-text">
+              <h3>Our Headquarters</h3>
+              <p>Nyerere Road, Dar es Salaam, Tanzania</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div class="contact-text">
+              <h3>Phone Numbers</h3>
+              <p>
+                <a href="tel:+255764324714">+255 764 324 714</a><br>
+                <a href="tel:+254792699947">+254 792 699 947</a>
+              </p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-text">
+              <h3>Email Addresses</h3>
+              <p>
+                <a href="mailto:info@mavunoagro.com">info@mavunotrade.org</a><br>
+                <a href="mailto:sales@mavunoagro.com">sales@mavunotrade.org</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="business-hours">
+          <h3>Business Hours</h3>
+          <ul class="hours-list">
+            <li><span>Monday - Friday</span> <span>8:00 AM - 5:00 PM</span></li>
+            <li><span>Saturday</span> <span>Closed</span></li>
+            <li><span>Sunday</span> <span>Closed</span></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="contact-form-container animate delay-1">
+        <h2>Send Us a Message</h2>
+        <!-- Status message container -->
+        <div id="status-message" class="status-message"></div>
+        
+        <form id="contactForm" action="send_email.php" method="POST">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" class="form-control" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" class="form-control" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" class="form-control" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">Subject *</label>
+            <select id="subject" name="subject" class="form-control" required>
+              <option value="" disabled selected>Select a subject</option>
+              <option value="General Inquiry">General Inquiry</option>
+              <option value="Partnership Opportunity">Partnership Opportunity</option>
+              <option value="Product Information">Product Information</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Your Message *</label>
+            <textarea id="message" name="message" class="form-control" required></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-block">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="map-section">
+    <div class="map-container animate">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.935161999424!2d39.20880731523168!3d-6.597515664736772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c5a9a7a1a5a9b%3A0x9a5a9a7a1a5a9b!2sNyerere%20Road%2C%20Dar%20es%20Salaam%2C%20Tanzania!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <div class="footer-logo">
+          <img src="images/logo2.jpg" alt="Mavuno Trade Ltd" class="logo-img">
+          <span>Mavuno Trade Ltd</span>
+        </div>
+        <div class="footer-about">
+          <p>Connecting Tanzanian agriculture to global markets with integrity and excellence since 2024.</p>
+        </div>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Our Products</a></li>
+          <li><a href="staff.html">Our Team</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Contact Info</h3>
+        <div class="footer-contact-info">
+          <p><i class="fas fa-map-marker-alt"></i> Nyerere Road, Dar es Salaam, Tanzania</p>
+          <p><i class="fas fa-phone-alt"></i> +255 764 324 714</p>
+          <p><i class="fas fa-phone-alt"></i> +254 792 699 947</p>
+          <p><i class="fas fa-envelope"></i> info@mavunotrade.org</p>
+          <p><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 5:00 PM</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="copyright">
+      &copy; 2025 Mavuno Trade Ltd. All Rights Reserved.
+    </div>
+  </footer>
+
+  <script>
+    // Simple animation trigger
+    document.addEventListener('DOMContentLoaded', function() {
+      const animatedElements = document.querySelectorAll('.animate');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      animatedElements.forEach(el => {
+        el.style.opacity = 0;
+        observer.observe(el);
+      });
+
+      // Check for status in URL parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const status = urlParams.get('status');
+      const statusMessage = document.getElementById('status-message');
+      
+      if (status === 'success') {
+        statusMessage.textContent = 'Thank you! Your message has been sent successfully.';
+        statusMessage.className = 'status-message status-success';
+        statusMessage.style.display = 'block';
+        
+        // Clear the URL parameters
+        window.history.replaceState({}, document.title, window.location.pathname);
+      } else if (status === 'error') {
+        statusMessage.textContent = 'There was an error sending your message. Please try again later or contact us directly.';
+        statusMessage.className = 'status-message status-error';
+        statusMessage.style.display = 'block';
+        
+        // Clear the URL parameters
+        window.history.replaceState({}, document.title, window.location.pathname);
+      }
+
+      // Form validation
+      document.getElementById('contactForm').addEventListener('submit', function(e) {
+        // Basic client-side validation
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value.trim();
+        
+        if (!name || !email || !phone || !subject || !message) {
+          e.preventDefault();
+          statusMessage.textContent = 'Please fill in all required fields.';
+          statusMessage.className = 'status-message status-error';
+          statusMessage.style.display = 'block';
+          return false;
+        }
+        
+        // Validate email format
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          e.preventDefault();
+          statusMessage.textContent = 'Please enter a valid email address.';
+          statusMessage.className = 'status-message status-error';
+          statusMessage.style.display = 'block';
+          return false;
+        }
+        
+        return true;
+      });
+    });
+  </script>
+</body>
+</html>

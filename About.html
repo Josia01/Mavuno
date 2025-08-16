@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Mavuno Trade Ltd - Tanzanian Agricultural Exporters</title>
+  <meta name="description" content="Learn about Mavuno Trade Ltd - our mission, values, and commitment to exporting premium Tanzanian agricultural products to global markets.">
+  
+  <!-- Social Media Meta Tags -->
+  <meta property="og:title" content="About Mavuno Trade Ltd">
+  <meta property="og:description" content="Exporting Tanzania's Best Agricultural Produce to the World">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1587049352841-6e8cfc4b5ec6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80">
+  <meta property="og:url" content="https://www.mavunotrade.com/about">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
+  
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #3A7D44;
+      --primary-dark: #245530;
+      --primary-light: #68A357;
+      --accent: #FFC857;
+      --light-bg: #f0f7f0;
+      --dark-text: #212529;
+      --light-text: #F8F9FA;
+      --border-radius: 16px;
+      --box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    
+    /* Header - Modern Design - Updated for fixed positioning */
+    header {
+      background-color: white;
+      padding: 20px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* Add padding to main to account for fixed header */
+    main {
+      padding-top: 90px;
+      background-color: var(--light-bg);
+    }
+
+    .logo {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none; /* Removes underline from link */
+    }
+    
+    .logo-img {
+      height: 50px; /* Adjust this to your preferred size */
+      width: auto; /* Maintains aspect ratio */
+      transition: opacity 0.3s ease;
+    }
+    
+    .logo-img:hover {
+      opacity: 0.9;
+    }
+
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    nav a {
+      color: var(--dark-text);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+      padding: 8px 16px;
+      border-radius: 8px;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+      background-color: rgba(58, 125, 68, 0.1);
+    }
+
+    nav a.active {
+      color: white;
+      background-color: var(--primary);
+    }
+
+    /* Mobile Menu Styles */
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      font-size: 24px;
+      background: transparent;
+      border: none;
+      color: var(--primary-dark);
+      width: 44px;
+      height: 44px;
+      align-items: center;
+      justify-content: center;
+      z-index: 1001;
+      padding: 0;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+      
+      nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background-color: white;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 20px;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        z-index: 1000;
+      }
+      
+      nav.active {
+        display: flex;
+        animation: fadeIn 0.3s ease-out;
+      }
+      
+      nav a {
+        margin: 10px 0;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+      
+      nav a:hover {
+        background-color: rgba(58, 125, 68, 0.1);
+      }
+      
+      header {
+        flex-direction: row;
+        align-items: center;
+        padding: 15px 5%;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    html, body { height: 100%; }
+    body {
+      font-family: 'Manrope', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--light-bg);
+      color: var(--dark-text);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .section {
+      padding: 60px 40px;
+      position: relative;
+      background-color: #f8fcf8;
+    }
+    
+    /* Animation Classes */
+    .animate {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    
+    .animate.animated {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .animate-delay-1 {
+      transition-delay: 0.2s;
+    }
+    
+    .animate-delay-2 {
+      transition-delay: 0.4s;
+    }
+    
+    .animate-delay-3 {
+      transition-delay: 0.6s;
+    }
+    
+    /* About Company Section - Updated with green background */
+    .about-company {
+      background-color: var(--primary);
+      color: white;
+    }
+    
+    .about-company h2 {
+      color: white !important;
+    }
+    
+    .about-company p {
+      color: rgba(255,255,255,0.9) !important;
+    }
+    
+    .about-container {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .about-content {
+      flex: 1;
+      min-width: 50%;
+    }
+    
+    .about-image {
+      flex: 1;
+      min-width: 40%;
+      height: 400px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      border: 3px solid white;
+    }
+    
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .about-image:hover img {
+      transform: scale(1.05);
+    }
+    
+    .section h2 {
+      color: var(--primary-dark);
+      margin-bottom: 20px;
+      font-size: clamp(24px, 4vw, 32px);
+    }
+    .section p { 
+      line-height: 1.6;
+      font-size: clamp(16px, 2vw, 18px);
+    }
+    
+    /* Mission and Vision Section */
+    .mission-vision {
+      background-color: var(--light-bg);
+      padding: 80px 20px;
+    }
+    
+    .mv-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .mv-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    
+    .mv-header h2 {
+      color: var(--primary-dark);
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .mv-header h2::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: var(--primary);
+    }
+    
+    .mv-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+    }
+    
+    .mv-card {
+      background: #f8fcf8;
+      border-radius: 10px;
+      padding: 40px 30px;
+      box-shadow: var(--box-shadow);
+      transition: transform 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .mv-card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .mv-card h3 {
+      color: var(--primary-dark);
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .mv-card h3::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background-color: var(--accent);
+    }
+    
+    .mv-card p {
+      color: #555;
+      line-height: 1.6;
+    }
+    
+    .mv-icon {
+      font-size: 50px;
+      color: var(--primary);
+      margin-bottom: 20px;
+      opacity: 0.8;
+    }
+    
+    /* Updated Values Section */
+    .values-section {
+      padding: 80px 20px;
+      background-color: var(--primary-dark);
+      color: white;
+    }
+    
+    .values-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .values-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    
+    .values-header h2 {
+      color: white;
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .values-header h2::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: var(--accent);
+    }
+    
+    .values-header p {
+      color: rgba(255,255,255,0.9);
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+    
+    .value-card {
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 30px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .value-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.15);
+    }
+    
+    .value-icon {
+      width: 70px;
+      height: 70px;
+      background-color: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      color: var(--primary-dark);
+      font-size: 30px;
+    }
+    
+    .value-card h3 {
+      color: white;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+    
+    .value-card p {
+      color: rgba(255,255,255,0.8);
+      line-height: 1.6;
+      margin: 0;
+    }
+    
+    /* History Section */
+    .history-section {
+      padding: 80px 20px;
+      background-color: var(--light-bg);
+    }
+    
+    .history-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .history-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    
+    .history-header h2 {
+      color: var(--primary-dark);
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .history-header h2::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: var(--primary);
+    }
+    
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      width: 2px;
+      background-color: var(--primary-light);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -1px;
+    }
+    
+    .timeline-item {
+      padding: 10px 40px;
+      position: relative;
+      width: 50%;
+      box-sizing: border-box;
+    }
+    
+    .timeline-item:nth-child(odd) {
+      left: 0;
+    }
+    
+    .timeline-item:nth-child(even) {
+      left: 50%;
+    }
+    
+    .timeline-content {
+      padding: 20px;
+      background-color: #f8fcf8;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      position: relative;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content::after {
+      content: '';
+      position: absolute;
+      right: -10px;
+      top: 20px;
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 10px solid #f8fcf8;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-content::after {
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: 20px;
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-right: 10px solid #f8fcf8;
+    }
+    
+    .timeline-date {
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    
+    .timeline-dot {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background-color: var(--primary);
+      border-radius: 50%;
+      top: 15px;
+      z-index: 1;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-dot {
+      right: -8px;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-dot {
+      left: -8px;
+    }
+    
+    /* Stats Section */
+    .stats-section {
+      padding: 80px 20px;
+      background-color: var(--primary-dark);
+      color: white;
+      text-align: center;
+    }
+    
+    .stats-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .stats-header h2 {
+      color: white;
+    }
+    
+    .stats-header p {
+      color: white;
+      opacity: 0.9;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .stat-item {
+      padding: 30px 20px;
+      background-color: rgba(255,255,255,0.1);
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+    
+    .stat-item:hover {
+      transform: translateY(-5px);
+    }
+    
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--accent);
+    }
+    
+    .stat-label {
+      font-size: 1.1rem;
+      color: white;
+      opacity: 0.9;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      padding: 100px 20px;
+      text-align: center;
+      background-color: var(--light-bg);
+    }
+    
+    .cta-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .cta-section h2 {
+      color: var(--primary-dark);
+      margin-bottom: 20px;
+    }
+    
+    .cta-section p {
+      margin-bottom: 30px;
+      color: #555;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 15px 30px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.3s;
+    }
+    
+    .cta-button:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+    }
+    
+    .cta-button.outline {
+      background: var(--primary);
+      border: 2px solid var(--primary);
+      color: white;
+    }
+    
+    .cta-button.outline:hover {
+      background: var(--primary-dark);
+      border-color: var(--primary-dark);
+    }
+
+    /* Footer Styles */
+    footer {
+      background-color: var(--primary-dark);
+      color: var(--light-text);
+      padding: 60px 20px 20px;
+      font-size: 16px;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 40px;
+    }
+
+    .footer-section {
+      flex: 1;
+      min-width: 250px;
+      margin-bottom: 30px;
+    }
+
+    .footer-section h3 {
+      color: var(--accent);
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-section ul li a {
+      color: var(--light-text);
+      text-decoration: none;
+      transition: var(--transition);
+      opacity: 0.8;
+    }
+
+    .footer-section ul li a:hover {
+      color: var(--accent);
+      opacity: 1;
+      padding-left: 5px;
+    }
+
+    .footer-section p {
+      margin: 15px 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .footer-section i {
+      margin-right: 10px;
+      width: 20px;
+      text-align: center;
+      color: var(--accent);
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .social-icons a {
+      color: var(--light-text);
+      font-size: 20px;
+      transition: var(--transition);
+    }
+
+    .social-icons a:hover {
+      color: var(--accent);
+    }
+
+    .newsletter-form {
+      display: flex;
+      margin-top: 15px;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 4px 0 0 4px;
+    }
+
+    .newsletter-form button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0 15px;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .newsletter-form button:hover {
+      background: var(--primary-light);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      margin-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .legal-links {
+      margin-top: 15px;
+    }
+
+    .legal-links a {
+      color: #a8dadc;
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .legal-links a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .about-container {
+        flex-direction: column;
+      }
+      
+      .about-content {
+        width: 100%;
+      }
+      
+      .about-image {
+        width: 100%;
+        height: 300px;
+        margin-top: 30px;
+      }
+      
+      /* Timeline adjustments */
+      .timeline::before {
+        left: 31px;
+      }
+      
+      .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+      
+      .timeline-item:nth-child(even) {
+        left: 0;
+      }
+      
+      .timeline-item:nth-child(odd) .timeline-dot,
+      .timeline-item:nth-child(even) .timeline-dot {
+        left: 23px;
+      }
+      
+      .timeline-item:nth-child(odd) .timeline-content::after,
+      .timeline-item:nth-child(even) .timeline-content::after {
+        left: -10px;
+        right: auto;
+        border-right: 10px solid #f8fcf8;
+        border-left: 0;
+      }
+      
+      /* Stats adjustments */
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      /* Values section adjustments */
+      .values-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      /* Adjust main padding for mobile */
+      main {
+        padding-top: 80px;
+      }
+      
+      /* CTA buttons */
+      .cta-buttons {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .cta-button {
+        width: 100%;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .mv-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @keyframes slideInLeft {
+      0% { transform: translateX(-100px); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+    
+    @keyframes fadeUp {
+      0% { transform: translateY(40px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="images/logo.jpg" alt="Mavuno Trade Ltd" class="logo-img">
+      <span>Mavuno Trade Ltd</span>
+    </div>
+    
+    <!-- Updated Mobile Menu Toggle with aria attributes -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false" aria-controls="mainNav">
+      <i class="fas fa-bars"></i>
+    </button>
+    
+    <nav id="mainNav" aria-labelledby="menuToggle">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="products.html">Products</a>
+      <a href="staff.html">Our Team</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- About Company Section -->
+    <section class="section about-company animate" id="about">
+      <div class="about-container">
+        <div class="about-content">
+          <h2>Our Company</h2>
+          <p>Founded in 2024, Mavuno Trade Ltd has grown from a small agricultural trading company to one of Tanzania's leading exporters of premium agricultural products. Headquartered in Dar es Salaam, we specialize in sourcing, processing, and exporting high-quality Tanzanian agricultural commodities to markets across Africa, the Middle East, Asia, and Europe.</p>
+          <p>Our name "Mavuno" means "harvest" in Swahili, reflecting our commitment to helping our partners reap the benefits of Tanzania's rich agricultural potential. We work directly with over 500 smallholder farmers and cooperatives across Tanzania, ensuring fair prices and sustainable farming practices.</p>
+          <p>With state-of-the-art processing facilities and a team of agricultural experts, we maintain strict quality control at every stage of the supply chain. Our logistics network ensures timely delivery to our international clients while maintaining product quality and freshness.</p>
+        </div>
+        <div class="about-image animate animate-delay-1">
+          <img src="images/trade.jpg" alt="Mavuno Trade team working in the field">
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission and Vision Section -->
+    <section class="mission-vision animate" id="mission">
+      <div class="mv-container">
+        <div class="mv-header">
+          <h2>Our Mission & Vision</h2>
+        </div>
+        
+        <div class="mv-grid">
+          <div class="mv-card animate animate-delay-1">
+            <div class="mv-icon">
+              <i class="fas fa-bullseye"></i>
+            </div>
+            <h3>Our Mission</h3>
+            <p>To connect Tanzanian farmers with global markets by providing reliable, high-quality agricultural products while promoting sustainable farming practices and fair trade principles that benefit all stakeholders in the supply chain.</p>
+          </div>
+          
+          <div class="mv-card animate animate-delay-2">
+            <div class="mv-icon">
+              <i class="fas fa-eye"></i>
+            </div>
+            <h3>Our Vision</h3>
+            <p>To become East Africa's most trusted agricultural export partner, recognized for our commitment to quality, sustainability, and the economic empowerment of local farming communities.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Updated Values Section -->
+    <section class="values-section animate" id="values">
+      <div class="values-container">
+        <div class="values-header">
+          <h2>Our Core Values</h2>
+          <p>These principles guide everything we do at Mavuno Trade Ltd</p>
+        </div>
+        
+        <div class="values-grid">
+          <div class="value-card animate animate-delay-1">
+            <div class="value-icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <h3>Integrity</h3>
+            <p>We conduct business with honesty, transparency, and ethical practices at all levels of our operations.</p>
+          </div>
+          
+          <div class="value-card animate animate-delay-2">
+            <div class="value-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <h3>Sustainability</h3>
+            <p>We promote agricultural practices that protect the environment and ensure long-term productivity.</p>
+          </div>
+          
+          <div class="value-card animate animate-delay-3">
+            <div class="value-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3>Community</h3>
+            <p>We invest in the communities we work with, providing fair prices and supporting local development.</p>
+          </div>
+          
+          <div class="value-card animate animate-delay-1">
+            <div class="value-icon">
+              <i class="fas fa-award"></i>
+            </div>
+            <h3>Quality</h3>
+            <p>We maintain rigorous quality standards to deliver premium products that meet international requirements.</p>
+          </div>
+          
+          <div class="value-card animate animate-delay-2">
+            <div class="value-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h3>Innovation</h3>
+            <p>We continuously improve our processes and adopt new technologies to enhance efficiency and product quality.</p>
+          </div>
+          
+          <div class="value-card animate animate-delay-3">
+            <div class="value-icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <h3>Global Perspective</h3>
+            <p>We combine local expertise with international standards to serve diverse global markets effectively.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- History Section -->
+    <section class="history-section animate" id="history">
+      <div class="history-container">
+        <div class="history-header">
+          <h2>Our Journey</h2>
+          <p>Key milestones in Mavuno Trade Ltd's growth and development</p>
+        </div>
+        
+        <div class="timeline">
+          <div class="timeline-item animate animate-delay-1">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">2024</div>
+              <h3>Company Founded</h3>
+              <p>Mavuno Trade Ltd was established in Dar es Salaam with a focus on domestic maize and rice trading.</p>
+            </div>
+          </div>
+          
+          <div class="timeline-item animate animate-delay-2">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">2024</div>
+              <h3>First Export Contract</h3>
+              <p>Secured our first international client, exporting 50 tons of Tanzanian rice to Kenya.</p>
+            </div>
+          </div>
+          
+          <div class="timeline-item animate animate-delay-3">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">2025</div>
+              <h3>Processing Facility Opened</h3>
+              <p>Established our first grain processing and packaging facility in Morogoro.</p>
+            </div>
+          </div>
+          
+          <div class="timeline-item animate animate-delay-1">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">2025</div>
+              <h3>EU Certification</h3>
+              <p>Received European Union certification for our processing facilities, opening new markets.</p>
+            </div>
+          </div>
+          
+          <div class="timeline-item animate animate-delay-2">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">2025</div>
+              <h3>Expanded Product Line</h3>
+              <p>Added timber and specialty crops to our export portfolio, diversifying our offerings.</p>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Stats Section -->
+    <section class="stats-section animate" id="stats">
+      <div class="stats-container">
+        <div class="values-header">
+          <h2 style="color: white;">By The Numbers</h2>
+          <p style="color: white;">Our impact in Tanzania's agricultural export sector</p>
+        </div>
+        
+        <div class="stats-grid">
+          <div class="stat-item animate animate-delay-1">
+            <div class="stat-number">100+</div>
+            <div class="stat-label">Farm Partners</div>
+          </div>
+          
+          <div class="stat-item animate animate-delay-2">
+            <div class="stat-number">15</div>
+            <div class="stat-label">Countries Served</div>
+          </div>
+          
+          <div class="stat-item animate animate-delay-3">
+            <div class="stat-number">10,000+</div>
+            <div class="stat-label">Tons Exported Annually</div>
+          </div>
+          
+          <div class="stat-item animate animate-delay-1">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Employees</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section animate" id="cta">
+      <div class="cta-container">
+        <h2>Ready to Partner With Us?</h2>
+        <p>Whether you're a farmer looking to access international markets or a buyer seeking reliable Tanzanian agricultural products, we'd love to hear from you.</p>
+        <div class="cta-buttons">
+          <a href="contact.html" class="cta-button">Contact Our Team</a>
+          <a href="products.html" class="cta-button outline">View Our Products</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Our Products</a></li>
+          <li><a href="staff.html">Our Team</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Contact Information</h3>
+        <p><i class="fas fa-map-marker-alt"></i> Dar es Salaam, Tanzania</p>
+        <p><i class="fas fa-phone"></i> +255 764 324 714</p>
+        <p><i class="fas fa-phone"></i> +254 792 699 947</p>
+        <p><i class="fas fa-envelope"></i> info@mavunotrade.org</p>
+        <p><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 5:00 PM</p>
+      </div>
+
+      <div class="footer-section">
+        <h3>Connect With Us</h3>
+        <div class="social-icons">
+          <a href="https://wa.me/+25576432714" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://wa.me/+254792699947" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://instagram.com/mavunotrade" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://facebook.com/mavunotrade" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="mailto:info@mavunotrade.org" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://linkedin.com/company/mavunotrade" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+        
+        <div class="newsletter">
+          <h4>Subscribe to Our Newsletter</h4>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email address" required>
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Mavuno Trade Ltd. All rights reserved.</p>
+      <div class="legal-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Menu Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.getElementById('menuToggle');
+      const mainNav = document.getElementById('mainNav');
+      
+      // Mobile Menu Toggle
+      menuToggle.addEventListener('click', function() {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !isExpanded);
+        mainNav.classList.toggle('active');
+        
+        // Change icon based on menu state
+        const icon = this.querySelector('i');
+        if (mainNav.classList.contains('active')) {
+          icon.classList.replace('fa-bars', 'fa-times');
+        } else {
+          icon.classList.replace('fa-times', 'fa-bars');
+        }
+      });
+      
+      // Close menu when clicking on a link
+      const navLinks = mainNav.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          if (window.innerWidth <= 768) {
+            mainNav.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
+          }
+        });
+      });
+      
+      // Close menu when clicking outside
+      document.addEventListener('click', function(event) {
+        if (window.innerWidth <= 768 && 
+            mainNav.classList.contains('active') &&
+            !menuToggle.contains(event.target) &&
+            !mainNav.contains(event.target)) {
+          mainNav.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
+        }
+      });
+      
+      // Reset menu state when window is resized to desktop size
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+          mainNav.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
+        }
+      });
+
+      // Image Loading
+      const images = document.querySelectorAll('img');
+      images.forEach(img => {
+        img.onerror = function() {
+          // Replace broken images with placeholder
+          this.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200"%3E%3Crect fill="%23e6f2e6" width="300" height="200"/%3E%3Ctext fill="%232d6a4f" font-family="Arial" font-size="16" dy="20" text-anchor="middle" x="150" y="100"%3EImage Loading...%3C/text%3E%3C/svg%3E';
+        }
+        
+        // Fix URLs that might have double slashes
+        if(img.src.includes('https://')) {
+          img.src = img.src.replace('https://', 'https://');
+        }
+      });
+      
+      // Initial animation check
+      checkAnimation();
+      
+      // Newsletter Form Submission
+      document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = this.querySelector('input').value;
+        // Here you would typically send the email to your server
+        alert(`Thank you for subscribing with ${email}!`);
+        this.reset();
+      });
+      
+      // Scroll Animation Functionality
+      function checkAnimation() {
+        const elements = document.querySelectorAll('.animate');
+        
+        elements.forEach(element => {
+          const elementPosition = element.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+          
+          if (elementPosition < windowHeight - 100) {
+            element.classList.add('animated');
+          } else {
+            // Reset animation when element scrolls out of view
+            element.classList.remove('animated');
+          }
+        });
+      }
+      
+      // Check animation on scroll
+      window.addEventListener('scroll', checkAnimation);
+      
+      // Also check when resizing window
+      window.addEventListener('resize', checkAnimation);
+    });
+  </script>
+</body>
+</html>

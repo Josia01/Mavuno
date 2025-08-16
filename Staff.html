@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Team - Mavuno Trade Ltd</title>
+  <meta name="description" content="Meet the leadership team of Mavuno Trade Ltd - Tanzania's premier agricultural export company">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #3A7D44;
+      --primary-dark: #245530;
+      --primary-light: #68A357;
+      --accent: #FFC857;
+      --light-bg: #F8F9FA;
+      --dark-text: #212529;
+      --light-text: #F8F9FA;
+      --border-radius: 16px;
+      --box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    
+    body {
+      font-family: 'Manrope', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--light-bg);
+      color: var(--dark-text);
+      line-height: 1.6;
+    }
+
+    /* Header - Modern Design */
+    header {
+      background-color: white;
+      padding: 20px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none; /* Removes underline from link */
+    }
+    
+    .logo-img {
+      height: 50px; /* Adjust this to your preferred size */
+      width: auto; /* Maintains aspect ratio */
+      transition: opacity 0.3s ease;
+    }
+    
+    .logo-img:hover {
+      opacity: 0.9;
+    }
+
+
+    nav a {
+      color: var(--dark-text);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+      padding: 8px 16px;
+      border-radius: 8px;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+      background-color: rgba(58, 125, 68, 0.1);
+    }
+
+    nav a.active {
+      color: white;
+      background-color: var(--primary);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, rgba(58, 125, 68, 0.9) 0%, rgba(36, 85, 48, 0.9) 100%),
+                  url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1350&q=80') center/cover;
+      color: var(--light-text);
+      padding: 120px 5% 100px;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 3.5rem;
+      margin: 0 0 20px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      opacity: 0.9;
+    }
+
+    /* CEO Section - Modern Card */
+    .ceo-section {
+      padding: 100px 5%;
+      background-color: white;
+    }
+
+    .ceo-card {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      background: white;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .ceo-image {
+      position: relative;
+      min-height: 400px;
+    }
+
+    .ceo-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .ceo-content {
+      padding: 60px 40px 60px 0;
+    }
+
+    .ceo-content h2 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 2.5rem;
+      color: var(--primary-dark);
+      margin: 0 0 25px;
+      position: relative;
+    }
+
+    .ceo-content h2::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background-color: var(--accent);
+    }
+
+    .ceo-content p {
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    .ceo-signature {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .signature {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 5px;
+    }
+
+    .ceo-title {
+      font-weight: 600;
+      color: var(--primary-dark);
+      font-size: 1.1rem;
+    }
+
+    /* Team Section - Modern Grid */
+    .team-section {
+      padding: 100px 5%;
+      background-color: var(--light-bg);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-header h2 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 2.8rem;
+      color: var(--primary-dark);
+      margin: 0 0 15px;
+    }
+
+    .section-header p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: #555;
+      font-size: 1.1rem;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .team-card {
+      background: white;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--box-shadow);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .team-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+    }
+
+    .team-photo {
+      height: 350px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .team-photo::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+      z-index: 1;
+    }
+
+    .team-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .team-card:hover .team-photo img {
+      transform: scale(1.05);
+    }
+
+    .team-info {
+      padding: 25px;
+      position: relative;
+    }
+
+    .team-info h3 {
+      font-size: 1.5rem;
+      margin: 0 0 5px;
+      color: var(--primary-dark);
+    }
+
+    .team-position {
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 15px;
+      display: block;
+      font-size: 1rem;
+    }
+
+    .team-info p {
+      font-size: 1rem;
+      color: #555;
+      margin: 0;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: var(--light-bg);
+      border-radius: 50%;
+      color: var(--primary);
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      background-color: var(--primary);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--primary-dark);
+      color: var(--light-text);
+      padding: 80px 5% 40px;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+    }
+
+    .footer-col h3 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.5rem;
+      margin: 0 0 25px;
+      position: relative;
+    }
+
+    .footer-col h3::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background-color: var(--accent);
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: var(--light-text);
+      text-decoration: none;
+      transition: var(--transition);
+      opacity: 0.8;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+      opacity: 1;
+      padding-left: 5px;
+    }
+
+    .contact-info {
+      margin-bottom: 25px;
+    }
+
+    .contact-info p {
+      margin: 0 0 15px;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .contact-info i {
+      margin-right: 10px;
+      color: var(--accent);
+      margin-top: 3px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .footer-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      color: var(--light-text);
+      transition: var(--transition);
+    }
+
+    .footer-social a:hover {
+      background-color: var(--accent);
+      color: var(--primary-dark);
+      transform: translateY(-3px);
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .ceo-card {
+        grid-template-columns: 1fr;
+      }
+      
+      .ceo-content {
+        padding: 40px;
+      }
+      
+      .ceo-image {
+        min-height: 300px;
+        order: -1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+      }
+      
+      nav {
+        justify-content: center;
+      }
+      
+      .hero {
+        padding: 80px 5% 60px;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .section-header h2 {
+        font-size: 2.2rem;
+      }
+      
+      .team-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .hero p {
+        font-size: 1.1rem;
+      }
+      
+      .ceo-content h2 {
+        font-size: 2rem;
+      }
+      
+      .team-photo {
+        height: 300px;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate {
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+
+    .delay-1 { animation-delay: 0.2s; }
+    .delay-2 { animation-delay: 0.4s; }
+    .delay-3 { animation-delay: 0.6s; }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="images/logo.jpg" alt="Mavuno Trade Ltd" class="logo-img">
+      <span>Mavuno Trade Ltd</span>
+    </div>
+    
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="staff.html" class="active">Our Team</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content animate">
+      <h1>Meet Our Leadership</h1>
+      <p>The passionate professionals driving Tanzania's agricultural exports to global markets</p>
+    </div>
+  </section>
+
+  <section class="ceo-section">
+    <div class="ceo-card animate">
+      <div class="ceo-image">
+          <img src="./images/" alt="Josiah Mitekaro, CEO of Mavuno AgroTrade">
+      </div>
+      <div class="ceo-content">
+        <h2>A Message From Our Founder</h2>
+        <p>At Mavuno Trade, we're revolutionizing agricultural exports from Tanzania. Since 2024, we've built bridges between local farmers and international markets while maintaining the highest standards of quality and ethical business practices.</p>
+        
+        <p>Our farmer-first approach connects over 200 smallholder farmers across Tanzania with premium global markets they couldn't access alone. This creates traceability, quality control, and real economic impact in rural communities.</p>
+        
+        <p>Our team combines agricultural expertise with international trade experience. From soil specialists to logistics experts, every member shares our commitment to excellence and sustainability.</p>
+        
+        <div class="ceo-signature">
+          <span class="signature">Josiah Mitekaro</span>
+          <span class="ceo-title">Founder & Chief Executive Officer</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="team-section">
+    <div class="section-header animate">
+      <h2>Our Executive Team</h2>
+      <p>Meet the talented individuals leading our mission to showcase Tanzania's agricultural excellence worldwide</p>
+    </div>
+    
+    <div class="team-grid">
+      <div class="team-card animate delay-1">
+        <div class="team-photo">
+          < <img src="./images/" alt="Josiah Mitekaro">
+        </div>
+        <div class="team-info">
+          <h3>Josiah Mitekaro</h3>
+          <span class="team-position">Chief Executive Officer</span>
+          <p>15+ years in agricultural exports. Leads company strategy and international partnerships.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="team-card animate delay-1">
+        <div class="team-photo">
+          <img src="https://" alt="gideon mitekaro">
+        </div>
+        <div class="team-info">
+          <h3>Gideon Mitekaro</h3>
+          <span class="team-position">Operations Director</span>
+          <p>Supply chain expert managing logistics, warehousing, and export documentation.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="team-card animate delay-2">
+        <div class="team-photo">
+          <img src="https://" alt="Sarah Waiyaki">
+        </div>
+        <div class="team-info">
+          <h3>Sarah Waiyaki</h3>
+          <span class="team-position">Finance Director</span>
+          <p>Chartered accountant managing financial strategy and international transactions.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Mavuno Trade</h3>
+        <p>Connecting Tanzanian agriculture to global markets with integrity and excellence since 2024.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Our Products</a></li>
+          <li><a href="gallery.html">Photo Gallery</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Contact Info</h3>
+        <div class="contact-info">
+          <p><i class="fas fa-map-marker-alt"></i> Nyerere Road, Dar es Salaam, Tanzania</p>
+          <p><i class="fas fa-phone-alt"></i> +255 764 324 714</p>
+          <p><i class="fas fa-phone-alt"></i> +254 792 699 947</p>
+          <p><i class="fas fa-envelope"></i> info@mavunotrade.org</p>
+          <p><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 5:00 PM</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="copyright">
+      &copy; 2025 Mavuno Trade Ltd. All Rights Reserved.
+    </div>
+  </footer>
+
+  <script>
+    // Simple animation trigger
+    document.addEventListener('DOMContentLoaded', function() {
+      const animatedElements = document.querySelectorAll('.animate');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      animatedElements.forEach(el => {
+        el.style.opacity = 0;
+        observer.observe(el);
+      });
+    });
+  </script>
+</body>
+</html>
