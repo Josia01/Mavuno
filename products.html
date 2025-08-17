@@ -38,7 +38,7 @@
       line-height: 1.6;
     }
 
-    /* Header - Modern Design */
+    /* Header - Modern Design - Updated for fixed positioning */
     header {
       background-color: white;
       padding: 20px 5%;
@@ -47,9 +47,18 @@
       align-items: center;
       flex-wrap: wrap;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      position: sticky;
+      position: fixed;
       top: 0;
-      z-index: 100;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* Add padding to main to account for fixed header */
+    main {
+      padding-top: 90px;
     }
 
     .logo {
@@ -99,6 +108,68 @@
     nav a.active {
       color: white;
       background-color: var(--primary);
+    }
+
+    /* Mobile Menu Styles */
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      font-size: 24px;
+      background: transparent;
+      border: none;
+      color: var(--primary-dark);
+      width: 44px;
+      height: 44px;
+      align-items: center;
+      justify-content: center;
+      z-index: 1001;
+      padding: 0;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+      
+      nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background-color: white;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 20px;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        z-index: 1000;
+      }
+      
+      nav.active {
+        display: flex;
+        animation: fadeIn 0.3s ease-out;
+      }
+      
+      nav a {
+        margin: 10px 0;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+      
+      nav a:hover {
+        background-color: rgba(58, 125, 68, 0.1);
+      }
+      
+      header {
+        flex-direction: row;
+        align-items: center;
+        padding: 15px 5%;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     /* Hero Section */
@@ -625,16 +696,6 @@
     }
 
     @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px;
-      }
-      
-      nav {
-        justify-content: center;
-      }
-      
       .products-hero {
         padding: 80px 5% 60px;
       }
@@ -650,6 +711,11 @@
       .cta-buttons {
         flex-direction: column;
         align-items: center;
+      }
+      
+      /* Adjust main padding for mobile */
+      main {
+        padding-top: 80px;
       }
     }
 
@@ -694,7 +760,12 @@
       <span>Mavuno Trade Ltd</span>
     </div>
     
-    <nav>
+    <!-- Mobile Menu Toggle with aria attributes -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false" aria-controls="mainNav">
+      <i class="fas fa-bars"></i>
+    </button>
+    
+    <nav id="mainNav" aria-labelledby="menuToggle">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="products.html" class="active">Products</a>
@@ -703,266 +774,268 @@
     </nav>
   </header>
 
-  <section class="products-hero">
-    <div class="products-hero-content animate">
-      <h1>Our Premium Agricultural Products</h1>
-      <p>Discover Tanzania's finest agricultural exports, grown with care and exported with excellence to global markets.</p>
-    </div>
-  </section>
+  <main>
+    <section class="products-hero">
+      <div class="products-hero-content animate">
+        <h1>Our Premium Agricultural Products</h1>
+        <p>Discover Tanzania's finest agricultural exports, grown with care and exported with excellence to global markets.</p>
+      </div>
+    </section>
 
-  <section class="products-section">
-    <div class="section-header animate">
-      <h2>Quality Products from Tanzanian Farms</h2>
-      <p>We specialize in exporting premium agricultural commodities that meet international quality and safety standards.</p>
-    </div>
-    
-    <div class="product-cards">
-      <!-- Premium Maize -->
-      <div class="product-card animate delay-1">
-        <div class="product-image">
-          <img src="images/maizepic.jpg" alt="Premium Maize">
-          <div class="product-badge">Best Seller</div>
-        </div>
-        <div class="product-content">
-          <h3>Premium Maize</h3>
-          <div class="product-specs">
-            <div class="spec-item">
-              <i class="fas fa-seedling"></i>
-              <span>White & Yellow Varieties</span>
-            </div>
-            <div class="spec-item">
-              <i class="fas fa-weight-hanging"></i>
-              <span>20 ton minimum</span>
-            </div>
-          </div>
-          <div class="product-description">
-            <p>Our premium maize is grown in the fertile soils of Tanzania's Southern Highlands, known for producing some of Africa's finest grains.</p>
-          </div>
-          <div class="benefits-list">
-            <h4>Key Benefits:</h4>
-            <ul>
-              <li>High nutritional value with 9-12% protein content</li>
-              <li>Excellent for human consumption and animal feed</li>
-              <li>Non-GMO and traditionally cultivated</li>
-              <li>Long shelf life when properly stored</li>
-            </ul>
-          </div>
-          <div class="quality-section">
-            <h4><i class="fas fa-check-circle"></i> Quality & Safety</h4>
-            <p>Our maize meets international food safety standards with moisture content below 14%, aflatoxin levels under 5ppb, and foreign matter less than 1%.</p>
-          </div>
-          <div class="product-cta">
-            <div class="product-price">$270/ton <span>FOB Dar es Salaam</span></div>
-            <a href="contact.html" class="btn">Inquire Now</a>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Rice -->
-      <div class="product-card animate delay-2">
-        <div class="product-image">
-          <img src="images/ricee.jpg"alt="Rice">
-          <div class="product-badge">Organic Available</div>
-        </div>
-        <div class="product-content">
-          <h3>Rice</h3>
-          <div class="product-specs">
-            <div class="spec-item">
-              <i class="fas fa-seedling"></i>
-              <span>Paddy & Milled</span>
-            </div>
-            <div class="spec-item">
-              <i class="fas fa-weight-hanging"></i>
-              <span>15 ton minimum</span>
-            </div>
-          </div>
-          <div class="product-description">
-            <p>Tanzanian rice is renowned for its excellent cooking qualities and distinctive aroma, grown in the lush paddies of Morogoro and Mbeya regions.</p>
-          </div>
-          <div class="benefits-list">
-            <h4>Key Benefits:</h4>
-            <ul>
-              <li>High milling recovery rate (68-72%)</li>
-              <li>Low broken percentage (under 5%)</li>
-              <li>Excellent grain elongation when cooked</li>
-              <li>Available in organic and conventional varieties</li>
-            </ul>
-          </div>
-          <div class="quality-section">
-            <h4><i class="fas fa-check-circle"></i> Quality & Safety</h4>
-            <p>Our rice is processed in modern mills meeting HACCP standards, with moisture content below 14%, and free from artificial additives or preservatives.</p>
-          </div>
-          <div class="product-cta">
-            <div class="product-price">$450/ton <span>FOB Dar es Salaam</span></div>
-            <a href="contact.html" class="btn">Inquire Now</a>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Wheat -->
-      <div class="product-card animate delay-1">
-        <div class="product-image">
-          <img src="images/wheatt.jpg" alt="Wheat">
-          <div class="product-badge">High Protein</div>
-        </div>
-        <div class="product-content">
-          <h3>Wheat</h3>
-          <div class="product-specs">
-            <div class="spec-item">
-              <i class="fas fa-seedling"></i>
-              <span>Hard & Soft Varieties</span>
-            </div>
-            <div class="spec-item">
-              <i class="fas fa-weight-hanging"></i>
-              <span>25 ton minimum</span>
-            </div>
-          </div>
-          <div class="product-description">
-            <p>Grown in the cool highlands of Tanzania, our wheat boasts excellent baking qualities with protein content ranging from 11-14%.</p>
-          </div>
-          <div class="benefits-list">
-            <h4>Key Benefits:</h4>
-            <ul>
-              <li>High gluten content for excellent bread-making</li>
-              <li>Consistent quality throughout the year</li>
-              <li>Low moisture content for better storage</li>
-              <li>Non-GMO and sustainably farmed</li>
-            </ul>
-          </div>
-          <div class="quality-section">
-            <h4><i class="fas fa-check-circle"></i> Quality & Safety</h4>
-            <p>Our wheat is tested for falling number (over 300), protein content, and moisture (under 13%). We ensure it's free from pests and mycotoxins.</p>
-          </div>
-          <div class="product-cta">
-            <div class="product-price">$380/ton <span>FOB Dar es Salaam</span></div>
-            <a href="contact.html" class="btn">Inquire Now</a>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Timber -->
-      <div class="product-card animate delay-2">
-        <div class="product-image">
-          <img src="images/pine.jpg" alt="Timber">
-          <div class="product-badge">Sustainable</div>
-        </div>
-        <div class="product-content">
-          <h3>Pine & Eucalyptus Timber</h3>
-          <div class="product-specs">
-            <div class="spec-item">
-              <i class="fas fa-tree"></i>
-              <span>Kiln-dried</span>
-            </div>
-            <div class="spec-item">
-              <i class="fas fa-ruler-combined"></i>
-              <span>Custom sizes</span>
-            </div>
-          </div>
-          <div class="product-description">
-            <p>Sustainably harvested from Tanzanian plantations, our timber is ideal for construction, furniture, and packaging applications.</p>
-          </div>
-          <div class="benefits-list">
-            <h4>Key Benefits:</h4>
-            <ul>
-              <li>Fast-growing plantation species</li>
-              <li>Kiln-dried to prevent warping</li>
-              <li>Treated against termites and fungi</li>
-              <li>FSC-certified options available</li>
-            </ul>
-          </div>
-          <div class="quality-section">
-            <h4><i class="fas fa-check-circle"></i> Quality & Safety</h4>
-            <p>Our timber meets international grading standards with moisture content below 12%. All treatments use environmentally-safe preservatives.</p>
-          </div>
-          <div class="product-cta">
-            <div class="product-price">$120/m³ <span>FOB Dar es Salaam</span></div>
-            <a href="contact.html" class="btn">Inquire Now</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="quality-assurance">
-    <div class="quality-container">
-      <div class="quality-content">
-        <h2 class="animate">Our Quality Assurance</h2>
-        <p class="animate delay-1">At Mavuno Trade, we implement rigorous quality control measures at every stage of production to ensure our products meet the highest international standards.</p>
-        <p class="animate delay-1">From farm selection to final packaging, our team of agricultural experts monitors each step to guarantee the safety, quality, and consistency of our products.</p>
-        
-        <div class="quality-standards animate delay-2">
-          <div class="standard-item">
-            <div class="standard-icon">
-              <i class="fas fa-leaf"></i>
-            </div>
-            <div class="standard-text">
-              <h4>Sustainable Farming</h4>
-              <p>We work with farmers who practice sustainable agriculture to protect the environment and ensure long-term productivity.</p>
-            </div>
-          </div>
-          
-          <div class="standard-item">
-            <div class="standard-icon">
-              <i class="fas fa-flask"></i>
-            </div>
-            <div class="standard-text">
-              <h4>Laboratory Testing</h4>
-              <p>Every shipment undergoes comprehensive laboratory testing for moisture, purity, and food safety parameters.</p>
-            </div>
-          </div>
-          
-          <div class="standard-item">
-            <div class="standard-icon">
-              <i class="fas fa-shield-alt"></i>
-            </div>
-            <div class="standard-text">
-              <h4>Safe Packaging</h4>
-              <p>We use food-grade packaging materials that protect products during transit while meeting international phytosanitary requirements.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="quality-image animate delay-2">
-        <img src="https://images.unsplash.com/photo-1587049352841-6e8cfc4b5ec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Quality Control Process">
-      </div>
-    </div>
-  </section>
-
-  <section class="cta-section">
-    <div class="cta-container animate">
-      <h2>Ready to Order Our Premium Products?</h2>
-      <p>Contact our sales team today to discuss your requirements and receive a customized quote.</p>
-      <div class="cta-buttons">
-        <a href="contact.html" class="btn">Request a Quote</a>
-        <a href="contact.html" class="btn">Contact Sales</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="certification-section">
-    <div class="certification-container">
+    <section class="products-section">
       <div class="section-header animate">
-        <h2>Our Certifications</h2>
-        <p>Mavuno Trade meets and exceeds international certification standards for quality and safety.</p>
+        <h2>Quality Products from Tanzanian Farms</h2>
+        <p>We specialize in exporting premium agricultural commodities that meet international quality and safety standards.</p>
       </div>
       
-      <div class="certification-logos">
-        <div class="certification-logo animate delay-1">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/ISO_logo.svg/1200px-ISO_logo.svg.png" alt="ISO Certified">
+      <div class="product-cards">
+        <!-- Premium Maize -->
+        <div class="product-card animate delay-1">
+          <div class="product-image">
+            <img src="images/maizepic.jpg" alt="Premium Maize">
+            <div class="product-badge">Best Seller</div>
+          </div>
+          <div class="product-content">
+            <h3>Premium Maize</h3>
+            <div class="product-specs">
+              <div class="spec-item">
+                <i class="fas fa-seedling"></i>
+                <span>White & Yellow Varieties</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-weight-hanging"></i>
+                <span>20 ton minimum</span>
+              </div>
+            </div>
+            <div class="product-description">
+              <p>Our premium maize is grown in the fertile soils of Tanzania's Southern Highlands, known for producing some of Africa's finest grains.</p>
+            </div>
+            <div class="benefits-list">
+              <h4>Key Benefits:</h4>
+              <ul>
+                <li>High nutritional value with 9-12% protein content</li>
+                <li>Excellent for human consumption and animal feed</li>
+                <li>Non-GMO and traditionally cultivated</li>
+                <li>Long shelf life when properly stored</li>
+              </ul>
+            </div>
+            <div class="quality-section">
+              <h4><i class="fas fa-check-circle"></i> Quality & Safety</h4>
+              <p>Our maize meets international food safety standards with moisture content below 14%, aflatoxin levels under 5ppb, and foreign matter less than 1%.</p>
+            </div>
+            <div class="product-cta">
+              <div class="product-price">$270/ton <span>FOB Dar es Salaam</span></div>
+              <a href="contact.html" class="btn">Inquire Now</a>
+            </div>
+          </div>
         </div>
-        <div class="certification-logo animate delay-2">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/HACCP_logo.svg/1200px-HACCP_logo.svg.png" alt="HACCP Certified">
+        
+        <!-- Rice -->
+        <div class="product-card animate delay-2">
+          <div class="product-image">
+            <img src="images/ricee.jpg"alt="Rice">
+            <div class="product-badge">Organic Available</div>
+          </div>
+          <div class="product-content">
+            <h3>Rice</h3>
+            <div class="product-specs">
+              <div class="spec-item">
+                <i class="fas fa-seedling"></i>
+                <span>Paddy & Milled</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-weight-hanging"></i>
+                <span>15 ton minimum</span>
+              </div>
+            </div>
+            <div class="product-description">
+              <p>Tanzanian rice is renowned for its excellent cooking qualities and distinctive aroma, grown in the lush paddies of Morogoro and Mbeya regions.</p>
+            </div>
+            <div class="benefits-list">
+              <h4>Key Benefits:</h4>
+              <ul>
+                <li>High milling recovery rate (68-72%)</li>
+                <li>Low broken percentage (under 5%)</li>
+                <li>Excellent grain elongation when cooked</li>
+                <li>Available in organic and conventional varieties</li>
+              </ul>
+            </div>
+            <div class="quality-section">
+              <h4><i class="fas fa-check-circle"></i> Quality & Safety</h4>
+              <p>Our rice is processed in modern mills meeting HACCP standards, with moisture content below 14%, and free from artificial additives or preservatives.</p>
+            </div>
+            <div class="product-cta">
+              <div class="product-price">$450/ton <span>FOB Dar es Salaam</span></div>
+              <a href="contact.html" class="btn">Inquire Now</a>
+            </div>
+          </div>
         </div>
-        <div class="certification-logo animate delay-1">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Usda_logo.svg/1200px-Usda_logo.svg.png" alt="USDA Standards">
+        
+        <!-- Wheat -->
+        <div class="product-card animate delay-1">
+          <div class="product-image">
+            <img src="images/wheatt.jpg" alt="Wheat">
+            <div class="product-badge">High Protein</div>
+          </div>
+          <div class="product-content">
+            <h3>Wheat</h3>
+            <div class="product-specs">
+              <div class="spec-item">
+                <i class="fas fa-seedling"></i>
+                <span>Hard & Soft Varieties</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-weight-hanging"></i>
+                <span>25 ton minimum</span>
+              </div>
+            </div>
+            <div class="product-description">
+              <p>Grown in the cool highlands of Tanzania, our wheat boasts excellent baking qualities with protein content ranging from 11-14%.</p>
+            </div>
+            <div class="benefits-list">
+              <h4>Key Benefits:</h4>
+              <ul>
+                <li>High gluten content for excellent bread-making</li>
+                <li>Consistent quality throughout the year</li>
+                <li>Low moisture content for better storage</li>
+                <li>Non-GMO and sustainably farmed</li>
+              </ul>
+            </div>
+            <div class="quality-section">
+              <h4><i class="fas fa-check-circle"></i> Quality & Safety</h4>
+              <p>Our wheat is tested for falling number (over 300), protein content, and moisture (under 13%). We ensure it's free from pests and mycotoxins.</p>
+            </div>
+            <div class="product-cta">
+              <div class="product-price">$380/ton <span>FOB Dar es Salaam</span></div>
+              <a href="contact.html" class="btn">Inquire Now</a>
+            </div>
+          </div>
         </div>
-        <div class="certification-logo animate delay-2">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/FSC_logo.svg/1200px-FSC_logo.svg.png" alt="FSC Certified">
+        
+        <!-- Timber -->
+        <div class="product-card animate delay-2">
+          <div class="product-image">
+            <img src="images/pine.jpg" alt="Timber">
+            <div class="product-badge">Sustainable</div>
+          </div>
+          <div class="product-content">
+            <h3>Pine & Eucalyptus Timber</h3>
+            <div class="product-specs">
+              <div class="spec-item">
+                <i class="fas fa-tree"></i>
+                <span>Kiln-dried</span>
+              </div>
+              <div class="spec-item">
+                <i class="fas fa-ruler-combined"></i>
+                <span>Custom sizes</span>
+              </div>
+            </div>
+            <div class="product-description">
+              <p>Sustainably harvested from Tanzanian plantations, our timber is ideal for construction, furniture, and packaging applications.</p>
+            </div>
+            <div class="benefits-list">
+              <h4>Key Benefits:</h4>
+              <ul>
+                <li>Fast-growing plantation species</li>
+                <li>Kiln-dried to prevent warping</li>
+                <li>Treated against termites and fungi</li>
+                <li>FSC-certified options available</li>
+              </ul>
+            </div>
+            <div class="quality-section">
+              <h4><i class="fas fa-check-circle"></i> Quality & Safety</h4>
+              <p>Our timber meets international grading standards with moisture content below 12%. All treatments use environmentally-safe preservatives.</p>
+            </div>
+            <div class="product-cta">
+              <div class="product-price">$120/m³ <span>FOB Dar es Salaam</span></div>
+              <a href="contact.html" class="btn">Inquire Now</a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section class="quality-assurance">
+      <div class="quality-container">
+        <div class="quality-content">
+          <h2 class="animate">Our Quality Assurance</h2>
+          <p class="animate delay-1">At Mavuno Trade, we implement rigorous quality control measures at every stage of production to ensure our products meet the highest international standards.</p>
+          <p class="animate delay-1">From farm selection to final packaging, our team of agricultural experts monitors each step to guarantee the safety, quality, and consistency of our products.</p>
+          
+          <div class="quality-standards animate delay-2">
+            <div class="standard-item">
+              <div class="standard-icon">
+                <i class="fas fa-leaf"></i>
+              </div>
+              <div class="standard-text">
+                <h4>Sustainable Farming</h4>
+                <p>We work with farmers who practice sustainable agriculture to protect the environment and ensure long-term productivity.</p>
+              </div>
+            </div>
+            
+            <div class="standard-item">
+              <div class="standard-icon">
+                <i class="fas fa-flask"></i>
+              </div>
+              <div class="standard-text">
+                <h4>Laboratory Testing</h4>
+                <p>Every shipment undergoes comprehensive laboratory testing for moisture, purity, and food safety parameters.</p>
+              </div>
+            </div>
+            
+            <div class="standard-item">
+              <div class="standard-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div class="standard-text">
+                <h4>Safe Packaging</h4>
+                <p>We use food-grade packaging materials that protect products during transit while meeting international phytosanitary requirements.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="quality-image animate delay-2">
+          <img src="https://images.unsplash.com/photo-1587049352841-6e8cfc4b5ec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Quality Control Process">
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="cta-container animate">
+        <h2>Ready to Order Our Premium Products?</h2>
+        <p>Contact our sales team today to discuss your requirements and receive a customized quote.</p>
+        <div class="cta-buttons">
+          <a href="contact.html" class="btn">Request a Quote</a>
+          <a href="contact.html" class="btn">Contact Sales</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="certification-section">
+      <div class="certification-container">
+        <div class="section-header animate">
+          <h2>Our Certifications</h2>
+          <p>Mavuno Trade meets and exceeds international certification standards for quality and safety.</p>
+        </div>
+        
+        <div class="certification-logos">
+          <div class="certification-logo animate delay-1">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/ISO_logo.svg/1200px-ISO_logo.svg.png" alt="ISO Certified">
+          </div>
+          <div class="certification-logo animate delay-2">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/HACCP_logo.svg/1200px-HACCP_logo.svg.png" alt="HACCP Certified">
+          </div>
+          <div class="certification-logo animate delay-1">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Usda_logo.svg/1200px-Usda_logo.svg.png" alt="USDA Standards">
+          </div>
+          <div class="certification-logo animate delay-2">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/FSC_logo.svg/1200px-FSC_logo.svg.png" alt="FSC Certified">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <div class="footer-container">
@@ -1006,8 +1079,74 @@
   </footer>
 
   <script>
-    // Simple animation trigger
+    // Mobile Menu Functionality
     document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.getElementById('menuToggle');
+      const mainNav = document.getElementById('mainNav');
+      
+      // Mobile Menu Toggle
+      menuToggle.addEventListener('click', function() {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !isExpanded);
+        mainNav.classList.toggle('active');
+        
+        // Change icon based on menu state
+        const icon = this.querySelector('i');
+        if (mainNav.classList.contains('active')) {
+          icon.classList.replace('fa-bars', 'fa-times');
+        } else {
+          icon.classList.replace('fa-times', 'fa-bars');
+        }
+      });
+      
+      // Close menu when clicking on a link
+      const navLinks = mainNav.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          if (window.innerWidth <= 768) {
+            mainNav.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
+          }
+        });
+      });
+      
+      // Close menu when clicking outside
+      document.addEventListener('click', function(event) {
+        if (window.innerWidth <= 768 && 
+            mainNav.classList.contains('active') &&
+            !menuToggle.contains(event.target) &&
+            !mainNav.contains(event.target)) {
+          mainNav.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
+        }
+      });
+      
+      // Reset menu state when window is resized to desktop size
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+          mainNav.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
+        }
+      });
+
+      // Image Loading
+      const images = document.querySelectorAll('img');
+      images.forEach(img => {
+        img.onerror = function() {
+          // Replace broken images with placeholder
+          this.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200"%3E%3Crect fill="%23e6f2e6" width="300" height="200"/%3E%3Ctext fill="%232d6a4f" font-family="Arial" font-size="16" dy="20" text-anchor="middle" x="150" y="100"%3EImage Loading...%3C/text%3E%3C/svg%3E';
+        }
+        
+        // Fix URLs that might have double slashes
+        if(img.src.includes('https://')) {
+          img.src = img.src.replace('https://', 'https://');
+        }
+      });
+      
+      // Simple animation trigger
       const animatedElements = document.querySelectorAll('.animate');
       
       const observer = new IntersectionObserver((entries) => {
