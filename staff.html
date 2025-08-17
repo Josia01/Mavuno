@@ -38,7 +38,7 @@
       line-height: 1.6;
     }
 
-    /* Header - Modern Design */
+    /* Header - Modern Design - Updated for fixed positioning */
     header {
       background-color: white;
       padding: 20px 5%;
@@ -47,9 +47,18 @@
       align-items: center;
       flex-wrap: wrap;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      position: sticky;
+      position: fixed;
       top: 0;
-      z-index: 100;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* Add padding to main to account for fixed header */
+    main {
+      padding-top: 90px;
     }
 
     .logo {
@@ -77,6 +86,11 @@
       opacity: 0.9;
     }
 
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
 
     nav a {
       color: var(--dark-text);
@@ -95,6 +109,68 @@
     nav a.active {
       color: white;
       background-color: var(--primary);
+    }
+
+    /* Mobile Menu Styles */
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      font-size: 24px;
+      background: transparent;
+      border: none;
+      color: var(--primary-dark);
+      width: 44px;
+      height: 44px;
+      align-items: center;
+      justify-content: center;
+      z-index: 1001;
+      padding: 0;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+      
+      nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background-color: white;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 20px;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        z-index: 1000;
+      }
+      
+      nav.active {
+        display: flex;
+        animation: fadeIn 0.3s ease-out;
+      }
+      
+      nav a {
+        margin: 10px 0;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+      
+      nav a:hover {
+        background-color: rgba(58, 125, 68, 0.1);
+      }
+      
+      header {
+        flex-direction: row;
+        align-items: center;
+        padding: 15px 5%;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     /* Hero Section */
@@ -455,16 +531,6 @@
     }
 
     @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px;
-      }
-      
-      nav {
-        justify-content: center;
-      }
-      
       .hero {
         padding: 80px 5% 60px;
       }
@@ -480,6 +546,11 @@
       .team-grid {
         grid-template-columns: 1fr;
         max-width: 500px;
+      }
+      
+      /* Adjust main padding for mobile */
+      main {
+        padding-top: 80px;
       }
     }
 
@@ -524,7 +595,12 @@
       <span>Mavuno Trade Ltd</span>
     </div>
     
-    <nav>
+    <!-- Mobile Menu Toggle with aria attributes -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false" aria-controls="mainNav">
+      <i class="fas fa-bars"></i>
+    </button>
+    
+    <nav id="mainNav" aria-labelledby="menuToggle">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="products.html">Products</a>
@@ -533,91 +609,92 @@
     </nav>
   </header>
 
-  <section class="hero">
-    <div class="hero-content animate">
-      <h1>Meet Our Leadership</h1>
-      <p>The passionate professionals driving Tanzania's agricultural exports to global markets</p>
-    </div>
-  </section>
-
-  <section class="ceo-section">
-    <div class="ceo-card animate">
-      <div class="ceo-image">
-          <img src="./images/" alt="Josiah Mitekaro, CEO of Mavuno AgroTrade">
+  <main>
+    <section class="hero">
+      <div class="hero-content animate">
+        <h1>Meet Our Leadership</h1>
+        <p>The passionate professionals driving Tanzania's agricultural exports to global markets</p>
       </div>
-      <div class="ceo-content">
-        <h2>A Message From Our Founder</h2>
-        <p>At Mavuno Trade, we're revolutionizing agricultural exports from Tanzania. Since 2024, we've built bridges between local farmers and international markets while maintaining the highest standards of quality and ethical business practices.</p>
-        
-        <p>Our farmer-first approach connects over 200 smallholder farmers across Tanzania with premium global markets they couldn't access alone. This creates traceability, quality control, and real economic impact in rural communities.</p>
-        
-        <p>Our team combines agricultural expertise with international trade experience. From soil specialists to logistics experts, every member shares our commitment to excellence and sustainability.</p>
-        
-        <div class="ceo-signature">
-          <span class="signature">Josiah Mitekaro</span>
-          <span class="ceo-title">Founder & Chief Executive Officer</span>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="team-section">
-    <div class="section-header animate">
-      <h2>Our Executive Team</h2>
-      <p>Meet the talented individuals leading our mission to showcase Tanzania's agricultural excellence worldwide</p>
-    </div>
-    
-    <div class="team-grid">
-      <div class="team-card animate delay-1">
-        <div class="team-photo">
-          < <img src="./images/" alt="Josiah Mitekaro">
+    <section class="ceo-section">
+      <div class="ceo-card animate">
+        <div class="ceo-image">
+            <img src="./images/" alt="Josiah Mitekaro, CEO of Mavuno AgroTrade">
         </div>
-        <div class="team-info">
-          <h3>Josiah Mitekaro</h3>
-          <span class="team-position">Chief Executive Officer</span>
-          <p>15+ years in agricultural exports. Leads company strategy and international partnerships.</p>
-          <div class="social-links">
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fas fa-envelope"></i></a>
+        <div class="ceo-content">
+          <h2>A Message From Our Founder</h2>
+          <p>At Mavuno Trade, we're revolutionizing agricultural exports from Tanzania. Since 2024, we've built bridges between local farmers and international markets while maintaining the highest standards of quality and ethical business practices.</p>
+          
+          <p>Our farmer-first approach connects over 200 smallholder farmers across Tanzania with premium global markets they couldn't access alone. This creates traceability, quality control, and real economic impact in rural communities.</p>
+          
+          <p>Our team combines agricultural expertise with international trade experience. From soil specialists to logistics experts, every member shares our commitment to excellence and sustainability.</p>
+          
+          <div class="ceo-signature">
+            <span class="signature">Josiah Mitekaro</span>
+            <span class="ceo-title">Founder & Chief Executive Officer</span>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="team-section">
+      <div class="section-header animate">
+        <h2>Our Executive Team</h2>
+        <p>Meet the talented individuals leading our mission to showcase Tanzania's agricultural excellence worldwide</p>
       </div>
       
-      <div class="team-card animate delay-1">
-        <div class="team-photo">
-          <img src="https://" alt="gideon mitekaro">
+      <div class="team-grid">
+        <div class="team-card animate delay-1">
+          <div class="team-photo">
+            <img src="./images/" alt="Josiah Mitekaro">
+          </div>
+          <div class="team-info">
+            <h3>Josiah Mitekaro</h3>
+            <span class="team-position">Chief Executive Officer</span>
+            <p>15+ years in agricultural exports. Leads company strategy and international partnerships.</p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
         </div>
-        <div class="team-info">
-          <h3>Gideon Mitekaro</h3>
-          <span class="team-position">Operations Director</span>
-          <p>Supply chain expert managing logistics, warehousing, and export documentation.</p>
-          <div class="social-links">
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fas fa-envelope"></i></a>
+        
+        <div class="team-card animate delay-1">
+          <div class="team-photo">
+            <img src="https://" alt="gideon mitekaro">
+          </div>
+          <div class="team-info">
+            <h3>Gideon Mitekaro</h3>
+            <span class="team-position">Operations Director</span>
+            <p>Supply chain expert managing logistics, warehousing, and export documentation.</p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="team-card animate delay-2">
+          <div class="team-photo">
+            <img src="https://" alt="Sarah Waiyaki">
+          </div>
+          <div class="team-info">
+            <h3>Sarah Waiyaki</h3>
+            <span class="team-position">Finance Director</span>
+            <p>Chartered accountant managing financial strategy and international transactions.</p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
           </div>
         </div>
       </div>
-      
-      <div class="team-card animate delay-2">
-        <div class="team-photo">
-          <img src="https://" alt="Sarah Waiyaki">
-        </div>
-        <div class="team-info">
-          <h3>Sarah Waiyaki</h3>
-          <span class="team-position">Finance Director</span>
-          <p>Chartered accountant managing financial strategy and international transactions.</p>
-          <div class="social-links">
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fas fa-envelope"></i></a>
-          </div>
-        </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer>
     <div class="footer-container">
@@ -661,8 +738,74 @@
   </footer>
 
   <script>
-    // Simple animation trigger
+    // Mobile Menu Functionality
     document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.getElementById('menuToggle');
+      const mainNav = document.getElementById('mainNav');
+      
+      // Mobile Menu Toggle
+      menuToggle.addEventListener('click', function() {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !isExpanded);
+        mainNav.classList.toggle('active');
+        
+        // Change icon based on menu state
+        const icon = this.querySelector('i');
+        if (mainNav.classList.contains('active')) {
+          icon.classList.replace('fa-bars', 'fa-times');
+        } else {
+          icon.classList.replace('fa-times', 'fa-bars');
+        }
+      });
+      
+      // Close menu when clicking on a link
+      const navLinks = mainNav.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          if (window.innerWidth <= 768) {
+            mainNav.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
+          }
+        });
+      });
+      
+      // Close menu when clicking outside
+      document.addEventListener('click', function(event) {
+        if (window.innerWidth <= 768 && 
+            mainNav.classList.contains('active') &&
+            !menuToggle.contains(event.target) &&
+            !mainNav.contains(event.target)) {
+          mainNav.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
+        }
+      });
+      
+      // Reset menu state when window is resized to desktop size
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+          mainNav.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
+        }
+      });
+
+      // Image Loading
+      const images = document.querySelectorAll('img');
+      images.forEach(img => {
+        img.onerror = function() {
+          // Replace broken images with placeholder
+          this.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200"%3E%3Crect fill="%23e6f2e6" width="300" height="200"/%3E%3Ctext fill="%232d6a4f" font-family="Arial" font-size="16" dy="20" text-anchor="middle" x="150" y="100"%3EImage Loading...%3C/text%3E%3C/svg%3E';
+        }
+        
+        // Fix URLs that might have double slashes
+        if(img.src.includes('https://')) {
+          img.src = img.src.replace('https://', 'https://');
+        }
+      });
+      
+      // Simple animation trigger
       const animatedElements = document.querySelectorAll('.animate');
       
       const observer = new IntersectionObserver((entries) => {
