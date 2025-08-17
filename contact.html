@@ -38,7 +38,7 @@
       line-height: 1.6;
     }
 
-    /* Header - Modern Design */
+    /* Header - Modern Design - Updated for fixed positioning */
     header {
       background-color: white;
       padding: 20px 5%;
@@ -47,9 +47,18 @@
       align-items: center;
       flex-wrap: wrap;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      position: sticky;
+      position: fixed;
       top: 0;
-      z-index: 100;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* Add padding to main to account for fixed header */
+    main {
+      padding-top: 90px;
     }
 
     .logo {
@@ -77,6 +86,12 @@
       opacity: 0.9;
     }
 
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
     nav a {
       color: var(--dark-text);
       text-decoration: none;
@@ -94,6 +109,68 @@
     nav a.active {
       color: white;
       background-color: var(--primary);
+    }
+
+    /* Mobile Menu Styles */
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      font-size: 24px;
+      background: transparent;
+      border: none;
+      color: var(--primary-dark);
+      width: 44px;
+      height: 44px;
+      align-items: center;
+      justify-content: center;
+      z-index: 1001;
+      padding: 0;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+      
+      nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background-color: white;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 20px;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        z-index: 1000;
+      }
+      
+      nav.active {
+        display: flex;
+        animation: fadeIn 0.3s ease-out;
+      }
+      
+      nav a {
+        margin: 10px 0;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+      
+      nav a:hover {
+        background-color: rgba(58, 125, 68, 0.1);
+      }
+      
+      header {
+        flex-direction: row;
+        align-items: center;
+        padding: 15px 5%;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     /* Hero Section */
@@ -489,16 +566,6 @@
     }
 
     @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px;
-      }
-      
-      nav {
-        justify-content: center;
-      }
-      
       .contact-hero {
         padding: 80px 5% 60px;
       }
@@ -517,6 +584,11 @@
       
       .form-row {
         grid-template-columns: 1fr;
+      }
+      
+      /* Adjust main padding for mobile */
+      main {
+        padding-top: 80px;
       }
     }
 
@@ -561,7 +633,12 @@
       <span>Mavuno Trade Ltd</span>
     </div>
     
-    <nav>
+    <!-- Mobile Menu Toggle with aria attributes -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false" aria-controls="mainNav">
+      <i class="fas fa-bars"></i>
+    </button>
+    
+    <nav id="mainNav" aria-labelledby="menuToggle">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="products.html">Products</a>
@@ -570,113 +647,115 @@
     </nav>
   </header>
 
-  <section class="contact-hero">
-    <div class="contact-hero-content animate">
-      <h1>Get In Touch With Us</h1>
-      <p>Whether you have questions about our products, want to place an order, or explore partnership opportunities, our team is ready to assist you.</p>
-    </div>
-  </section>
+  <main>
+    <section class="contact-hero">
+      <div class="contact-hero-content animate">
+        <h1>Get In Touch With Us</h1>
+        <p>Whether you have questions about our products, want to place an order, or explore partnership opportunities, our team is ready to assist you.</p>
+      </div>
+    </section>
 
-  <section class="contact-section">
-    <div class="contact-container">
-      <div class="contact-info animate">
-        <h2>Contact Information</h2>
-        <div class="contact-details">
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-map-marker-alt"></i>
+    <section class="contact-section">
+      <div class="contact-container">
+        <div class="contact-info animate">
+          <h2>Contact Information</h2>
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-text">
+                <h3>Our Headquarters</h3>
+                <p>Nyerere Road, Dar es Salaam, Tanzania</p>
+              </div>
             </div>
-            <div class="contact-text">
-              <h3>Our Headquarters</h3>
-              <p>Nyerere Road, Dar es Salaam, Tanzania</p>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div class="contact-text">
+                <h3>Phone Numbers</h3>
+                <p>
+                  <a href="tel:+255764324714">+255 764 324 714</a><br>
+                  <a href="tel:+254792699947">+254 792 699 947</a>
+                </p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-text">
+                <h3>Email Addresses</h3>
+                <p>
+                  <a href="mailto:info@mavunoagro.com">info@mavunotrade.org</a><br>
+                  <a href="mailto:sales@mavunoagro.com">sales@mavunotrade.org</a>
+                </p>
+              </div>
             </div>
           </div>
           
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-phone-alt"></i>
-            </div>
-            <div class="contact-text">
-              <h3>Phone Numbers</h3>
-              <p>
-                <a href="tel:+255764324714">+255 764 324 714</a><br>
-                <a href="tel:+254792699947">+254 792 699 947</a>
-              </p>
-            </div>
-          </div>
-          
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-envelope"></i>
-            </div>
-            <div class="contact-text">
-              <h3>Email Addresses</h3>
-              <p>
-                <a href="mailto:info@mavunoagro.com">info@mavunotrade.org</a><br>
-                <a href="mailto:sales@mavunoagro.com">sales@mavunotrade.org</a>
-              </p>
-            </div>
+          <div class="business-hours">
+            <h3>Business Hours</h3>
+            <ul class="hours-list">
+              <li><span>Monday - Friday</span> <span>8:00 AM - 5:00 PM</span></li>
+              <li><span>Saturday</span> <span>Closed</span></li>
+              <li><span>Sunday</span> <span>Closed</span></li>
+            </ul>
           </div>
         </div>
         
-        <div class="business-hours">
-          <h3>Business Hours</h3>
-          <ul class="hours-list">
-            <li><span>Monday - Friday</span> <span>8:00 AM - 5:00 PM</span></li>
-            <li><span>Saturday</span> <span>Closed</span></li>
-            <li><span>Sunday</span> <span>Closed</span></li>
-          </ul>
+        <div class="contact-form-container animate delay-1">
+          <h2>Send Us a Message</h2>
+          <!-- Status message container -->
+          <div id="status-message" class="status-message"></div>
+          
+          <form id="contactForm" action="send_email.php" method="POST">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Subject *</label>
+              <select id="subject" name="subject" class="form-control" required>
+                <option value="" disabled selected>Select a subject</option>
+                <option value="General Inquiry">General Inquiry</option>
+                <option value="Partnership Opportunity">Partnership Opportunity</option>
+                <option value="Product Information">Product Information</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Your Message *</label>
+              <textarea id="message" name="message" class="form-control" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-block">Send Message</button>
+          </form>
         </div>
       </div>
-      
-      <div class="contact-form-container animate delay-1">
-        <h2>Send Us a Message</h2>
-        <!-- Status message container -->
-        <div id="status-message" class="status-message"></div>
-        
-        <form id="contactForm" action="send_email.php" method="POST">
-          <div class="form-group">
-            <label for="name">Full Name *</label>
-            <input type="text" id="name" name="name" class="form-control" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="email">Email Address *</label>
-            <input type="email" id="email" name="email" class="form-control" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="phone">Phone Number *</label>
-            <input type="tel" id="phone" name="phone" class="form-control" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="subject">Subject *</label>
-            <select id="subject" name="subject" class="form-control" required>
-              <option value="" disabled selected>Select a subject</option>
-              <option value="General Inquiry">General Inquiry</option>
-              <option value="Partnership Opportunity">Partnership Opportunity</option>
-              <option value="Product Information">Product Information</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-          
-          <div class="form-group">
-            <label for="message">Your Message *</label>
-            <textarea id="message" name="message" class="form-control" required></textarea>
-          </div>
-          
-          <button type="submit" class="btn btn-block">Send Message</button>
-        </form>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="map-section">
-    <div class="map-container animate">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.935161999424!2d39.20880731523168!3d-6.597515664736772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c5a9a7a1a5a9b%3A0x9a5a9a7a1a5a9b!2sNyerere%20Road%2C%20Dar%20es%20Salaam%2C%20Tanzania!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-  </section>
+    <section class="map-section">
+      <div class="map-container animate">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.935161999424!2d39.20880731523168!3d-6.597515664736772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c5a9a7a1a5a9b%3A0x9a5a9a7a1a5a9b!2sNyerere%20Road%2C%20Dar%20es%20Salaam%2C%20Tanzania!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <div class="footer-container">
@@ -725,8 +804,74 @@
   </footer>
 
   <script>
-    // Simple animation trigger
+    // Mobile Menu Functionality
     document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.getElementById('menuToggle');
+      const mainNav = document.getElementById('mainNav');
+      
+      // Mobile Menu Toggle
+      menuToggle.addEventListener('click', function() {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !isExpanded);
+        mainNav.classList.toggle('active');
+        
+        // Change icon based on menu state
+        const icon = this.querySelector('i');
+        if (mainNav.classList.contains('active')) {
+          icon.classList.replace('fa-bars', 'fa-times');
+        } else {
+          icon.classList.replace('fa-times', 'fa-bars');
+        }
+      });
+      
+      // Close menu when clicking on a link
+      const navLinks = mainNav.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          if (window.innerWidth <= 768) {
+            mainNav.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
+          }
+        });
+      });
+      
+      // Close menu when clicking outside
+      document.addEventListener('click', function(event) {
+        if (window.innerWidth <= 768 && 
+            mainNav.classList.contains('active') &&
+            !menuToggle.contains(event.target) &&
+            !mainNav.contains(event.target)) {
+          mainNav.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
+        }
+      });
+      
+      // Reset menu state when window is resized to desktop size
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+          mainNav.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
+        }
+      });
+
+      // Image Loading
+      const images = document.querySelectorAll('img');
+      images.forEach(img => {
+        img.onerror = function() {
+          // Replace broken images with placeholder
+          this.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200"%3E%3Crect fill="%23e6f2e6" width="300" height="200"/%3E%3Ctext fill="%232d6a4f" font-family="Arial" font-size="16" dy="20" text-anchor="middle" x="150" y="100"%3EImage Loading...%3C/text%3E%3C/svg%3E';
+        }
+        
+        // Fix URLs that might have double slashes
+        if(img.src.includes('https://')) {
+          img.src = img.src.replace('https://', 'https://');
+        }
+      });
+      
+      // Simple animation trigger
       const animatedElements = document.querySelectorAll('.animate');
       
       const observer = new IntersectionObserver((entries) => {
