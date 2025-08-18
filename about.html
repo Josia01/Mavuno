@@ -14,8 +14,26 @@
   <meta property="og:url" content="https://www.mavunotrade.com/about">
   <meta name="twitter:card" content="summary_large_image">
   
-  <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
+  <!-- ========== FAVICON SETUP OPTIMIZED FOR GITHUB PAGES ========== -->
+  <!-- Basic ICO Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  
+  <!-- PNG Favicons for modern browsers -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  
+  <!-- Android/Chrome -->
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#3A7D44">
+  
+  <!-- Microsoft Tiles -->
+  <meta name="msapplication-TileColor" content="#3A7D44">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <meta name="msapplication-config" content="/browserconfig.xml">
   
   <!-- Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,7 +51,7 @@
       --primary-dark: #245530;
       --primary-light: #68A357;
       --accent: #FFC857;
-      --light-bg: #f0f7f0;
+      --light-bg: #F8F9FA;
       --dark-text: #212529;
       --light-text: #F8F9FA;
       --border-radius: 16px;
@@ -62,7 +80,6 @@
     /* Add padding to main to account for fixed header */
     main {
       padding-top: 90px;
-      background-color: var(--light-bg);
     }
 
     .logo {
@@ -89,7 +106,6 @@
     .logo-img:hover {
       opacity: 0.9;
     }
-
 
     nav {
       display: flex;
@@ -192,7 +208,7 @@
     .section {
       padding: 60px 40px;
       position: relative;
-      background-color: #f8fcf8;
+      background-color: #ffffff;
     }
     
     /* Animation Classes */
@@ -319,7 +335,7 @@
     }
     
     .mv-card {
-      background: #f8fcf8;
+      background: #ffffff;
       border-radius: 10px;
       padding: 40px 30px;
       box-shadow: var(--box-shadow);
@@ -522,7 +538,7 @@
     
     .timeline-content {
       padding: 20px;
-      background-color: #f8fcf8;
+      background-color: #ffffff;
       border-radius: 8px;
       box-shadow: 0 3px 10px rgba(0,0,0,0.05);
       position: relative;
@@ -537,7 +553,7 @@
       height: 0;
       border-top: 10px solid transparent;
       border-bottom: 10px solid transparent;
-      border-left: 10px solid #f8fcf8;
+      border-left: 10px solid #ffffff;
     }
     
     .timeline-item:nth-child(even) .timeline-content::after {
@@ -549,7 +565,7 @@
       height: 0;
       border-top: 10px solid transparent;
       border-bottom: 10px solid transparent;
-      border-right: 10px solid #f8fcf8;
+      border-right: 10px solid #ffffff;
     }
     
     .timeline-date {
@@ -853,7 +869,7 @@
       .timeline-item:nth-child(even) .timeline-content::after {
         left: -10px;
         right: auto;
-        border-right: 10px solid #f8fcf8;
+        border-right: 10px solid #ffffff;
         border-left: 0;
       }
       
