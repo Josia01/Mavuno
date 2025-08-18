@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mavuno Trade Ltd - Exporting Tanzanian Agricultural Products</title>
+  <title>Mavuno Trade - Exporting Tanzanian Agricultural Products</title>
   <meta name="description" content="Mavuno Trade Ltd exports premium Tanzanian agricultural produce to global markets. Based in Dar es Salaam, we connect East African farms to the world.">
   
   <!-- Social Media Meta Tags -->
-  <meta property="og:title" content="Mavuno Trade Ltd">
+  <meta property="og:title" content="Mavuno Trade">
   <meta property="og:description" content="Exporting Tanzania's Best Agricultural Produce to the World">
   <meta property="og:image" content="https://images.unsplash.com/photo-1587049352841-6e8cfc4b5ec6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80">
   <meta property="og:url" content="https://www.mavunotrade.org">
@@ -205,7 +205,7 @@
       flex-direction: column;
     }
 
-    /* Updated Hero Section for Slideshow */
+    /* Optimized Hero Slideshow */
     .hero {
       position: relative;
       min-height: 60vh;
@@ -226,6 +226,7 @@
       width: 100%;
       height: 100%;
       z-index: -1;
+      background-color: #f0f0f0; /* Fallback color */
     }
 
     .slide {
@@ -234,12 +235,30 @@
       height: 100%;
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       opacity: 0;
       transition: opacity 1s ease-in-out;
+      will-change: opacity; /* Optimize for GPU acceleration */
     }
 
     .slide.active {
       opacity: 1;
+    }
+
+    /* Loading indicator for slides */
+    .slide::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.05);
+      z-index: 1;
+    }
+
+    .slide.loaded::after {
+      display: none;
     }
 
     .hero::before {
@@ -1076,13 +1095,14 @@
   </header>
 
   <main>
-    <!-- Updated Hero Section with Slideshow -->
+    <!-- Optimized Hero Section with Slideshow -->
     <section class="hero" id="home">
       <div class="hero-slideshow">
-        <div class="slide active" style="background-image: url('./images/wheat.jpg')"></div>
-        <div class="slide" style="background-image: url('./images/ricee.jpg')"></div>
-        <div class="slide" style="background-image: url('./images/pine.jpg')"></div>
-        <div class="slide" style="background-image: url('./images/maizee.jpg')"></div>
+        <!-- Only first slide loaded by default, others will be lazy loaded -->
+        <div class="slide active" data-src="./images/wheat.jpg"></div>
+        <div class="slide" data-src="./images/ricee.jpg"></div>
+        <div class="slide" data-src="./images/pine.jpg"></div>
+        <div class="slide" data-src="./images/maizee.jpg"></div>
       </div>
       <div class="hero-content">
         <h2>Exporting Tanzania's Best Agricultural Produce to the World</h2>
@@ -1466,19 +1486,56 @@
         }
       });
 
-      // Image Slideshow Functionality
+      // Optimized Image Slideshow Functionality
       let currentSlide = 0;
+      let slideshowInitialized = false;
       const slides = document.querySelectorAll('.slide');
       const totalSlides = slides.length;
 
+      function loadSlideImage(slide) {
+        const src = slide.getAttribute('data-src');
+        if (src && !slide.style.backgroundImage) {
+          const img = new Image();
+          img.src = src;
+          img.onload = function() {
+            slide.style.backgroundImage = `url(${src})`;
+            slide.classList.add('loaded');
+          };
+          img.onerror = function() {
+            console.error('Error loading slide image:', src);
+          };
+        }
+      }
+
       function changeSlide() {
+        if (!slideshowInitialized && totalSlides > 0) {
+          // Initialize slideshow - load first two slides immediately
+          loadSlideImage(slides[0]);
+          if (totalSlides > 1) {
+            loadSlideImage(slides[1]);
+          }
+          slideshowInitialized = true;
+          return;
+        }
+
         slides[currentSlide].classList.remove('active');
         currentSlide = (currentSlide + 1) % totalSlides;
         slides[currentSlide].classList.add('active');
+        
+        // Preload next slide
+        const nextSlideIndex = (currentSlide + 1) % totalSlides;
+        loadSlideImage(slides[nextSlideIndex]);
       }
 
-      // Change slide every 5 seconds
-      setInterval(changeSlide, 5000);
+      // Initialize first slide immediately
+      if (totalSlides > 0) {
+        loadSlideImage(slides[0]);
+      }
+
+      // Start slideshow after a brief delay to allow initial content to load
+      setTimeout(() => {
+        setInterval(changeSlide, 5000);
+      }, 1000);
       
       // Image Loading
       const images = document.querySelectorAll('img');
