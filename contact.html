@@ -7,6 +7,27 @@
   <title>Contact Us - Mavuno Trade Ltd</title>
   <meta name="description" content="Contact Mavuno Trade Ltd to place orders for premium Tanzanian agricultural products or inquire about partnership opportunities.">
   
+  <!-- ========== FAVICON SETUP OPTIMIZED FOR GITHUB PAGES ========== -->
+  <!-- Basic ICO Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  
+  <!-- PNG Favicons for modern browsers -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  
+  <!-- Android/Chrome -->
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#3A7D44">
+  
+  <!-- Microsoft Tiles -->
+  <meta name="msapplication-TileColor" content="#3A7D44">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+  
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
@@ -623,6 +644,11 @@
     .delay-1 { animation-delay: 0.2s; }
     .delay-2 { animation-delay: 0.4s; }
     .delay-3 { animation-delay: 0.6s; }
+
+    /* Honeypot field */
+    .hidden-field {
+      display: none !important;
+    }
   </style>
 </head>
 
@@ -712,7 +738,10 @@
           <!-- Status message container -->
           <div id="status-message" class="status-message"></div>
           
-          <form id="contactForm" action="send_email.php" method="POST">
+          <form id="contactForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+            <!-- Honeypot field for spam prevention -->
+            <input type="text" name="_gotcha" class="hidden-field">
+            
             <div class="form-group">
               <label for="name">Full Name *</label>
               <input type="text" id="name" name="name" class="form-control" required>
@@ -745,6 +774,9 @@
             </div>
             
             <button type="submit" class="btn btn-block">Send Message</button>
+            
+            <!-- Hidden field for redirect after submission -->
+            <input type="hidden" name="_next" value="https://yourusername.github.io/your-repo/contact.html?status=success">
           </form>
         </div>
       </div>
@@ -761,7 +793,7 @@
     <div class="footer-container">
       <div class="footer-col">
         <div class="footer-logo">
-          <img src="images/logo22.jpg" alt="Mavuno Trade Ltd" class="logo-img">
+          <img src="images/logo2.jpg" alt="Mavuno Trade Ltd" class="logo-img">
           <span>Mavuno Trade Ltd</span>
         </div>
         <div class="footer-about">
@@ -908,17 +940,23 @@
         window.history.replaceState({}, document.title, window.location.pathname);
       }
 
-      // Form validation
+      // Form validation and submission
       document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent default form submission
+        
         // Basic client-side validation
         const name = document.getElementById('name').value.trim();
         const email = document.getElementById('email').value.trim();
         const phone = document.getElementById('phone').value.trim();
         const subject = document.getElementById('subject').value;
         const message = document.getElementById('message').value.trim();
+        const statusMessage = document.getElementById('status-message');
         
+        // Reset status message
+        statusMessage.style.display = 'none';
+        
+        // Validate required fields
         if (!name || !email || !phone || !subject || !message) {
-          e.preventDefault();
           statusMessage.textContent = 'Please fill in all required fields.';
           statusMessage.className = 'status-message status-error';
           statusMessage.style.display = 'block';
@@ -928,14 +966,49 @@
         // Validate email format
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
-          e.preventDefault();
           statusMessage.textContent = 'Please enter a valid email address.';
           statusMessage.className = 'status-message status-error';
           statusMessage.style.display = 'block';
           return false;
         }
         
-        return true;
+        // Submit the form via Formspree
+        const form = e.target;
+        const formData = new FormData(form);
+        
+        // Show loading state
+        const submitButton = form.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.textContent;
+        submitButton.textContent = 'Sending...';
+        submitButton.disabled = true;
+        
+        fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        })
+        .then(response => {
+          if (response.ok) {
+            // Success - redirect to thank you page
+            window.location.href = form.querySelector('input[name="_next"]').value;
+          } else {
+            throw new Error('Network response was not ok');
+          }
+        })
+        .catch(error => {
+          // Show error message
+          statusMessage.textContent = 'There was an error sending your message. Please try again later.';
+          statusMessage.className = 'status-message status-error';
+          statusMessage.style.display = 'block';
+          
+          // Reset button
+          submitButton.textContent = originalButtonText;
+          submitButton.disabled = false;
+        });
+        
+        return false;
       });
     });
   </script>
