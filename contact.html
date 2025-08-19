@@ -805,9 +805,10 @@
   <!-- EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script>
-    // Initialize EmailJS
+    // Initialize EmailJS with the CORRECT public key
     (function() {
-      emailjs.init("63718358299-v9olu4t2lkj2aji11g6r5ng3ck613nbl");
+      emailjs.init("VK71l4huRfXg8nV8m");
+      console.log("EmailJS initialized with public key: VK71l4huRfXg8nV8m");
     })();
 
     // Form submission handler
@@ -855,14 +856,18 @@
           to_email: 'mitekaroj@mavunotrade.org,sales@mavunotrade.org,info@mavunotrade.org'
         };
         
-        // Send email
+        console.log("Sending email with parameters:", emailParams);
+        
+        // Send email using EmailJS
         emailjs.send('service_699aeav', 'template_jvkm55g', emailParams)
           .then(function(response) {
+            console.log("Email sent successfully!", response);
             showStatus('Thank you! Your message has been sent successfully.', 'success');
             contactForm.reset();
           })
           .catch(function(error) {
             console.error('Email sending failed:', error);
+            console.error('Error details:', error.text || error.message);
             showStatus('There was an error sending your message. Please try again later.', 'error');
           })
           .finally(function() {
@@ -875,8 +880,6 @@
         statusMessage.textContent = message;
         statusMessage.className = `status-message status-${type}`;
         statusMessage.style.display = 'block';
-        
-        // Scroll to message if it's not visible
         statusMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
       
@@ -934,7 +937,6 @@
       const images = document.querySelectorAll('img');
       images.forEach(img => {
         img.onerror = function() {
-          // Replace broken images with placeholder
           this.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200"%3E%3Crect fill="%23e6f2e6" width="300" height="200"/%3E%3Ctext fill="%232d6a4f" font-family="Arial" font-size="16" dy="20" text-anchor="middle" x="150" y="100"%3EImage Loading...%3C/text%3E%3C/svg%3E';
         }
       });
