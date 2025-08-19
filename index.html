@@ -14,26 +14,14 @@
   <meta property="og:url" content="https://www.mavunotrade.org">
   <meta name="twitter:card" content="summary_large_image">
   
-  <!-- ========== FAVICON SETUP OPTIMIZED FOR GITHUB PAGES ========== -->
-  <!-- Basic ICO Favicon -->
+  <!-- Favicon Setup -->
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  
-  <!-- PNG Favicons for modern browsers -->
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  
-  <!-- Apple Touch Icon -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  
-  <!-- Android/Chrome -->
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#3A7D44">
-  
-  <!-- Microsoft Tiles -->
-  <meta name="msapplication-TileColor" content="#3A7D44">
-  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
-  <meta name="msapplication-config" content="/browserconfig.xml">
   
   <!-- Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,7 +47,7 @@
       --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
     
-    /* Header - Modern Design - Updated for fixed positioning */
+    /* Header with Logo */
     header {
       background-color: white;
       padding: 20px 5%;
@@ -77,34 +65,34 @@
       box-sizing: border-box;
     }
 
-    /* Add padding to main to account for fixed header */
-    main {
-      padding-top: 90px;
+    .logo-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
     }
 
-    .logo {
+    .logo-img {
+      height: 50px;
+      width: auto;
+      margin-right: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .logo-text {
       font-family: 'Libre Baskerville', serif;
       font-size: 28px;
       font-weight: 700;
       color: var(--primary-dark);
-      display: flex;
-      align-items: center;
     }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      text-decoration: none; /* Removes underline from link */
-    }
-    
-    .logo-img {
-      height: 50px; /* Adjust this to your preferred size */
-      width: auto; /* Maintains aspect ratio */
-      transition: opacity 0.3s ease;
-    }
-    
-    .logo-img:hover {
+    .logo-link:hover .logo-img {
       opacity: 0.9;
+      transform: scale(1.05);
+    }
+
+    /* Add padding to main to account for fixed header */
+    main {
+      padding-top: 90px;
     }
 
     nav {
@@ -1075,12 +1063,11 @@
 
 <body>
   <header>
-    <div class="logo">
-      <img src="images/logo.jpg" alt="Mavuno Trade Ltd" class="logo-img">
-      <span>Mavuno Trade Ltd</span>
-    </div>
+    <a href="index.html" class="logo-link">
+      <img src="images/logo.png" alt="Mavuno Trade Logo" class="logo-img">
+      <span class="logo-text">Mavuno Trade Ltd</span>
+    </a>
     
-    <!-- Updated Mobile Menu Toggle with aria attributes -->
     <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false" aria-controls="mainNav">
       <i class="fas fa-bars"></i>
     </button>
