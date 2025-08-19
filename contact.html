@@ -7,27 +7,6 @@
   <title>Contact Us - Mavuno Trade Ltd</title>
   <meta name="description" content="Contact Mavuno Trade Ltd to place orders for premium Tanzanian agricultural products or inquire about partnership opportunities.">
   
-  <!-- ========== FAVICON SETUP OPTIMIZED FOR GITHUB PAGES ========== -->
-  <!-- Basic ICO Favicon -->
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  
-  <!-- PNG Favicons for modern browsers -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  
-  <!-- Apple Touch Icon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  
-  <!-- Android/Chrome -->
-  <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#3A7D44">
-  
-  <!-- Microsoft Tiles -->
-  <meta name="msapplication-TileColor" content="#3A7D44">
-  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
-  <meta name="msapplication-config" content="/browserconfig.xml">
-  
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
@@ -644,11 +623,6 @@
     .delay-1 { animation-delay: 0.2s; }
     .delay-2 { animation-delay: 0.4s; }
     .delay-3 { animation-delay: 0.6s; }
-
-    /* Honeypot field */
-    .hidden-field {
-      display: none !important;
-    }
   </style>
 </head>
 
@@ -716,8 +690,8 @@
               <div class="contact-text">
                 <h3>Email Addresses</h3>
                 <p>
-                  <a href="mailto:info@mavunoagro.com">info@mavunotrade.org</a><br>
-                  <a href="mailto:sales@mavunoagro.com">sales@mavunotrade.org</a>
+                  <a href="mailto:info@mavunotrade.org">info@mavunotrade.org</a><br>
+                  <a href="mailto:sales@mavunotrade.org">sales@mavunotrade.org</a>
                 </p>
               </div>
             </div>
@@ -735,13 +709,9 @@
         
         <div class="contact-form-container animate delay-1">
           <h2>Send Us a Message</h2>
-          <!-- Status message container -->
           <div id="status-message" class="status-message"></div>
           
-          <form id="contactForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
-            <!-- Honeypot field for spam prevention -->
-            <input type="text" name="_gotcha" class="hidden-field">
-            
+          <form id="contactForm">
             <div class="form-group">
               <label for="name">Full Name *</label>
               <input type="text" id="name" name="name" class="form-control" required>
@@ -774,9 +744,6 @@
             </div>
             
             <button type="submit" class="btn btn-block">Send Message</button>
-            
-            <!-- Hidden field for redirect after submission -->
-            <input type="hidden" name="_next" value="https://yourusername.github.io/your-repo/contact.html?status=success">
           </form>
         </div>
       </div>
@@ -835,19 +802,93 @@
     </div>
   </footer>
 
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script>
-    // Mobile Menu Functionality
+    // Initialize EmailJS
+    (function() {
+      emailjs.init("63718358299-v9olu4t2lkj2aji11g6r5ng3ck613nbl");
+    })();
+
+    // Form submission handler
     document.addEventListener('DOMContentLoaded', function() {
+      const contactForm = document.getElementById('contactForm');
+      const statusMessage = document.getElementById('status-message');
+      
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        statusMessage.style.display = 'none';
+        
+        // Get form values
+        const formData = {
+          name: document.getElementById('name').value.trim(),
+          email: document.getElementById('email').value.trim(),
+          phone: document.getElementById('phone').value.trim(),
+          subject: document.getElementById('subject').value,
+          message: document.getElementById('message').value.trim()
+        };
+        
+        // Validate form
+        if (!formData.name || !formData.email || !formData.phone || !formData.subject || !formData.message) {
+          showStatus('Please fill in all required fields.', 'error');
+          return;
+        }
+        
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+          showStatus('Please enter a valid email address.', 'error');
+          return;
+        }
+        
+        // Show loading state
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        submitBtn.disabled = true;
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        
+        // Prepare email parameters
+        const emailParams = {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: 'mitekaroj@mavunotrade.org,sales@mavunotrade.org,info@mavunotrade.org'
+        };
+        
+        // Send email
+        emailjs.send('service_699aeav', 'template_jvkm55g', emailParams)
+          .then(function(response) {
+            showStatus('Thank you! Your message has been sent successfully.', 'success');
+            contactForm.reset();
+          })
+          .catch(function(error) {
+            console.error('Email sending failed:', error);
+            showStatus('There was an error sending your message. Please try again later.', 'error');
+          })
+          .finally(function() {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+          });
+      });
+      
+      function showStatus(message, type) {
+        statusMessage.textContent = message;
+        statusMessage.className = `status-message status-${type}`;
+        statusMessage.style.display = 'block';
+        
+        // Scroll to message if it's not visible
+        statusMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+      
+      // Mobile menu functionality
       const menuToggle = document.getElementById('menuToggle');
       const mainNav = document.getElementById('mainNav');
       
-      // Mobile Menu Toggle
       menuToggle.addEventListener('click', function() {
         const isExpanded = this.getAttribute('aria-expanded') === 'true';
         this.setAttribute('aria-expanded', !isExpanded);
         mainNav.classList.toggle('active');
         
-        // Change icon based on menu state
         const icon = this.querySelector('i');
         if (mainNav.classList.contains('active')) {
           icon.classList.replace('fa-bars', 'fa-times');
@@ -896,11 +937,6 @@
           // Replace broken images with placeholder
           this.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200"%3E%3Crect fill="%23e6f2e6" width="300" height="200"/%3E%3Ctext fill="%232d6a4f" font-family="Arial" font-size="16" dy="20" text-anchor="middle" x="150" y="100"%3EImage Loading...%3C/text%3E%3C/svg%3E';
         }
-        
-        // Fix URLs that might have double slashes
-        if(img.src.includes('https://')) {
-          img.src = img.src.replace('https://', 'https://');
-        }
       });
       
       // Simple animation trigger
@@ -917,98 +953,6 @@
       animatedElements.forEach(el => {
         el.style.opacity = 0;
         observer.observe(el);
-      });
-
-      // Check for status in URL parameters
-      const urlParams = new URLSearchParams(window.location.search);
-      const status = urlParams.get('status');
-      const statusMessage = document.getElementById('status-message');
-      
-      if (status === 'success') {
-        statusMessage.textContent = 'Thank you! Your message has been sent successfully.';
-        statusMessage.className = 'status-message status-success';
-        statusMessage.style.display = 'block';
-        
-        // Clear the URL parameters
-        window.history.replaceState({}, document.title, window.location.pathname);
-      } else if (status === 'error') {
-        statusMessage.textContent = 'There was an error sending your message. Please try again later or contact us directly.';
-        statusMessage.className = 'status-message status-error';
-        statusMessage.style.display = 'block';
-        
-        // Clear the URL parameters
-        window.history.replaceState({}, document.title, window.location.pathname);
-      }
-
-      // Form validation and submission
-      document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault(); // Prevent default form submission
-        
-        // Basic client-side validation
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const phone = document.getElementById('phone').value.trim();
-        const subject = document.getElementById('subject').value;
-        const message = document.getElementById('message').value.trim();
-        const statusMessage = document.getElementById('status-message');
-        
-        // Reset status message
-        statusMessage.style.display = 'none';
-        
-        // Validate required fields
-        if (!name || !email || !phone || !subject || !message) {
-          statusMessage.textContent = 'Please fill in all required fields.';
-          statusMessage.className = 'status-message status-error';
-          statusMessage.style.display = 'block';
-          return false;
-        }
-        
-        // Validate email format
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-          statusMessage.textContent = 'Please enter a valid email address.';
-          statusMessage.className = 'status-message status-error';
-          statusMessage.style.display = 'block';
-          return false;
-        }
-        
-        // Submit the form via Formspree
-        const form = e.target;
-        const formData = new FormData(form);
-        
-        // Show loading state
-        const submitButton = form.querySelector('button[type="submit"]');
-        const originalButtonText = submitButton.textContent;
-        submitButton.textContent = 'Sending...';
-        submitButton.disabled = true;
-        
-        fetch(form.action, {
-          method: 'POST',
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
-          }
-        })
-        .then(response => {
-          if (response.ok) {
-            // Success - redirect to thank you page
-            window.location.href = form.querySelector('input[name="_next"]').value;
-          } else {
-            throw new Error('Network response was not ok');
-          }
-        })
-        .catch(error => {
-          // Show error message
-          statusMessage.textContent = 'There was an error sending your message. Please try again later.';
-          statusMessage.className = 'status-message status-error';
-          statusMessage.style.display = 'block';
-          
-          // Reset button
-          submitButton.textContent = originalButtonText;
-          submitButton.disabled = false;
-        });
-        
-        return false;
       });
     });
   </script>
