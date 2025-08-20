@@ -41,23 +41,10 @@
       --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
     
-    /* Reset and base styles to prevent overflow */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    
-    html, body {
-      width: 100%;
-      overflow-x: hidden;
-      position: relative;
-    }
-    
     /* Header - Modern Design - Updated for fixed positioning */
     header {
       background-color: white;
-      padding: 15px 5%;
+      padding: 20px 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -69,20 +56,18 @@
       right: 0;
       z-index: 1000;
       width: 100%;
-      max-width: 100vw;
+      box-sizing: border-box;
     }
 
     /* Add padding to main to account for fixed header */
     main {
-      padding-top: 80px;
+      padding-top: 90px;
       background-color: var(--light-bg);
-      width: 100%;
-      overflow: hidden;
     }
 
     .logo {
       font-family: 'Libre Baskerville', serif;
-      font-size: 24px;
+      font-size: 28px;
       font-weight: 700;
       color: var(--primary-dark);
       display: flex;
@@ -92,24 +77,24 @@
     .logo {
       display: flex;
       align-items: center;
-      text-decoration: none;
+      text-decoration: none; /* Removes underline from link */
     }
     
     .logo-img {
-      height: 45px;
-      width: auto;
+      height: 50px; /* Adjust this to your preferred size */
+      width: auto; /* Maintains aspect ratio */
       transition: opacity 0.3s ease;
-      margin-right: 10px;
     }
     
     .logo-img:hover {
       opacity: 0.9;
     }
 
+
     nav {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 15px;
     }
 
     nav a {
@@ -117,9 +102,8 @@
       text-decoration: none;
       font-weight: 600;
       transition: var(--transition);
-      padding: 8px 15px;
+      padding: 8px 16px;
       border-radius: 8px;
-      font-size: 15px;
     }
 
     nav a:hover {
@@ -161,7 +145,7 @@
         position: absolute;
         top: 100%;
         left: 0;
-        padding: 15px;
+        padding: 20px;
         box-shadow: 0 10px 15px rgba(0,0,0,0.1);
         z-index: 1000;
       }
@@ -172,12 +156,10 @@
       }
       
       nav a {
-        margin: 8px 0;
+        margin: 10px 0;
         padding: 10px 15px;
         border-radius: 5px;
         transition: background-color 0.3s;
-        width: 100%;
-        text-align: center;
       }
       
       nav a:hover {
@@ -187,15 +169,7 @@
       header {
         flex-direction: row;
         align-items: center;
-        padding: 12px 5%;
-      }
-      
-      .logo {
-        font-size: 20px;
-      }
-      
-      .logo-img {
-        height: 40px;
+        padding: 15px 5%;
       }
     }
 
@@ -204,12 +178,7 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    html, body { 
-      height: 100%;
-      max-width: 100%;
-      overflow-x: hidden;
-    }
-    
+    html, body { height: 100%; }
     body {
       font-family: 'Manrope', sans-serif;
       margin: 0;
@@ -221,10 +190,9 @@
     }
 
     .section {
-      padding: 50px 5%;
+      padding: 60px 40px;
       position: relative;
       background-color: #f8fcf8;
-      width: 100%;
     }
     
     /* Animation Classes */
@@ -271,7 +239,6 @@
       gap: 40px;
       max-width: 1200px;
       margin: 0 auto;
-      width: 100%;
     }
     
     .about-content {
@@ -305,7 +272,6 @@
       margin-bottom: 20px;
       font-size: clamp(24px, 4vw, 32px);
     }
-    
     .section p { 
       line-height: 1.6;
       font-size: clamp(16px, 2vw, 18px);
@@ -314,23 +280,22 @@
     /* Mission and Vision Section */
     .mission-vision {
       background-color: var(--light-bg);
-      padding: 70px 5%;
+      padding: 80px 20px;
     }
     
     .mv-container {
       max-width: 1200px;
       margin: 0 auto;
-      width: 100%;
     }
     
     .mv-header {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
     }
     
     .mv-header h2 {
       color: var(--primary-dark);
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       margin-bottom: 15px;
       position: relative;
       display: inline-block;
@@ -349,14 +314,14 @@
     
     .mv-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
     }
     
     .mv-card {
       background: #f8fcf8;
       border-radius: 10px;
-      padding: 30px 25px;
+      padding: 40px 30px;
       box-shadow: var(--box-shadow);
       transition: transform 0.3s ease;
       position: relative;
@@ -370,8 +335,8 @@
     .mv-card h3 {
       color: var(--primary-dark);
       margin-top: 0;
-      margin-bottom: 15px;
-      font-size: 1.6rem;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
       position: relative;
       display: inline-block;
     }
@@ -379,7 +344,7 @@
     .mv-card h3::after {
       content: "";
       position: absolute;
-      bottom: -8px;
+      bottom: -10px;
       left: 0;
       width: 50px;
       height: 3px;
@@ -392,15 +357,15 @@
     }
     
     .mv-icon {
-      font-size: 45px;
+      font-size: 50px;
       color: var(--primary);
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       opacity: 0.8;
     }
     
     /* Updated Values Section */
     .values-section {
-      padding: 70px 5%;
+      padding: 80px 20px;
       background-color: var(--primary-dark);
       color: white;
     }
@@ -408,17 +373,16 @@
     .values-container {
       max-width: 1200px;
       margin: 0 auto;
-      width: 100%;
     }
     
     .values-header {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
     }
     
     .values-header h2 {
       color: white;
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       margin-bottom: 15px;
       position: relative;
       display: inline-block;
@@ -445,15 +409,15 @@
     
     .values-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
       margin-top: 40px;
     }
     
     .value-card {
       background: rgba(255,255,255,0.1);
       border-radius: 10px;
-      padding: 25px;
+      padding: 30px;
       text-align: center;
       transition: transform 0.3s ease;
       border: 1px solid rgba(255,255,255,0.1);
@@ -465,52 +429,49 @@
     }
     
     .value-icon {
-      width: 60px;
-      height: 60px;
+      width: 70px;
+      height: 70px;
       background-color: var(--accent);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 15px;
+      margin: 0 auto 20px;
       color: var(--primary-dark);
-      font-size: 25px;
+      font-size: 30px;
     }
     
     .value-card h3 {
       color: white;
       margin-top: 0;
-      margin-bottom: 12px;
-      font-size: 1.2rem;
+      margin-bottom: 15px;
     }
     
     .value-card p {
       color: rgba(255,255,255,0.8);
       line-height: 1.6;
       margin: 0;
-      font-size: 0.95rem;
     }
     
     /* History Section */
     .history-section {
-      padding: 70px 5%;
+      padding: 80px 20px;
       background-color: var(--light-bg);
     }
     
     .history-container {
       max-width: 1200px;
       margin: 0 auto;
-      width: 100%;
     }
     
     .history-header {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
     }
     
     .history-header h2 {
       color: var(--primary-dark);
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       margin-bottom: 15px;
       position: relative;
       display: inline-block;
@@ -617,7 +578,7 @@
     
     /* Stats Section */
     .stats-section {
-      padding: 70px 5%;
+      padding: 80px 20px;
       background-color: var(--primary-dark);
       color: white;
       text-align: center;
@@ -626,7 +587,6 @@
     .stats-container {
       max-width: 1200px;
       margin: 0 auto;
-      width: 100%;
     }
     
     .stats-header h2 {
@@ -640,13 +600,13 @@
     
     .stats-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
       margin-top: 40px;
     }
     
     .stat-item {
-      padding: 25px 15px;
+      padding: 30px 20px;
       background-color: rgba(255,255,255,0.1);
       border-radius: 8px;
       transition: transform 0.3s ease;
@@ -657,21 +617,21 @@
     }
     
     .stat-number {
-      font-size: 2.5rem;
+      font-size: 3rem;
       font-weight: 700;
       margin-bottom: 10px;
       color: var(--accent);
     }
     
     .stat-label {
-      font-size: 1rem;
+      font-size: 1.1rem;
       color: white;
       opacity: 0.9;
     }
     
     /* CTA Section */
     .cta-section {
-      padding: 80px 5%;
+      padding: 100px 20px;
       text-align: center;
       background-color: var(--light-bg);
     }
@@ -679,7 +639,6 @@
     .cta-container {
       max-width: 800px;
       margin: 0 auto;
-      width: 100%;
     }
     
     .cta-section h2 {
@@ -730,9 +689,8 @@
     footer {
       background-color: var(--primary-dark);
       color: var(--light-text);
-      padding: 50px 5% 20px;
+      padding: 60px 20px 20px;
       font-size: 16px;
-      width: 100%;
     }
 
     .footer-content {
@@ -741,20 +699,19 @@
       justify-content: space-between;
       max-width: 1200px;
       margin: 0 auto;
-      gap: 30px;
-      width: 100%;
+      gap: 40px;
     }
 
     .footer-section {
       flex: 1;
       min-width: 250px;
-      margin-bottom: 25px;
+      margin-bottom: 30px;
     }
 
     .footer-section h3 {
       color: var(--accent);
-      margin-bottom: 15px;
-      font-size: 18px;
+      margin-bottom: 20px;
+      font-size: 20px;
     }
 
     .footer-section ul {
@@ -763,7 +720,7 @@
     }
 
     .footer-section ul li {
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     .footer-section ul li a {
@@ -780,7 +737,7 @@
     }
 
     .footer-section p {
-      margin: 12px 0;
+      margin: 15px 0;
       display: flex;
       align-items: center;
     }
@@ -794,13 +751,13 @@
 
     .social-icons {
       display: flex;
-      gap: 12px;
-      margin: 15px 0;
+      gap: 15px;
+      margin: 20px 0;
     }
 
     .social-icons a {
       color: var(--light-text);
-      font-size: 18px;
+      font-size: 20px;
       transition: var(--transition);
     }
 
@@ -811,7 +768,6 @@
     .newsletter-form {
       display: flex;
       margin-top: 15px;
-      width: 100%;
     }
 
     .newsletter-form input {
@@ -819,7 +775,6 @@
       padding: 10px;
       border: none;
       border-radius: 4px 0 0 4px;
-      width: 100%;
     }
 
     .newsletter-form button {
@@ -838,10 +793,9 @@
 
     .footer-bottom {
       text-align: center;
-      padding-top: 25px;
-      margin-top: 25px;
+      padding-top: 30px;
+      margin-top: 30px;
       border-top: 1px solid rgba(255,255,255,0.1);
-      width: 100%;
     }
 
     .legal-links {
@@ -915,7 +869,7 @@
       
       /* Adjust main padding for mobile */
       main {
-        padding-top: 70px;
+        padding-top: 80px;
       }
       
       /* CTA buttons */
@@ -926,34 +880,6 @@
       
       .cta-button {
         width: 100%;
-      }
-      
-      /* Fix for mobile overflow */
-      body, html {
-        width: 100%;
-        overflow-x: hidden;
-        position: relative;
-      }
-      
-      .section {
-        padding: 40px 5%;
-      }
-      
-      .mission-vision, .values-section, .history-section, .stats-section {
-        padding: 50px 5%;
-      }
-      
-      /* Header adjustments for mobile */
-      header {
-        padding: 10px 5%;
-      }
-      
-      .logo {
-        font-size: 18px;
-      }
-      
-      .logo-img {
-        height: 35px;
       }
     }
     
@@ -968,22 +894,6 @@
       
       .values-grid {
         grid-template-columns: 1fr;
-      }
-      
-      .footer-section {
-        min-width: 100%;
-      }
-      
-      .section {
-        padding: 30px 5%;
-      }
-      
-      .mission-vision, .values-section, .history-section, .stats-section {
-        padding: 40px 5%;
-      }
-      
-      .about-image {
-        height: 250px;
       }
     }
     
