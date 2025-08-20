@@ -14,31 +14,6 @@
   <meta property="og:url" content="https://www.mavunotrade.org/about">
   <meta name="twitter:card" content="summary_large_image">
   
-  <!-- ========== FAVICON SETUP OPTIMIZED FOR GITHUB PAGES ========== -->
-  <!-- Basic ICO Favicon -->
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  
-  <!-- PNG Favicons for modern browsers -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  
-  <!-- Apple Touch Icon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  
-  <!-- Android/Chrome -->
-  <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#3A7D44">
-  
-  <!-- Microsoft Tiles -->
-  <meta name="msapplication-TileColor" content="#3A7D44">
-  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
-  <meta name="msapplication-config" content="/browserconfig.xml">
-  
-  <!-- Preconnect -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
@@ -59,6 +34,19 @@
       --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
     
+    /* Reset and base styles to prevent overflow */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html, body {
+      width: 100%;
+      overflow-x: hidden;
+      position: relative;
+    }
+    
     /* Header - Modern Design - Updated for fixed positioning */
     header {
       background-color: white;
@@ -74,12 +62,13 @@
       right: 0;
       z-index: 1000;
       width: 100%;
-      box-sizing: border-box;
     }
 
     /* Add padding to main to account for fixed header */
     main {
       padding-top: 90px;
+      width: 100%;
+      overflow: hidden;
     }
 
     .logo {
@@ -90,16 +79,10 @@
       display: flex;
       align-items: center;
     }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      text-decoration: none; /* Removes underline from link */
-    }
     
     .logo-img {
-      height: 50px; /* Adjust this to your preferred size */
-      width: auto; /* Maintains aspect ratio */
+      height: 50px;
+      width: auto;
       transition: opacity 0.3s ease;
     }
     
@@ -187,13 +170,6 @@
         align-items: center;
         padding: 15px 5%;
       }
-      
-      /* Make the green section take full viewport height */
-      .about-company {
-        min-height: calc(100vh - 90px);
-        display: flex;
-        align-items: center;
-      }
     }
 
     @keyframes fadeIn {
@@ -201,7 +177,12 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    html, body { height: 100%; }
+    html, body { 
+      height: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+    
     body {
       font-family: 'Manrope', sans-serif;
       margin: 0;
@@ -213,9 +194,10 @@
     }
 
     .section {
-      padding: 60px 40px;
+      padding: 60px 5%;
       position: relative;
       background-color: #ffffff;
+      width: 100%;
     }
     
     /* Animation Classes */
@@ -262,6 +244,7 @@
       gap: 40px;
       max-width: 1200px;
       margin: 0 auto;
+      width: 100%;
     }
     
     .about-content {
@@ -295,6 +278,7 @@
       margin-bottom: 20px;
       font-size: clamp(24px, 4vw, 32px);
     }
+    
     .section p { 
       line-height: 1.6;
       font-size: clamp(16px, 2vw, 18px);
@@ -303,12 +287,13 @@
     /* Mission and Vision Section */
     .mission-vision {
       background-color: var(--light-bg);
-      padding: 80px 20px;
+      padding: 80px 5%;
     }
     
     .mv-container {
       max-width: 1200px;
       margin: 0 auto;
+      width: 100%;
     }
     
     .mv-header {
@@ -388,7 +373,7 @@
     
     /* Updated Values Section */
     .values-section {
-      padding: 80px 20px;
+      padding: 80px 5%;
       background-color: var(--primary-dark);
       color: white;
     }
@@ -396,6 +381,7 @@
     .values-container {
       max-width: 1200px;
       margin: 0 auto;
+      width: 100%;
     }
     
     .values-header {
@@ -478,13 +464,14 @@
     
     /* History Section */
     .history-section {
-      padding: 80px 20px;
+      padding: 80px 5%;
       background-color: var(--light-bg);
     }
     
     .history-container {
       max-width: 1200px;
       margin: 0 auto;
+      width: 100%;
     }
     
     .history-header {
@@ -601,7 +588,7 @@
     
     /* Stats Section */
     .stats-section {
-      padding: 80px 20px;
+      padding: 80px 5%;
       background-color: var(--primary-dark);
       color: white;
       text-align: center;
@@ -610,6 +597,7 @@
     .stats-container {
       max-width: 1200px;
       margin: 0 auto;
+      width: 100%;
     }
     
     .stats-header h2 {
@@ -654,7 +642,7 @@
     
     /* CTA Section */
     .cta-section {
-      padding: 100px 20px;
+      padding: 100px 5%;
       text-align: center;
       background-color: var(--light-bg);
     }
@@ -662,6 +650,7 @@
     .cta-container {
       max-width: 800px;
       margin: 0 auto;
+      width: 100%;
     }
     
     .cta-section h2 {
@@ -712,8 +701,9 @@
     footer {
       background-color: var(--primary-dark);
       color: var(--light-text);
-      padding: 60px 20px 20px;
+      padding: 60px 5% 20px;
       font-size: 16px;
+      width: 100%;
     }
 
     .footer-content {
@@ -723,6 +713,7 @@
       max-width: 1200px;
       margin: 0 auto;
       gap: 40px;
+      width: 100%;
     }
 
     .footer-section {
@@ -791,6 +782,7 @@
     .newsletter-form {
       display: flex;
       margin-top: 15px;
+      width: 100%;
     }
 
     .newsletter-form input {
@@ -798,6 +790,7 @@
       padding: 10px;
       border: none;
       border-radius: 4px 0 0 4px;
+      width: 100%;
     }
 
     .newsletter-form button {
@@ -819,6 +812,7 @@
       padding-top: 30px;
       margin-top: 30px;
       border-top: 1px solid rgba(255,255,255,0.1);
+      width: 100%;
     }
 
     .legal-links {
@@ -904,6 +898,21 @@
       .cta-button {
         width: 100%;
       }
+      
+      /* Fix for mobile overflow */
+      body, html {
+        width: 100%;
+        overflow-x: hidden;
+        position: relative;
+      }
+      
+      .section {
+        padding: 40px 5%;
+      }
+      
+      .mission-vision, .values-section, .history-section, .stats-section {
+        padding: 60px 5%;
+      }
     }
     
     @media (max-width: 480px) {
@@ -917,6 +926,18 @@
       
       .values-grid {
         grid-template-columns: 1fr;
+      }
+      
+      .footer-section {
+        min-width: 100%;
+      }
+      
+      .section {
+        padding: 30px 5%;
+      }
+      
+      .mission-vision, .values-section, .history-section, .stats-section {
+        padding: 40px 5%;
       }
     }
     
