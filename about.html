@@ -11,8 +11,15 @@
   <meta property="og:title" content="About Mavuno Trade Ltd">
   <meta property="og:description" content="Exporting Tanzania's Best Agricultural Produce to the World">
   <meta property="og:image" content="https://images.unsplash.com/photo-1587049352841-6e8cfc4b5ec6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80">
-  <meta property="og:url" content="https://www.mavunotrade.org/about">
+  <meta property="og:url" content="https://www.mavunotrade.com/about">
   <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
+  
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -26,7 +33,7 @@
       --primary-dark: #245530;
       --primary-light: #68A357;
       --accent: #FFC857;
-      --light-bg: #F8F9FA;
+      --light-bg: #f0f7f0;
       --dark-text: #212529;
       --light-text: #F8F9FA;
       --border-radius: 16px;
@@ -50,7 +57,7 @@
     /* Header - Modern Design - Updated for fixed positioning */
     header {
       background-color: white;
-      padding: 20px 5%;
+      padding: 15px 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -62,28 +69,37 @@
       right: 0;
       z-index: 1000;
       width: 100%;
+      max-width: 100vw;
     }
 
     /* Add padding to main to account for fixed header */
     main {
-      padding-top: 90px;
+      padding-top: 80px;
+      background-color: var(--light-bg);
       width: 100%;
       overflow: hidden;
     }
 
     .logo {
       font-family: 'Libre Baskerville', serif;
-      font-size: 28px;
+      font-size: 24px;
       font-weight: 700;
       color: var(--primary-dark);
       display: flex;
       align-items: center;
     }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
     
     .logo-img {
-      height: 50px;
+      height: 45px;
       width: auto;
       transition: opacity 0.3s ease;
+      margin-right: 10px;
     }
     
     .logo-img:hover {
@@ -93,7 +109,7 @@
     nav {
       display: flex;
       flex-wrap: wrap;
-      gap: 15px;
+      gap: 10px;
     }
 
     nav a {
@@ -101,8 +117,9 @@
       text-decoration: none;
       font-weight: 600;
       transition: var(--transition);
-      padding: 8px 16px;
+      padding: 8px 15px;
       border-radius: 8px;
+      font-size: 15px;
     }
 
     nav a:hover {
@@ -144,7 +161,7 @@
         position: absolute;
         top: 100%;
         left: 0;
-        padding: 20px;
+        padding: 15px;
         box-shadow: 0 10px 15px rgba(0,0,0,0.1);
         z-index: 1000;
       }
@@ -155,10 +172,12 @@
       }
       
       nav a {
-        margin: 10px 0;
+        margin: 8px 0;
         padding: 10px 15px;
         border-radius: 5px;
         transition: background-color 0.3s;
+        width: 100%;
+        text-align: center;
       }
       
       nav a:hover {
@@ -168,7 +187,15 @@
       header {
         flex-direction: row;
         align-items: center;
-        padding: 15px 5%;
+        padding: 12px 5%;
+      }
+      
+      .logo {
+        font-size: 20px;
+      }
+      
+      .logo-img {
+        height: 40px;
       }
     }
 
@@ -194,9 +221,9 @@
     }
 
     .section {
-      padding: 60px 5%;
+      padding: 50px 5%;
       position: relative;
-      background-color: #ffffff;
+      background-color: #f8fcf8;
       width: 100%;
     }
     
@@ -287,7 +314,7 @@
     /* Mission and Vision Section */
     .mission-vision {
       background-color: var(--light-bg);
-      padding: 80px 5%;
+      padding: 70px 5%;
     }
     
     .mv-container {
@@ -298,12 +325,12 @@
     
     .mv-header {
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 40px;
     }
     
     .mv-header h2 {
       color: var(--primary-dark);
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       margin-bottom: 15px;
       position: relative;
       display: inline-block;
@@ -322,14 +349,14 @@
     
     .mv-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
     }
     
     .mv-card {
-      background: #ffffff;
+      background: #f8fcf8;
       border-radius: 10px;
-      padding: 40px 30px;
+      padding: 30px 25px;
       box-shadow: var(--box-shadow);
       transition: transform 0.3s ease;
       position: relative;
@@ -343,8 +370,8 @@
     .mv-card h3 {
       color: var(--primary-dark);
       margin-top: 0;
-      margin-bottom: 20px;
-      font-size: 1.8rem;
+      margin-bottom: 15px;
+      font-size: 1.6rem;
       position: relative;
       display: inline-block;
     }
@@ -352,7 +379,7 @@
     .mv-card h3::after {
       content: "";
       position: absolute;
-      bottom: -10px;
+      bottom: -8px;
       left: 0;
       width: 50px;
       height: 3px;
@@ -365,15 +392,15 @@
     }
     
     .mv-icon {
-      font-size: 50px;
+      font-size: 45px;
       color: var(--primary);
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       opacity: 0.8;
     }
     
     /* Updated Values Section */
     .values-section {
-      padding: 80px 5%;
+      padding: 70px 5%;
       background-color: var(--primary-dark);
       color: white;
     }
@@ -386,12 +413,12 @@
     
     .values-header {
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 40px;
     }
     
     .values-header h2 {
       color: white;
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       margin-bottom: 15px;
       position: relative;
       display: inline-block;
@@ -418,15 +445,15 @@
     
     .values-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
       margin-top: 40px;
     }
     
     .value-card {
       background: rgba(255,255,255,0.1);
       border-radius: 10px;
-      padding: 30px;
+      padding: 25px;
       text-align: center;
       transition: transform 0.3s ease;
       border: 1px solid rgba(255,255,255,0.1);
@@ -438,33 +465,35 @@
     }
     
     .value-icon {
-      width: 70px;
-      height: 70px;
+      width: 60px;
+      height: 60px;
       background-color: var(--accent);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 20px;
+      margin: 0 auto 15px;
       color: var(--primary-dark);
-      font-size: 30px;
+      font-size: 25px;
     }
     
     .value-card h3 {
       color: white;
       margin-top: 0;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
+      font-size: 1.2rem;
     }
     
     .value-card p {
       color: rgba(255,255,255,0.8);
       line-height: 1.6;
       margin: 0;
+      font-size: 0.95rem;
     }
     
     /* History Section */
     .history-section {
-      padding: 80px 5%;
+      padding: 70px 5%;
       background-color: var(--light-bg);
     }
     
@@ -476,12 +505,12 @@
     
     .history-header {
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 40px;
     }
     
     .history-header h2 {
       color: var(--primary-dark);
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       margin-bottom: 15px;
       position: relative;
       display: inline-block;
@@ -532,7 +561,7 @@
     
     .timeline-content {
       padding: 20px;
-      background-color: #ffffff;
+      background-color: #f8fcf8;
       border-radius: 8px;
       box-shadow: 0 3px 10px rgba(0,0,0,0.05);
       position: relative;
@@ -547,7 +576,7 @@
       height: 0;
       border-top: 10px solid transparent;
       border-bottom: 10px solid transparent;
-      border-left: 10px solid #ffffff;
+      border-left: 10px solid #f8fcf8;
     }
     
     .timeline-item:nth-child(even) .timeline-content::after {
@@ -559,7 +588,7 @@
       height: 0;
       border-top: 10px solid transparent;
       border-bottom: 10px solid transparent;
-      border-right: 10px solid #ffffff;
+      border-right: 10px solid #f8fcf8;
     }
     
     .timeline-date {
@@ -588,7 +617,7 @@
     
     /* Stats Section */
     .stats-section {
-      padding: 80px 5%;
+      padding: 70px 5%;
       background-color: var(--primary-dark);
       color: white;
       text-align: center;
@@ -611,13 +640,13 @@
     
     .stats-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 25px;
       margin-top: 40px;
     }
     
     .stat-item {
-      padding: 30px 20px;
+      padding: 25px 15px;
       background-color: rgba(255,255,255,0.1);
       border-radius: 8px;
       transition: transform 0.3s ease;
@@ -628,21 +657,21 @@
     }
     
     .stat-number {
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-weight: 700;
       margin-bottom: 10px;
       color: var(--accent);
     }
     
     .stat-label {
-      font-size: 1.1rem;
+      font-size: 1rem;
       color: white;
       opacity: 0.9;
     }
     
     /* CTA Section */
     .cta-section {
-      padding: 100px 5%;
+      padding: 80px 5%;
       text-align: center;
       background-color: var(--light-bg);
     }
@@ -701,7 +730,7 @@
     footer {
       background-color: var(--primary-dark);
       color: var(--light-text);
-      padding: 60px 5% 20px;
+      padding: 50px 5% 20px;
       font-size: 16px;
       width: 100%;
     }
@@ -712,20 +741,20 @@
       justify-content: space-between;
       max-width: 1200px;
       margin: 0 auto;
-      gap: 40px;
+      gap: 30px;
       width: 100%;
     }
 
     .footer-section {
       flex: 1;
       min-width: 250px;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
 
     .footer-section h3 {
       color: var(--accent);
-      margin-bottom: 20px;
-      font-size: 20px;
+      margin-bottom: 15px;
+      font-size: 18px;
     }
 
     .footer-section ul {
@@ -734,7 +763,7 @@
     }
 
     .footer-section ul li {
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .footer-section ul li a {
@@ -751,7 +780,7 @@
     }
 
     .footer-section p {
-      margin: 15px 0;
+      margin: 12px 0;
       display: flex;
       align-items: center;
     }
@@ -765,13 +794,13 @@
 
     .social-icons {
       display: flex;
-      gap: 15px;
-      margin: 20px 0;
+      gap: 12px;
+      margin: 15px 0;
     }
 
     .social-icons a {
       color: var(--light-text);
-      font-size: 20px;
+      font-size: 18px;
       transition: var(--transition);
     }
 
@@ -809,8 +838,8 @@
 
     .footer-bottom {
       text-align: center;
-      padding-top: 30px;
-      margin-top: 30px;
+      padding-top: 25px;
+      margin-top: 25px;
       border-top: 1px solid rgba(255,255,255,0.1);
       width: 100%;
     }
@@ -870,7 +899,7 @@
       .timeline-item:nth-child(even) .timeline-content::after {
         left: -10px;
         right: auto;
-        border-right: 10px solid #ffffff;
+        border-right: 10px solid #f8fcf8;
         border-left: 0;
       }
       
@@ -886,7 +915,7 @@
       
       /* Adjust main padding for mobile */
       main {
-        padding-top: 80px;
+        padding-top: 70px;
       }
       
       /* CTA buttons */
@@ -911,7 +940,20 @@
       }
       
       .mission-vision, .values-section, .history-section, .stats-section {
-        padding: 60px 5%;
+        padding: 50px 5%;
+      }
+      
+      /* Header adjustments for mobile */
+      header {
+        padding: 10px 5%;
+      }
+      
+      .logo {
+        font-size: 18px;
+      }
+      
+      .logo-img {
+        height: 35px;
       }
     }
     
@@ -938,6 +980,10 @@
       
       .mission-vision, .values-section, .history-section, .stats-section {
         padding: 40px 5%;
+      }
+      
+      .about-image {
+        height: 250px;
       }
     }
     
@@ -986,7 +1032,7 @@
         <div class="about-content">
           <h2>Our Company</h2>
           <p>Founded in 2024, Mavuno Trade Ltd has grown from a small agricultural trading company to one of Tanzania's leading exporters of premium agricultural products. Headquartered in Dar es Salaam, we specialize in sourcing, processing, and exporting high-quality Tanzanian agricultural commodities to markets across Africa, the Middle East, Asia, and Europe.</p>
-          <p>Our name "Mavuno" means "harvest" in Swahili, reflecting our commitment to helping our partners reap the benefits of Tanzania's rich agricultural potential. We work directly with over 100 smallholder farmers and cooperatives across Tanzania, ensuring fair prices and sustainable farming practices.</p>
+          <p>Our name "Mavuno" means "harvest" in Swahili, reflecting our commitment to helping our partners reap the benefits of Tanzania's rich agricultural potential. We work directly with over 500 smallholder farmers and cooperatives across Tanzania, ensuring fair prices and sustainable farming practices.</p>
           <p>With state-of-the-art processing facilities and a team of agricultural experts, we maintain strict quality control at every stage of the supply chain. Our logistics network ensures timely delivery to our international clients while maintaining product quality and freshness.</p>
         </div>
         <div class="about-image animate animate-delay-1">
@@ -1114,7 +1160,7 @@
             <div class="timeline-content">
               <div class="timeline-date">2025</div>
               <h3>Processing Facility Opened</h3>
-              <p>Established our first grain processing and packaging facility in Tunduma.</p>
+              <p>Established our first grain processing and packaging facility in Morogoro.</p>
             </div>
           </div>
           
