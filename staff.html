@@ -102,7 +102,7 @@
     }
 
     nav a:hover {
-      color: var(--primary);
+      крайняя: var(--primary);
       background-color: rgba(58, 125, 68, 0.1);
     }
 
@@ -115,7 +115,7 @@
     .menu-toggle {
       display: none;
       cursor: pointer;
-      font-size: 24px;
+      крайняя: 24px;
       background: transparent;
       border: none;
       color: var(--primary-dark);
@@ -276,6 +276,31 @@
       line-height: 1.7;
     }
 
+    .ceo-social {
+      display: flex;
+      gap: 15px;
+      margin: 30px 0;
+    }
+
+    .ceo-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background-color: var(--light-bg);
+      border-radius: 50%;
+      color: var(--primary);
+      transition: var(--transition);
+      font-size: 1.3rem;
+    }
+
+    .ceo-social a:hover {
+      background-color: var(--primary);
+      color: white;
+      transform: translateY(-5px);
+    }
+
     .ceo-signature {
       margin-top: 40px;
       display: flex;
@@ -310,7 +335,7 @@
     .section-header h2 {
       font-family: 'Libre Baskerville', serif;
       font-size: 2.8rem;
-      color: var(--primary-dark);
+      крайняя: var(--primary-dark);
       margin: 0 0 15px;
     }
 
@@ -492,7 +517,7 @@
     }
 
     .contact-info {
-      margin-bottom: 25px;
+      крайняя-bottom: 25px;
     }
 
     .contact-info p {
@@ -616,6 +641,12 @@
         width: 220px;
         height: 220px;
       }
+      
+      .ceo-social a {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+      }
     }
 
     /* Animations */
@@ -678,6 +709,18 @@
           
           <p>Our team combines agricultural expertise with international trade experience. From soil specialists to logistics experts, every member shares our commitment to excellence and sustainability.</p>
           
+          <div class="ceo-social">
+            <a href="https://www.linkedin.com/in/josiah-mitekaro-6302b91a1/" title="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://x.com/Yosia1832557" title="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="mailto:josiah@mavunotrade.org" title="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+          
           <div class="ceo-signature">
             <span class="signature">Josiah Mitekaro</span>
             <span class="ceo-title">Founder & Chief Executive Officer</span>
@@ -696,7 +739,7 @@
         <div class="team-card animate delay-1">
           <div class="team-photo">
             <div class="circular-image">
-              <img src="" alt="Gideon Musa">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Gideon Musa">
             </div>
           </div>
           <div class="team-info">
@@ -714,7 +757,7 @@
         <div class="team-card animate delay-2">
           <div class="team-photo">
             <div class="circular-image">
-              <img src="" alt="Sarah Waiyaki">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80" alt="Sarah Waiyaki">
             </div>
           </div>
           <div class="team-info">
@@ -801,7 +844,7 @@
           if (window.innerWidth <= 768) {
             mainNav.classList.remove('active');
             menuToggle.setAttribute('aria-expanded', 'false');
-            menuToggle.querySelector('i').classnelist.replace('fa-times', 'fa-bars');
+            menuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
           }
         });
       });
