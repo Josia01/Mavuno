@@ -205,95 +205,72 @@
       opacity: 0.9;
     }
 
-    /* CEO Section - Modern Card with Circular Photo */
+    /* CEO Section - Modern Card */
     .ceo-section {
       padding: 100px 5%;
       background-color: white;
-      text-align: center;
-    }
-
-    .ceo-container {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .ceo-header {
-      margin-bottom: 60px;
-    }
-
-    .ceo-header h2 {
-      font-family: 'Libre Baskerville', serif;
-      font-size: 2.8rem;
-      color: var(--primary-dark);
-      margin: 0 0 15px;
-    }
-
-    .ceo-header p {
-      max-width: 700px;
-      margin: 0 auto;
-      color: #555;
-      font-size: 1.1rem;
     }
 
     .ceo-card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
       background: white;
       border-radius: var(--border-radius);
       box-shadow: var(--box-shadow);
-      padding: 50px;
+      overflow: hidden;
       position: relative;
     }
 
     .ceo-image {
-      width: 250px;
-      height: 250px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 5px solid var(--primary-light);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      position: relative;
+      min-height: 400px;
     }
 
     .ceo-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
 
     .ceo-content {
-      text-align: center;
-      max-width: 800px;
+      padding: 60px 40px 60px 0;
     }
 
-    .ceo-content h3 {
+    .ceo-content h2 {
       font-family: 'Libre Baskerville', serif;
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       color: var(--primary-dark);
-      margin: 0 0 10px;
+      margin: 0 0 25px;
+      position: relative;
     }
 
-    .ceo-title {
-      color: var(--primary);
-      font-weight: 600;
-      font-size: 1.2rem;
-      margin-bottom: 25px;
-      display: block;
+    .ceo-content h2::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background-color: var(--accent);
     }
 
     .ceo-content p {
       margin-bottom: 20px;
       font-size: 1.1rem;
       line-height: 1.7;
-      text-align: left;
     }
 
     .ceo-signature {
       margin-top: 40px;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
     }
 
     .signature {
@@ -303,39 +280,13 @@
       margin-bottom: 5px;
     }
 
-    .ceo-name {
+    .ceo-title {
       font-weight: 600;
       color: var(--primary-dark);
       font-size: 1.1rem;
     }
 
-    .social-links {
-      display: flex;
-      gap: 15px;
-      margin-top: 25px;
-      justify-content: center;
-    }
-
-    .social-links a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 45px;
-      height: 45px;
-      background-color: var(--light-bg);
-      border-radius: 50%;
-      color: var(--primary);
-      transition: var(--transition);
-      font-size: 1.2rem;
-    }
-
-    .social-links a:hover {
-      background-color: var(--primary);
-      color: white;
-      transform: translateY(-3px);
-    }
-
-    /* Team Section - Modern Grid */
+    /* Team Section - Modern Grid with Circular Photos */
     .team-section {
       padding: 100px 5%;
       background-color: var(--light-bg);
@@ -362,7 +313,7 @@
 
     .team-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
       max-width: 1200px;
       margin: 0 auto;
@@ -384,9 +335,13 @@
     }
 
     .team-photo {
-      height: 300px;
+      height: 350px;
       overflow: hidden;
       position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
     }
 
     .team-photo::before {
@@ -400,14 +355,24 @@
       z-index: 1;
     }
 
-    .team-photo img {
+    .circular-image {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid var(--primary-light);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      z-index: 2;
+    }
+
+    .circular-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: var(--transition);
     }
 
-    .team-card:hover .team-photo img {
+    .team-card:hover .circular-image img {
       transform: scale(1.05);
     }
 
@@ -436,27 +401,26 @@
       margin: 0;
     }
 
-    .team-social-links {
+    .social-links {
       display: flex;
-      gap: 12px;
+      gap: 15px;
       margin-top: 20px;
       justify-content: center;
     }
 
-    .team-social-links a {
+    .social-links a {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 38px;
-      height: 38px;
+      width: 40px;
+      height: 40px;
       background-color: var(--light-bg);
       border-radius: 50%;
       color: var(--primary);
       transition: var(--transition);
-      font-size: 1rem;
     }
 
-    .team-social-links a:hover {
+    .social-links a:hover {
       background-color: var(--primary);
       color: white;
       transform: translateY(-3px);
@@ -569,7 +533,16 @@
     /* Responsive Design */
     @media (max-width: 1024px) {
       .ceo-card {
+        grid-template-columns: 1fr;
+      }
+      
+      .ceo-content {
         padding: 40px;
+      }
+      
+      .ceo-image {
+        min-height: 300px;
+        order: -1;
       }
     }
 
@@ -582,22 +555,18 @@
         font-size: 2.5rem;
       }
       
-      .ceo-header h2, .section-header h2 {
+      .section-header h2 {
         font-size: 2.2rem;
-      }
-      
-      .ceo-image {
-        width: 200px;
-        height: 200px;
-      }
-      
-      .ceo-content h3 {
-        font-size: 1.8rem;
       }
       
       .team-grid {
         grid-template-columns: 1fr;
         max-width: 500px;
+      }
+      
+      .circular-image {
+        width: 200px;
+        height: 200px;
       }
       
       /* Adjust main padding for mobile */
@@ -615,16 +584,17 @@
         font-size: 1.1rem;
       }
       
-      .ceo-content h3 {
-        font-size: 1.6rem;
-      }
-      
-      .ceo-card {
-        padding: 30px 20px;
+      .ceo-content h2 {
+        font-size: 2rem;
       }
       
       .team-photo {
-        height: 280px;
+        height: 300px;
+      }
+      
+      .circular-image {
+        width: 180px;
+        height: 180px;
       }
     }
 
@@ -674,37 +644,21 @@
     </section>
 
     <section class="ceo-section">
-      <div class="ceo-container">
-        <div class="ceo-header animate">
-          <h2>Our Founder & CEO</h2>
-          <p>Visionary leadership with a passion for transforming Tanzania's agricultural sector</p>
+      <div class="ceo-card animate">
+        <div class="ceo-image">
+            <img src="./images/ceo.jpg" alt="Josiah Mitekaro, CEO of Mavuno Trade Ltd" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"400\" height=\"400\" viewBox=\"0 0 400 400\"%3E%3Crect width=\"400\" height=\"400\" fill=\"%2368A357\"/%3E%3Ctext fill=\"%23ffffff\" font-family=\"Arial\" font-size=\"70\" text-anchor=\"middle\" x=\"200\" y=\"220\"%3ECEO%3C/text%3E%3C/svg%3E'">
         </div>
-        
-        <div class="ceo-card animate delay-1">
-          <div class="ceo-image">
-            <img src="./images/ceo.jpg" alt="Josiah Mitekaro, CEO of Mavuno Trade Ltd">
-          </div>
+        <div class="ceo-content">
+          <h2>A Message From Our Founder</h2>
+          <p>At Mavuno Trade, we're revolutionizing agricultural exports from Tanzania. Since 2024, we've built bridges between local farmers and international markets while maintaining the highest standards of quality and ethical business practices.</p>
           
-          <div class="ceo-content">
-            <h3>Josiah Mitekaro</h3>
+          <p>Our farmer-first approach connects over 100 smallholder farmers across Tanzania with premium global markets they couldn't access alone. This creates traceability, quality control, and real economic impact in rural communities.</p>
+          
+          <p>Our team combines agricultural expertise with international trade experience. From soil specialists to logistics experts, every member shares our commitment to excellence and sustainability.</p>
+          
+          <div class="ceo-signature">
+            <span class="signature">Josiah Mitekaro</span>
             <span class="ceo-title">Founder & Chief Executive Officer</span>
-            
-            <p>At Mavuno Trade, we're revolutionizing agricultural exports from Tanzania. Since 2024, we've built bridges between local farmers and international markets while maintaining the highest standards of quality and ethical business practices.</p>
-            
-            <p>Our farmer-first approach connects over 100 smallholder farmers across Tanzania with premium global markets they couldn't access alone. This creates traceability, quality control, and real economic impact in rural communities.</p>
-            
-            <p>Our team combines agricultural expertise with international trade experience. From soil specialists to logistics experts, every member shares our commitment to excellence and sustainability.</p>
-            
-            <div class="social-links">
-              <a href="https://www.linkedin.com/in/josiah-mitekaro-6302b91a1/"><i class="fab fa-linkedin-in"></i></a>
-              <a href="https://x.com/Yosia1832557"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fas fa-envelope"></i></a>
-            </div>
-            
-            <div class="ceo-signature">
-              <span class="signature">Josiah Mitekaro</span>
-              <span class="ceo-name">Founder & Chief Executive Officer</span>
-            </div>
           </div>
         </div>
       </div>
@@ -712,20 +666,22 @@
 
     <section class="team-section">
       <div class="section-header animate">
-        <h2>Our Leadership Team</h2>
+        <h2>Our Executive Team</h2>
         <p>Meet the talented individuals leading our mission to showcase Tanzania's agricultural excellence worldwide</p>
       </div>
       
       <div class="team-grid">
         <div class="team-card animate delay-1">
           <div class="team-photo">
-            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Gideon Musa">
+            <div class="circular-image">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Gideon Musa">
+            </div>
           </div>
           <div class="team-info">
             <h3>Gideon Musa</h3>
             <span class="team-position">Operations Director</span>
-            <p>Supply chain expert managing logistics, warehousing, and export documentation with over 10 years of industry experience.</p>
-            <div class="team-social-links">
+            <p>Supply chain expert managing logistics, warehousing, and export documentation.</p>
+            <div class="social-links">
               <a href="#"><i class="fab fa-linkedin-in"></i></a>
               <a href="#"><i class="fab fa-twitter"></i></a>
               <a href="#"><i class="fas fa-envelope"></i></a>
@@ -735,13 +691,15 @@
         
         <div class="team-card animate delay-2">
           <div class="team-photo">
-            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80" alt="Sarah Waiyaki">
+            <div class="circular-image">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80" alt="Sarah Waiyaki">
+            </div>
           </div>
           <div class="team-info">
             <h3>Sarah Waiyaki</h3>
             <span class="team-position">Finance Director</span>
-            <p>Chartered accountant managing financial strategy and international transactions with a focus on sustainable growth.</p>
-            <div class="team-social-links">
+            <p>Chartered accountant managing financial strategy and international transactions.</p>
+            <div class="social-links">
               <a href="#"><i class="fab fa-linkedin-in"></i></a>
               <a href="#"><i class="fab fa-twitter"></i></a>
               <a href="#"><i class="fas fa-envelope"></i></a>
@@ -852,12 +810,11 @@
       images.forEach(img => {
         img.onerror = function() {
           // Replace broken images with placeholder
-          this.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200"%3E%3Crect fill="%23e6f2e6" width="300" height="200"/%3E%3Ctext fill="%232d6a4f" font-family="Arial" font-size="16" dy="20" text-anchor="middle" x="150" y="100"%3EImage Loading...%3C/text%3E%3C/svg%3E';
-        }
-        
-        // Fix URLs that might have double slashes
-        if(img.src.includes('https://')) {
-          img.src = img.src.replace('https://', 'https://');
+          if(this.alt.includes('CEO')) {
+            this.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400"%3E%3Crect width="400" height="400" fill="%2368A357"/%3E%3Ctext fill="%23ffffff" font-family="Arial" font-size="70" text-anchor="middle" x="200" y="220"%3ECEO%3C/text%3E%3C/svg%3E';
+          } else {
+            this.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300"%3E%3Ccircle cx="150" cy="150" r="140" fill="%2368A357"/%3E%3Ctext fill="%23ffffff" font-family="Arial" font-size="50" text-anchor="middle" x="150" y="170"%3EPhoto%3C/text%3E%3C/svg%3E';
+          }
         }
       });
       
