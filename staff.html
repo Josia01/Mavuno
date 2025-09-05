@@ -7,27 +7,6 @@
   <title>Our Team - Mavuno Trade Ltd</title>
   <meta name="description" content="Meet the leadership team of Mavuno Trade Ltd - Tanzania's premier agricultural export company">
   
-  <!-- ========== FAVICON SETUP OPTIMIZED FOR GITHUB PAGES ========== -->
-  <!-- Basic ICO Favicon -->
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  
-  <!-- PNG Favicons for modern browsers -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  
-  <!-- Apple Touch Icon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  
-  <!-- Android/Chrome -->
-  <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#3A7D44">
-  
-  <!-- Microsoft Tiles -->
-  <meta name="msapplication-TileColor" content="#3A7D44">
-  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
-  <meta name="msapplication-config" content="/browserconfig.xml">
-  
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
@@ -226,72 +205,95 @@
       opacity: 0.9;
     }
 
-    /* CEO Section - Modern Card */
+    /* CEO Section - Modern Card with Circular Photo */
     .ceo-section {
       padding: 100px 5%;
       background-color: white;
+      text-align: center;
+    }
+
+    .ceo-container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .ceo-header {
+      margin-bottom: 60px;
+    }
+
+    .ceo-header h2 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 2.8rem;
+      color: var(--primary-dark);
+      margin: 0 0 15px;
+    }
+
+    .ceo-header p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: #555;
+      font-size: 1.1rem;
     }
 
     .ceo-card {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
       background: white;
       border-radius: var(--border-radius);
       box-shadow: var(--box-shadow);
-      overflow: hidden;
+      padding: 50px;
       position: relative;
     }
 
     .ceo-image {
-      position: relative;
-      min-height: 400px;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 5px solid var(--primary-light);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     }
 
     .ceo-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      position: absolute;
-      top: 0;
-      left: 0;
     }
 
     .ceo-content {
-      padding: 60px 40px 60px 0;
+      text-align: center;
+      max-width: 800px;
     }
 
-    .ceo-content h2 {
+    .ceo-content h3 {
       font-family: 'Libre Baskerville', serif;
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       color: var(--primary-dark);
-      margin: 0 0 25px;
-      position: relative;
+      margin: 0 0 10px;
     }
 
-    .ceo-content h2::after {
-      content: '';
-      position: absolute;
-      bottom: -12px;
-      left: 0;
-      width: 60px;
-      height: 4px;
-      background-color: var(--accent);
+    .ceo-title {
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+      display: block;
     }
 
     .ceo-content p {
       margin-bottom: 20px;
       font-size: 1.1rem;
       line-height: 1.7;
+      text-align: left;
     }
 
     .ceo-signature {
       margin-top: 40px;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
     }
 
     .signature {
@@ -301,10 +303,36 @@
       margin-bottom: 5px;
     }
 
-    .ceo-title {
+    .ceo-name {
       font-weight: 600;
       color: var(--primary-dark);
       font-size: 1.1rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 25px;
+      justify-content: center;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      background-color: var(--light-bg);
+      border-radius: 50%;
+      color: var(--primary);
+      transition: var(--transition);
+      font-size: 1.2rem;
+    }
+
+    .social-links a:hover {
+      background-color: var(--primary);
+      color: white;
+      transform: translateY(-3px);
     }
 
     /* Team Section - Modern Grid */
@@ -334,7 +362,7 @@
 
     .team-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
       max-width: 1200px;
       margin: 0 auto;
@@ -347,6 +375,7 @@
       box-shadow: var(--box-shadow);
       transition: var(--transition);
       position: relative;
+      text-align: center;
     }
 
     .team-card:hover {
@@ -355,7 +384,7 @@
     }
 
     .team-photo {
-      height: 350px;
+      height: 300px;
       overflow: hidden;
       position: relative;
     }
@@ -407,25 +436,27 @@
       margin: 0;
     }
 
-    .social-links {
+    .team-social-links {
       display: flex;
-      gap: 15px;
+      gap: 12px;
       margin-top: 20px;
+      justify-content: center;
     }
 
-    .social-links a {
+    .team-social-links a {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 40px;
-      height: 40px;
+      width: 38px;
+      height: 38px;
       background-color: var(--light-bg);
       border-radius: 50%;
       color: var(--primary);
       transition: var(--transition);
+      font-size: 1rem;
     }
 
-    .social-links a:hover {
+    .team-social-links a:hover {
       background-color: var(--primary);
       color: white;
       transform: translateY(-3px);
@@ -538,16 +569,7 @@
     /* Responsive Design */
     @media (max-width: 1024px) {
       .ceo-card {
-        grid-template-columns: 1fr;
-      }
-      
-      .ceo-content {
         padding: 40px;
-      }
-      
-      .ceo-image {
-        min-height: 300px;
-        order: -1;
       }
     }
 
@@ -560,8 +582,17 @@
         font-size: 2.5rem;
       }
       
-      .section-header h2 {
+      .ceo-header h2, .section-header h2 {
         font-size: 2.2rem;
+      }
+      
+      .ceo-image {
+        width: 200px;
+        height: 200px;
+      }
+      
+      .ceo-content h3 {
+        font-size: 1.8rem;
       }
       
       .team-grid {
@@ -584,12 +615,16 @@
         font-size: 1.1rem;
       }
       
-      .ceo-content h2 {
-        font-size: 2rem;
+      .ceo-content h3 {
+        font-size: 1.6rem;
+      }
+      
+      .ceo-card {
+        padding: 30px 20px;
       }
       
       .team-photo {
-        height: 300px;
+        height: 280px;
       }
     }
 
@@ -639,21 +674,37 @@
     </section>
 
     <section class="ceo-section">
-      <div class="ceo-card animate">
-        <div class="ceo-image">
-            <img src="./images/" alt="Josiah Mitekaro, CEO of Mavuno AgroTrade">
+      <div class="ceo-container">
+        <div class="ceo-header animate">
+          <h2>Our Founder & CEO</h2>
+          <p>Visionary leadership with a passion for transforming Tanzania's agricultural sector</p>
         </div>
-        <div class="ceo-content">
-          <h2>A Message From Our Founder</h2>
-          <p>At Mavuno Trade, we're revolutionizing agricultural exports from Tanzania. Since 2024, we've built bridges between local farmers and international markets while maintaining the highest standards of quality and ethical business practices.</p>
+        
+        <div class="ceo-card animate delay-1">
+          <div class="ceo-image">
+            <img src="./images/ceo.jpg" alt="Josiah Mitekaro, CEO of Mavuno Trade Ltd">
+          </div>
           
-          <p>Our farmer-first approach connects over 100 smallholder farmers across Tanzania with premium global markets they couldn't access alone. This creates traceability, quality control, and real economic impact in rural communities.</p>
-          
-          <p>Our team combines agricultural expertise with international trade experience. From soil specialists to logistics experts, every member shares our commitment to excellence and sustainability.</p>
-          
-          <div class="ceo-signature">
-            <span class="signature">Josiah Mitekaro</span>
+          <div class="ceo-content">
+            <h3>Josiah Mitekaro</h3>
             <span class="ceo-title">Founder & Chief Executive Officer</span>
+            
+            <p>At Mavuno Trade, we're revolutionizing agricultural exports from Tanzania. Since 2024, we've built bridges between local farmers and international markets while maintaining the highest standards of quality and ethical business practices.</p>
+            
+            <p>Our farmer-first approach connects over 100 smallholder farmers across Tanzania with premium global markets they couldn't access alone. This creates traceability, quality control, and real economic impact in rural communities.</p>
+            
+            <p>Our team combines agricultural expertise with international trade experience. From soil specialists to logistics experts, every member shares our commitment to excellence and sustainability.</p>
+            
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/josiah-mitekaro-6302b91a1/"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://x.com/Yosia1832557"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+            
+            <div class="ceo-signature">
+              <span class="signature">Josiah Mitekaro</span>
+              <span class="ceo-name">Founder & Chief Executive Officer</span>
+            </div>
           </div>
         </div>
       </div>
@@ -661,36 +712,20 @@
 
     <section class="team-section">
       <div class="section-header animate">
-        <h2>Our Executive Team</h2>
+        <h2>Our Leadership Team</h2>
         <p>Meet the talented individuals leading our mission to showcase Tanzania's agricultural excellence worldwide</p>
       </div>
       
       <div class="team-grid">
         <div class="team-card animate delay-1">
           <div class="team-photo">
-            <img src="./images/" alt="Josiah Mitekaro">
-          </div>
-          <div class="team-info">
-            <h3>Josiah Mitekaro</h3>
-            <span class="team-position">Chief Executive Officer</span>
-            <p>Leads company strategy and international partnerships.</p>
-            <div class="social-links">
-              <a href="https://www.linkedin.com/in/josiah-mitekaro-6302b91a1/"><i class="fab fa-linkedin-in"></i></a>
-              <a href="https://x.com/Yosia1832557"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fas fa-envelope"></i></a>
-            </div>
-          </div>
-        </div>
-        
-        <div class="team-card animate delay-1">
-          <div class="team-photo">
-            <img src="https://" alt="gideon mitekaro">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Gideon Musa">
           </div>
           <div class="team-info">
             <h3>Gideon Musa</h3>
             <span class="team-position">Operations Director</span>
-            <p>Supply chain expert managing logistics, warehousing, and export documentation.</p>
-            <div class="social-links">
+            <p>Supply chain expert managing logistics, warehousing, and export documentation with over 10 years of industry experience.</p>
+            <div class="team-social-links">
               <a href="#"><i class="fab fa-linkedin-in"></i></a>
               <a href="#"><i class="fab fa-twitter"></i></a>
               <a href="#"><i class="fas fa-envelope"></i></a>
@@ -700,13 +735,13 @@
         
         <div class="team-card animate delay-2">
           <div class="team-photo">
-            <img src="https://" alt="Sarah Waiyaki">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80" alt="Sarah Waiyaki">
           </div>
           <div class="team-info">
             <h3>Sarah Waiyaki</h3>
             <span class="team-position">Finance Director</span>
-            <p>Chartered accountant managing financial strategy and international transactions.</p>
-            <div class="social-links">
+            <p>Chartered accountant managing financial strategy and international transactions with a focus on sustainable growth.</p>
+            <div class="team-social-links">
               <a href="#"><i class="fab fa-linkedin-in"></i></a>
               <a href="#"><i class="fab fa-twitter"></i></a>
               <a href="#"><i class="fas fa-envelope"></i></a>
